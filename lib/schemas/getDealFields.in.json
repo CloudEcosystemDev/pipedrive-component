@@ -1,4 +1,12 @@
 {
     "type": "object",
-    "properties": {}
+    "properties": {
+        "start": {
+            "type": "integer",
+            "default": 0
+        },
+        "limit": {
+            "type": "integer"
+        }
+    }
 }

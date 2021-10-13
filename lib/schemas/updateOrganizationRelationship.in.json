@@ -6,7 +6,7 @@
             "type": "integer"
         },
         "requestBody": {
-            "title": "organizationRelationshipRequest",
+            "title": "organizationRelationship",
             "type": "object",
             "properties": {
                 "org_id": {
