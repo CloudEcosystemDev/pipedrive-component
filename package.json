@@ -3,7 +3,8 @@
     "main": "component.json",
     "dependencies": {
         "@openintegrationhub/ferryman": "1.6.2",
-        "swagger-client": "^3.8.22",
+        "swagger-client": "^3.8.22"},
+    "devDependencies": {
         "eslint": "^7.26.0",
         "eslint-config-airbnb-base": "13.1.0",
         "eslint-plugin-import": "^2.14.0",
