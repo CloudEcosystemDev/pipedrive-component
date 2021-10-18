@@ -78,7 +78,7 @@
         "getDeals": {
             "main": "./lib/triggers/getDeals.js",
             "title": "Get all deals",
-            "description": "Returns all deals. For more information on how to get all deals, see <a href=\"https://pipedrive.readme.io/docs/getting-all-deals\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
+            "description": "Returns all deals. For more information on how to get all deals",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -123,7 +123,7 @@
         "getGoals": {
             "main": "./lib/triggers/getGoals.js",
             "title": "Find goals",
-            "description": "Returns data about goals based on criteria. For searching, append `{searchField}={searchValue}` to the URL, where `searchField` can be any one of the lowest-level fields in dot-notation (e.g. `type.params.pipeline_id`; `title`). `searchValue` should be the value you are looking for on that field. Additionally, `is_active=<true|false>` can be provided to search for only active/inactive goals. When providing `period.start`, `period.end` must also be provided and vice versa.",
+            "description": "Returns data about goals based on criteria. For searching, append ",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -153,7 +153,7 @@
         "getLeads": {
             "main": "./lib/triggers/getLeads.js",
             "title": "Get all leads",
-            "description": "Returns multiple Leads. Leads are sorted by the time they were created, from oldest to newest. Pagination can be controlled using `limit` and `start` query parameters. If a Lead contains custom fields, the fields' values will be included in the response in the same format as with the `Deals` endpoints. If a custom field's value hasn't been set for the Lead, it won't appear in the response. Please note that Leads do not have a separate set of custom fields, instead they inherit the custom fields' structure from Deals.\n",
+            "description": "Returns multiple Leads. Leads are sorted by the time they were created, from oldest to newest. ",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -349,7 +349,7 @@
         "addDeal": {
             "main": "./lib/actions/addDeal.js",
             "title": "Add a deal",
-            "description": "Adds a new deal. Note that you can supply additional custom fields along with the request that are not described here. These custom fields are different for each Pipedrive account and can be recognized by long hashes as keys. To determine which custom fields exists, fetch the dealFields and look for `key` values. For more information on how to add a deal, see <a href=\"https://pipedrive.readme.io/docs/creating-a-deal\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
+            "description": "Adds a new deal. Note that you can supply additional custom fields along with the request that are not described here. ",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -469,7 +469,7 @@
         "addFilter": {
             "main": "./lib/actions/addFilter.js",
             "title": "Add a new filter",
-            "description": "Adds a new filter, returns the ID upon success. Note that in the conditions JSON object only one first-level condition group is supported, and it must be glued with 'AND', and only two second level condition groups are supported of which one must be glued with 'AND' and the second with 'OR'. Other combinations do not work (yet) but the syntax supports introducing them in future. For more information on how to add a new filter, see <a href=\"https://pipedrive.readme.io/docs/adding-a-filter\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
+            "description": "Adds a new filter, returns the ID upon success. ",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -499,7 +499,7 @@
         "addLead": {
             "main": "./lib/actions/addLead.js",
             "title": "Add a lead",
-            "description": "Creates a Lead. A Lead always has to be linked to a Person or an Organization or both. All Leads created through the Pipedrive API will have a Lead Source `API` assigned. Here's the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-lead\" target=\"_blank\" rel=\"noopener noreferrer\">adding a Lead</a>. If a Lead contains custom fields, the fields' values will be included in the response in the same format as with the `Deals` endpoints. If a custom field's value hasn't been set for the Lead, it won't appear in the response. Please note that Leads do not have a separate set of custom fields, instead they inherit the custom fields' structure from Deals. See an example given in the <a href=\"https://pipedrive.readme.io/docs/updating-custom-field-value\" target=\"_blank\" rel=\"noopener noreferrer\">updating custom fields' values tutorial</a>.",
+            "description": "Creates a Lead. A Lead always has to be linked to a Person or an Organization or both.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -559,7 +559,7 @@
         "addOrganization": {
             "main": "./lib/actions/addOrganization.js",
             "title": "Add an organization",
-            "description": "Adds a new organization. Note that you can supply additional custom fields along with the request that are not described here. These custom fields are different for each Pipedrive account and can be recognized by long hashes as keys. To determine which custom fields exists, fetch the organizationFields and look for `key` values. For more information on how to add an organization, see <a href=\"https://pipedrive.readme.io/docs/adding-an-organization\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
+            "description": "Adds a new organization. Note that you can supply additional custom fields along with the request that are not described here.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -589,7 +589,7 @@
         "addOrganizationField": {
             "main": "./lib/actions/addOrganizationField.js",
             "title": "Add a new organization field",
-            "description": "Adds a new organization field. For more information on adding a new custom field, see <a href=\"https://pipedrive.readme.io/docs/adding-a-new-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
+            "description": "Adds a new organization field. ",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -619,7 +619,7 @@
         "addPerson": {
             "main": "./lib/actions/addPerson.js",
             "title": "Add a person",
-            "description": "Adds a new person. Note that you can supply additional custom fields along with the request that are not described here. These custom fields are different for each Pipedrive account and can be recognized by long hashes as keys. To determine which custom fields exists, fetch the personFields and look for `key` values.",
+            "description": "Adds a new person. ",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -649,7 +649,7 @@
         "addPersonPicture": {
             "main": "./lib/actions/addPersonPicture.js",
             "title": "Add person picture",
-            "description": "Add a picture to a person. If a picture is already set, the old picture will be replaced. Added image (or the cropping parameters supplied with the request) should have an equal width and height and should be at least 128 pixels. GIF, JPG and PNG are accepted. All added images will be resized to 128 and 512 pixel wide squares.",
+            "description": "Add a picture to a person. ",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -664,7 +664,7 @@
         "addPersonField": {
             "main": "./lib/actions/addPersonField.js",
             "title": "Add a new person field",
-            "description": "Adds a new person field. For more information on adding a new custom field, see <a href=\"https://pipedrive.readme.io/docs/adding-a-new-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
+            "description": "Adds a new person field. ",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -694,7 +694,7 @@
         "addProduct": {
             "main": "./lib/actions/addProduct.js",
             "title": "Add a product",
-            "description": "Adds a new product to the Products inventory. For more information on how to add a product, see <a href=\"https://pipedrive.readme.io/docs/adding-a-product\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
+            "description": "Adds a new product to the Products inventory. ",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -724,7 +724,7 @@
         "addProductField": {
             "main": "./lib/actions/addProductField.js",
             "title": "Add a new product field",
-            "description": "Adds a new product field. For more information on adding a new custom field, see <a href=\"https://pipedrive.readme.io/docs/adding-a-new-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
+            "description": "Adds a new product field. ",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -842,7 +842,7 @@
         "addWebhook": {
             "main": "./lib/actions/addWebhook.js",
             "title": "Create a new webhook",
-            "description": "Creates a new webhook and returns its details. Note that specifying an event which triggers the webhook combines 2 parameters - `event_action` and `event_object`. E.g., use `*.*` for getting notifications about all events, `added.deal` for any newly added deals, `deleted.persons` for any deleted persons, etc. See <a href=\"https://pipedrive.readme.io/docs/guide-for-webhooks?ref=api_reference\">https://pipedrive.readme.io/docs/guide-for-webhooks</a> for more details.",
+            "description": "Creates a new webhook and returns its details.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
