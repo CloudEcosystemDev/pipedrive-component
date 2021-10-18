@@ -615,200 +615,6 @@
                 "out": "./lib/schemas/getOrganizations.out.json"
             }
         },
-        "searchOrganization": {
-            "main": "./lib/triggers/searchOrganization.js",
-            "title": "Search organizations",
-            "description": "Searches all Organizations by name, address, notes and/or custom fields. This endpoint is a wrapper of <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> with a narrower OAuth scope.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/searchOrganization.in.json",
-                "out": "./lib/schemas/searchOrganization.out.json"
-            }
-        },
-        "getOrganizationByName": {
-            "main": "./lib/triggers/getOrganizationByName.js",
-            "title": "Find organizations by name",
-            "description": "This endpoint is deprecated. Please use <a href=\"https://developers.pipedrive.com/docs/api/v1/Organizations#searchOrganization\">/v1/organizations/search</a> or <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> instead. <br> Searches all organizations by their name.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationByName.in.json",
-                "out": "./lib/schemas/getOrganizationByName.out.json"
-            }
-        },
-        "getOrganizationActivities": {
-            "main": "./lib/triggers/getOrganizationActivities.js",
-            "title": "List activities associated with an organization",
-            "description": "Lists activities associated with an organization.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationActivities.in.json",
-                "out": "./lib/schemas/getOrganizationActivities.out.json"
-            }
-        },
-        "getOrganizationDeals": {
-            "main": "./lib/triggers/getOrganizationDeals.js",
-            "title": "List deals associated with an organization",
-            "description": "Lists deals associated with an organization.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationDeals.in.json",
-                "out": "./lib/schemas/getOrganizationDeals.out.json"
-            }
-        },
-        "getOrganizationFiles": {
-            "main": "./lib/triggers/getOrganizationFiles.js",
-            "title": "List files attached to an organization",
-            "description": "Lists files associated with an organization.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationFiles.in.json",
-                "out": "./lib/schemas/getOrganizationFiles.out.json"
-            }
-        },
-        "getOrganizationUpdates": {
-            "main": "./lib/triggers/getOrganizationUpdates.js",
-            "title": "List updates about an organization",
-            "description": "Lists updates about an organization.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationUpdates.in.json",
-                "out": "./lib/schemas/getOrganizationUpdates.out.json"
-            }
-        },
-        "getOrganizationFollowers": {
-            "main": "./lib/triggers/getOrganizationFollowers.js",
-            "title": "List followers of an organization",
-            "description": "Lists the followers of an organization.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationFollowers.in.json",
-                "out": "./lib/schemas/getOrganizationFollowers.out.json"
-            }
-        },
-        "getOrganizationMailMessages": {
-            "main": "./lib/triggers/getOrganizationMailMessages.js",
-            "title": "List mail messages associated with an organization",
-            "description": "Lists mail messages associated with an organization.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationMailMessages.in.json",
-                "out": "./lib/schemas/getOrganizationMailMessages.out.json"
-            }
-        },
-        "getOrganizationUsers": {
-            "main": "./lib/triggers/getOrganizationUsers.js",
-            "title": "List permitted users",
-            "description": "List users permitted to access an organization",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationUsers.in.json",
-                "out": "./lib/schemas/getOrganizationUsers.out.json"
-            }
-        },
-        "getOrganizationPersons": {
-            "main": "./lib/triggers/getOrganizationPersons.js",
-            "title": "List persons of an organization",
-            "description": "Lists persons associated with an organization.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationPersons.in.json",
-                "out": "./lib/schemas/getOrganizationPersons.out.json"
-            }
-        },
-        "getOrganizationFields": {
-            "main": "./lib/triggers/getOrganizationFields.js",
-            "title": "Get all organization fields",
-            "description": "Returns data about all organization fields",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationFields.in.json",
-                "out": "./lib/schemas/getOrganizationFields.out.json"
-            }
-        },
-        "getOrganizationRelationships": {
-            "main": "./lib/triggers/getOrganizationRelationships.js",
-            "title": "Get all relationships for organization",
-            "description": "Gets all of the relationships for a supplied organization ID.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationRelationships.in.json",
-                "out": "./lib/schemas/getOrganizationRelationships.out.json"
-            }
-        },
-        "getPermissionSets": {
-            "main": "./lib/triggers/getPermissionSets.js",
-            "title": "Get all Permission Sets",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPermissionSets.in.json",
-                "out": "./lib/schemas/getPermissionSets.out.json"
-            }
-        },
         "getPermissionSetAssignments": {
             "main": "./lib/triggers/getPermissionSetAssignments.js",
             "title": "List Permission Set assignments",
@@ -854,156 +660,6 @@
                 "out": "./lib/schemas/searchPersons.out.json"
             }
         },
-        "findPersonByName": {
-            "main": "./lib/triggers/findPersonByName.js",
-            "title": "Find persons by name",
-            "description": "This endpoint is deprecated. Please use <a href=\"https://developers.pipedrive.com/docs/api/v1/Persons#searchPersons\">/v1/persons/search</a> or <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> instead. <br> Searches all persons by their name.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/findPersonByName.in.json",
-                "out": "./lib/schemas/findPersonByName.out.json"
-            }
-        },
-        "getPersonActivities": {
-            "main": "./lib/triggers/getPersonActivities.js",
-            "title": "List activities associated with a person",
-            "description": "Lists activities associated with a person.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonActivities.in.json",
-                "out": "./lib/schemas/getPersonActivities.out.json"
-            }
-        },
-        "getPersonDeals": {
-            "main": "./lib/triggers/getPersonDeals.js",
-            "title": "List deals associated with a person",
-            "description": "Lists deals associated with a person.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonDeals.in.json",
-                "out": "./lib/schemas/getPersonDeals.out.json"
-            }
-        },
-        "getPersonFiles": {
-            "main": "./lib/triggers/getPersonFiles.js",
-            "title": "List files attached to a person",
-            "description": "Lists files associated with a person.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonFiles.in.json",
-                "out": "./lib/schemas/getPersonFiles.out.json"
-            }
-        },
-        "getPersonUpdates": {
-            "main": "./lib/triggers/getPersonUpdates.js",
-            "title": "List updates about a person",
-            "description": "Lists updates about a person.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonUpdates.in.json",
-                "out": "./lib/schemas/getPersonUpdates.out.json"
-            }
-        },
-        "getPersonFollowers": {
-            "main": "./lib/triggers/getPersonFollowers.js",
-            "title": "List followers of a person",
-            "description": "Lists the followers of a person.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonFollowers.in.json",
-                "out": "./lib/schemas/getPersonFollowers.out.json"
-            }
-        },
-        "getPersonMailMessages": {
-            "main": "./lib/triggers/getPersonMailMessages.js",
-            "title": "List mail messages associated with a person",
-            "description": "Lists mail messages associated with a person.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonMailMessages.in.json",
-                "out": "./lib/schemas/getPersonMailMessages.out.json"
-            }
-        },
-        "getPersonUsers": {
-            "main": "./lib/triggers/getPersonUsers.js",
-            "title": "List permitted users",
-            "description": "List users permitted to access a person",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonUsers.in.json",
-                "out": "./lib/schemas/getPersonUsers.out.json"
-            }
-        },
-        "getPersonProducts": {
-            "main": "./lib/triggers/getPersonProducts.js",
-            "title": "List products associated with a person",
-            "description": "Lists products associated with a person.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonProducts.in.json",
-                "out": "./lib/schemas/getPersonProducts.out.json"
-            }
-        },
-        "getPersonFields": {
-            "main": "./lib/triggers/getPersonFields.js",
-            "title": "Get all person fields",
-            "description": "Returns data about all person fields",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonFields.in.json",
-                "out": "./lib/schemas/getPersonFields.out.json"
-            }
-        },
         "getPipelines": {
             "main": "./lib/triggers/getPipelines.js",
             "title": "Get all pipelines",
@@ -1034,36 +690,6 @@
                 "out": "./lib/schemas/getPipelineConversionStatistics.out.json"
             }
         },
-        "getPipelineDeals": {
-            "main": "./lib/triggers/getPipelineDeals.js",
-            "title": "Get deals in a pipeline",
-            "description": "Lists deals in a specific pipeline across all its stages",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPipelineDeals.in.json",
-                "out": "./lib/schemas/getPipelineDeals.out.json"
-            }
-        },
-        "getPipelineMovementStatistics": {
-            "main": "./lib/triggers/getPipelineMovementStatistics.js",
-            "title": "Get deals movements in pipeline",
-            "description": "Returns statistics for deals movements for given time period.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPipelineMovementStatistics.in.json",
-                "out": "./lib/schemas/getPipelineMovementStatistics.out.json"
-            }
-        },
         "getProducts": {
             "main": "./lib/triggers/getProducts.js",
             "title": "Get all products",
@@ -1092,96 +718,6 @@
             "metadata": {
                 "in": "./lib/schemas/searchProducts.in.json",
                 "out": "./lib/schemas/searchProducts.out.json"
-            }
-        },
-        "findProductsByName": {
-            "main": "./lib/triggers/findProductsByName.js",
-            "title": "Find products by name",
-            "description": "This endpoint is deprecated. Please use <a href=\"https://developers.pipedrive.com/docs/api/v1/Products#searchProducts\">/v1/products/search</a> or <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> instead. <br> Returns data about the products that were found. If currency was set in request, prices in that currency are served back.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/findProductsByName.in.json",
-                "out": "./lib/schemas/findProductsByName.out.json"
-            }
-        },
-        "getProductDeals": {
-            "main": "./lib/triggers/getProductDeals.js",
-            "title": "Get deals where a product is attached to",
-            "description": "Returns data about deals that have a product attached to.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getProductDeals.in.json",
-                "out": "./lib/schemas/getProductDeals.out.json"
-            }
-        },
-        "getProductFiles": {
-            "main": "./lib/triggers/getProductFiles.js",
-            "title": "List files attached to a product",
-            "description": "Lists files associated with a product.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getProductFiles.in.json",
-                "out": "./lib/schemas/getProductFiles.out.json"
-            }
-        },
-        "getProductFollowers": {
-            "main": "./lib/triggers/getProductFollowers.js",
-            "title": "List followers of a product",
-            "description": "Lists the followers of a Product",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getProductFollowers.in.json",
-                "out": "./lib/schemas/getProductFollowers.out.json"
-            }
-        },
-        "getProductUsers": {
-            "main": "./lib/triggers/getProductUsers.js",
-            "title": "List permitted users",
-            "description": "Lists users permitted to access a product.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getProductUsers.in.json",
-                "out": "./lib/schemas/getProductUsers.out.json"
-            }
-        },
-        "getProductFields": {
-            "main": "./lib/triggers/getProductFields.js",
-            "title": "Get all product fields",
-            "description": "Returns data about all product fields",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getProductFields.in.json",
-                "out": "./lib/schemas/getProductFields.out.json"
             }
         },
         "getRecents": {
@@ -1376,126 +912,6 @@
                 "out": "./lib/schemas/getUsers.out.json"
             }
         },
-        "findUsersByName": {
-            "main": "./lib/triggers/findUsersByName.js",
-            "title": "Find users by name",
-            "description": "Finds users by their name.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/findUsersByName.in.json",
-                "out": "./lib/schemas/findUsersByName.out.json"
-            }
-        },
-        "getCurrentUser": {
-            "main": "./lib/triggers/getCurrentUser.js",
-            "title": "Get current user data",
-            "description": "Returns data about an authorized user within the company with bound company data: company ID, company name, and domain. Note that the `locale` property means 'Date/number format' in the Pipedrive account settings, not the chosen language.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getCurrentUser.in.json",
-                "out": "./lib/schemas/getCurrentUser.out.json"
-            }
-        },
-        "getUserFollowers": {
-            "main": "./lib/triggers/getUserFollowers.js",
-            "title": "List followers of a user",
-            "description": "Lists followers of a specific user.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getUserFollowers.in.json",
-                "out": "./lib/schemas/getUserFollowers.out.json"
-            }
-        },
-        "getUserPermissions": {
-            "main": "./lib/triggers/getUserPermissions.js",
-            "title": "List user permissions",
-            "description": "List aggregated permissions over all assigned permission sets for a user",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getUserPermissions.in.json",
-                "out": "./lib/schemas/getUserPermissions.out.json"
-            }
-        },
-        "getUserRoleAssignments": {
-            "main": "./lib/triggers/getUserRoleAssignments.js",
-            "title": "List role assignments",
-            "description": "List role assignments for a user",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getUserRoleAssignments.in.json",
-                "out": "./lib/schemas/getUserRoleAssignments.out.json"
-            }
-        },
-        "getUserRoleSettings": {
-            "main": "./lib/triggers/getUserRoleSettings.js",
-            "title": "List user role settings",
-            "description": "List settings of user's assigned role",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getUserRoleSettings.in.json",
-                "out": "./lib/schemas/getUserRoleSettings.out.json"
-            }
-        },
-        "getUserConnections": {
-            "main": "./lib/triggers/getUserConnections.js",
-            "title": "Get all user connections",
-            "description": "Returns data about all connections for authorized user.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getUserConnections.in.json",
-                "out": "./lib/schemas/getUserConnections.out.json"
-            }
-        },
-        "getUserSettings": {
-            "main": "./lib/triggers/getUserSettings.js",
-            "title": "List settings of an authorized user",
-            "description": "List settings of an authorized user. Example response contains a shortened list of settings.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getUserSettings.in.json",
-                "out": "./lib/schemas/getUserSettings.out.json"
-            }
-        },
         "getWebhooks": {
             "main": "./lib/triggers/getWebhooks.js",
             "title": "Get all webhooks",
@@ -1526,21 +942,6 @@
             "metadata": {
                 "in": "./lib/schemas/addActivity.in.json",
                 "out": "./lib/schemas/addActivity.out.json"
-            }
-        },
-        "getActivity": {
-            "main": "./lib/actions/getActivity.js",
-            "title": "Get details of an Activity",
-            "description": "Returns details of a specific Activity",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getActivity.in.json",
-                "out": "./lib/schemas/getActivity.out.json"
             }
         },
         "addActivityType": {
@@ -1616,21 +1017,6 @@
             "metadata": {
                 "in": "./lib/schemas/addDeal.in.json",
                 "out": "./lib/schemas/addDeal.out.json"
-            }
-        },
-        "getDeal": {
-            "main": "./lib/actions/getDeal.js",
-            "title": "Get details of a deal",
-            "description": "Returns details of a specific deal. Note that this also returns some additional fields which are not present when asking for all deals - such as deal age and stay in pipeline stages. Also note that custom fields appear as long hashes in the resulting data. These hashes can be mapped against the `key` value of dealFields. For more information on how to get all details of a deal, see <a href=\"https://pipedrive.readme.io/docs/getting-details-of-a-deal\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDeal.in.json",
-                "out": "./lib/schemas/getDeal.out.json"
             }
         },
         "duplicateDeal": {
@@ -1723,21 +1109,6 @@
                 "out": "./lib/schemas/addDealField.out.json"
             }
         },
-        "getDealField": {
-            "main": "./lib/actions/getDealField.js",
-            "title": "Get one deal field",
-            "description": "Returns data about a specific deal field.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealField.in.json",
-                "out": "./lib/schemas/getDealField.out.json"
-            }
-        },
         "addFile": {
             "main": "./lib/actions/addFile.js",
             "title": "Add file",
@@ -1783,21 +1154,6 @@
                 "out": "./lib/schemas/linkFileToItem.out.json"
             }
         },
-        "getFile": {
-            "main": "./lib/actions/getFile.js",
-            "title": "Get one file",
-            "description": "Returns data about a specific file.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getFile.in.json",
-                "out": "./lib/schemas/getFile.out.json"
-            }
-        },
         "addFilter": {
             "main": "./lib/actions/addFilter.js",
             "title": "Add a new filter",
@@ -1811,21 +1167,6 @@
             "metadata": {
                 "in": "./lib/schemas/addFilter.in.json",
                 "out": "./lib/schemas/addFilter.out.json"
-            }
-        },
-        "getFilter": {
-            "main": "./lib/actions/getFilter.js",
-            "title": "Get one filter",
-            "description": "Returns data about a specific filter. Note that this also returns the condition lines of the filter.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getFilter.in.json",
-                "out": "./lib/schemas/getFilter.out.json"
             }
         },
         "addGoal": {
@@ -1858,21 +1199,6 @@
                 "out": "./lib/schemas/addLead.out.json"
             }
         },
-        "getLead": {
-            "main": "./lib/actions/getLead.js",
-            "title": "Get one lead",
-            "description": "Returns details of a specific Lead. If a Lead contains custom fields, the fields' values will be included in the response in the same format as with the `Deals` endpoints. If a custom field's value hasn't been set for the Lead, it won't appear in the response. Please note that Leads do not have a separate set of custom fields, instead they inherit the custom fields' structure from Deals.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getLead.in.json",
-                "out": "./lib/schemas/getLead.out.json"
-            }
-        },
         "addLeadLabel": {
             "main": "./lib/actions/addLeadLabel.js",
             "title": "Add a lead label",
@@ -1886,36 +1212,6 @@
             "metadata": {
                 "in": "./lib/schemas/addLeadLabel.in.json",
                 "out": "./lib/schemas/addLeadLabel.out.json"
-            }
-        },
-        "getMailMessage": {
-            "main": "./lib/actions/getMailMessage.js",
-            "title": "Get one mail message",
-            "description": "Returns data about specific mail message.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getMailMessage.in.json",
-                "out": "./lib/schemas/getMailMessage.out.json"
-            }
-        },
-        "getMailThread": {
-            "main": "./lib/actions/getMailThread.js",
-            "title": "Get one mail thread",
-            "description": "Returns specific mail thread.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getMailThread.in.json",
-                "out": "./lib/schemas/getMailThread.out.json"
             }
         },
         "addNote": {
@@ -1933,21 +1229,6 @@
                 "out": "./lib/schemas/addNote.out.json"
             }
         },
-        "getNote": {
-            "main": "./lib/actions/getNote.js",
-            "title": "Get one note",
-            "description": "Returns details about a specific note.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getNote.in.json",
-                "out": "./lib/schemas/getNote.out.json"
-            }
-        },
         "addNoteComment": {
             "main": "./lib/actions/addNoteComment.js",
             "title": "Add a comment to a note",
@@ -1961,21 +1242,6 @@
             "metadata": {
                 "in": "./lib/schemas/addNoteComment.in.json",
                 "out": "./lib/schemas/addNoteComment.out.json"
-            }
-        },
-        "getComment": {
-            "main": "./lib/actions/getComment.js",
-            "title": "Get one comment",
-            "description": "Returns details about a comment",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getComment.in.json",
-                "out": "./lib/schemas/getComment.out.json"
             }
         },
         "addOrganization": {
@@ -1993,21 +1259,6 @@
                 "out": "./lib/schemas/addOrganization.out.json"
             }
         },
-        "getOrganization": {
-            "main": "./lib/actions/getOrganization.js",
-            "title": "Get details of an organization",
-            "description": "Returns details of an organization. Note that this also returns some additional fields which are not present when asking for all organizations. Also note that custom fields appear as long hashes in the resulting data. These hashes can be mapped against the `key` value of organizationFields.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganization.in.json",
-                "out": "./lib/schemas/getOrganization.out.json"
-            }
-        },
         "addOrganizationFollower": {
             "main": "./lib/actions/addOrganizationFollower.js",
             "title": "Add a follower to an organization",
@@ -2021,21 +1272,6 @@
             "metadata": {
                 "in": "./lib/schemas/addOrganizationFollower.in.json",
                 "out": "./lib/schemas/addOrganizationFollower.out.json"
-            }
-        },
-        "mergeOrganizations": {
-            "main": "./lib/actions/mergeOrganizations.js",
-            "title": "Merge two organizations",
-            "description": "Merges an organization with another organization. For more information on how to merge two organizations, see <a href=\"https://pipedrive.readme.io/docs/merging-two-organizations\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/mergeOrganizations.in.json",
-                "out": "./lib/schemas/mergeOrganizations.out.json"
             }
         },
         "addOrganizationField": {
@@ -2053,21 +1289,6 @@
                 "out": "./lib/schemas/addOrganizationField.out.json"
             }
         },
-        "getOrganizationField": {
-            "main": "./lib/actions/getOrganizationField.js",
-            "title": "Get one organization field",
-            "description": "Returns data about a specific organization field.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationField.in.json",
-                "out": "./lib/schemas/getOrganizationField.out.json"
-            }
-        },
         "addOrganizationRelationship": {
             "main": "./lib/actions/addOrganizationRelationship.js",
             "title": "Create an organization relationship",
@@ -2081,35 +1302,6 @@
             "metadata": {
                 "in": "./lib/schemas/addOrganizationRelationship.in.json",
                 "out": "./lib/schemas/addOrganizationRelationship.out.json"
-            }
-        },
-        "getOrganizationRelationship": {
-            "main": "./lib/actions/getOrganizationRelationship.js",
-            "title": "Get one organization relationship",
-            "description": "Finds and returns an organization relationship from its ID.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationRelationship.in.json",
-                "out": "./lib/schemas/getOrganizationRelationship.out.json"
-            }
-        },
-        "getPermissionSet": {
-            "main": "./lib/actions/getPermissionSet.js",
-            "title": "Get one Permission Set",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPermissionSet.in.json",
-                "out": "./lib/schemas/getPermissionSet.out.json"
             }
         },
         "addPerson": {
@@ -2127,21 +1319,6 @@
                 "out": "./lib/schemas/addPerson.out.json"
             }
         },
-        "getPerson": {
-            "main": "./lib/actions/getPerson.js",
-            "title": "Get details of a person",
-            "description": "Returns details of a person. Note that this also returns some additional fields which are not present when asking for all persons. Also note that custom fields appear as long hashes in the resulting data. These hashes can be mapped against the `key` value of personFields.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPerson.in.json",
-                "out": "./lib/schemas/getPerson.out.json"
-            }
-        },
         "addPersonFollower": {
             "main": "./lib/actions/addPersonFollower.js",
             "title": "Add a follower to a person",
@@ -2155,21 +1332,6 @@
             "metadata": {
                 "in": "./lib/schemas/addPersonFollower.in.json",
                 "out": "./lib/schemas/addPersonFollower.out.json"
-            }
-        },
-        "mergePersons": {
-            "main": "./lib/actions/mergePersons.js",
-            "title": "Merge two persons",
-            "description": "Merges a person with another person. For more information on how to merge two persons, see <a href=\"https://pipedrive.readme.io/docs/merging-two-persons\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/mergePersons.in.json",
-                "out": "./lib/schemas/mergePersons.out.json"
             }
         },
         "addPersonPicture": {
@@ -2202,21 +1364,6 @@
                 "out": "./lib/schemas/addPersonField.out.json"
             }
         },
-        "getPersonField": {
-            "main": "./lib/actions/getPersonField.js",
-            "title": "Get one person field",
-            "description": "Returns data about a specific person field.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonField.in.json",
-                "out": "./lib/schemas/getPersonField.out.json"
-            }
-        },
         "addPipeline": {
             "main": "./lib/actions/addPipeline.js",
             "title": "Add a new pipeline",
@@ -2232,21 +1379,6 @@
                 "out": "./lib/schemas/addPipeline.out.json"
             }
         },
-        "getPipeline": {
-            "main": "./lib/actions/getPipeline.js",
-            "title": "Get one pipeline",
-            "description": "Returns data about a specific pipeline. Also returns the summary of the deals in this pipeline across its stages.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPipeline.in.json",
-                "out": "./lib/schemas/getPipeline.out.json"
-            }
-        },
         "addProduct": {
             "main": "./lib/actions/addProduct.js",
             "title": "Add a product",
@@ -2260,21 +1392,6 @@
             "metadata": {
                 "in": "./lib/schemas/addProduct.in.json",
                 "out": "./lib/schemas/addProduct.out.json"
-            }
-        },
-        "getProduct": {
-            "main": "./lib/actions/getProduct.js",
-            "title": "Get one product",
-            "description": "Returns data about a specific product.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getProduct.in.json",
-                "out": "./lib/schemas/getProduct.out.json"
             }
         },
         "addProductFollower": {
@@ -2307,21 +1424,6 @@
                 "out": "./lib/schemas/addProductField.out.json"
             }
         },
-        "getProductField": {
-            "main": "./lib/actions/getProductField.js",
-            "title": "Get one product field",
-            "description": "Returns data about a specific product field.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getProductField.in.json",
-                "out": "./lib/schemas/getProductField.out.json"
-            }
-        },
         "addRole": {
             "main": "./lib/actions/addRole.js",
             "title": "Add a role",
@@ -2334,20 +1436,6 @@
             "metadata": {
                 "in": "./lib/schemas/addRole.in.json",
                 "out": "./lib/schemas/addRole.out.json"
-            }
-        },
-        "getRole": {
-            "main": "./lib/actions/getRole.js",
-            "title": "Get one role",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getRole.in.json",
-                "out": "./lib/schemas/getRole.out.json"
             }
         },
         "addRoleAssignment": {
@@ -2392,21 +1480,6 @@
             "metadata": {
                 "in": "./lib/schemas/addStage.in.json",
                 "out": "./lib/schemas/addStage.out.json"
-            }
-        },
-        "getStage": {
-            "main": "./lib/actions/getStage.js",
-            "title": "Get one stage",
-            "description": "Returns data about a specific stage.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getStage.in.json",
-                "out": "./lib/schemas/getStage.out.json"
             }
         },
         "addRecurringSubscription": {
@@ -2482,21 +1555,6 @@
             "metadata": {
                 "in": "./lib/schemas/addTeamUser.in.json",
                 "out": "./lib/schemas/addTeamUser.out.json"
-            }
-        },
-        "getUserTeams": {
-            "main": "./lib/actions/getUserTeams.js",
-            "title": "Get all teams of a user",
-            "description": "Returns data about all teams which have specified user as a member",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getUserTeams.in.json",
-                "out": "./lib/schemas/getUserTeams.out.json"
             }
         },
         "addUser": {
