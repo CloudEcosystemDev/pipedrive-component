@@ -75,66 +75,6 @@
                 "out": "./lib/schemas/getActivities.out.json"
             }
         },
-        "getActivityFields": {
-            "main": "./lib/triggers/getActivityFields.js",
-            "title": "Get all activity fields",
-            "description": "Returns all activity fields.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getActivityFields.in.json",
-                "out": "./lib/schemas/getActivityFields.out.json"
-            }
-        },
-        "getActivityTypes": {
-            "main": "./lib/triggers/getActivityTypes.js",
-            "title": "Get all ActivityTypes",
-            "description": "Returns all ActivityTypes.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getActivityTypes.in.json",
-                "out": "./lib/schemas/getActivityTypes.out.json"
-            }
-        },
-        "getUserCallLogs": {
-            "main": "./lib/triggers/getUserCallLogs.js",
-            "title": "Get all call logs assigned to a particular user",
-            "description": "Returns all call logs assigned to a particular user",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getUserCallLogs.in.json",
-                "out": "./lib/schemas/getUserCallLogs.out.json"
-            }
-        },
-        "getCurrencies": {
-            "main": "./lib/triggers/getCurrencies.js",
-            "title": "Get all supported currencies",
-            "description": "Returns all supported currencies in given account which should be used when saving monetary values with other objects. The `code` parameter of the returning objects is the currency code according to ISO 4217 for all non-custom currencies.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getCurrencies.in.json",
-                "out": "./lib/schemas/getCurrencies.out.json"
-            }
-        },
         "getDeals": {
             "main": "./lib/triggers/getDeals.js",
             "title": "Get all deals",
@@ -148,201 +88,6 @@
             "metadata": {
                 "in": "./lib/schemas/getDeals.in.json",
                 "out": "./lib/schemas/getDeals.out.json"
-            }
-        },
-        "searchDeals": {
-            "main": "./lib/triggers/searchDeals.js",
-            "title": "Search deals",
-            "description": "Searches all Deals by title, notes and/or custom fields. This endpoint is a wrapper of <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> with a narrower OAuth scope. Found Deals can be filtered by Person ID and Organization ID.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/searchDeals.in.json",
-                "out": "./lib/schemas/searchDeals.out.json"
-            }
-        },
-        "getDealsSummary": {
-            "main": "./lib/triggers/getDealsSummary.js",
-            "title": "Get deals summary",
-            "description": "Returns summary of all the deals.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealsSummary.in.json",
-                "out": "./lib/schemas/getDealsSummary.out.json"
-            }
-        },
-        "getDealsTimeline": {
-            "main": "./lib/triggers/getDealsTimeline.js",
-            "title": "Get deals timeline",
-            "description": "Returns open and won deals, grouped by defined interval of time set in a date-type dealField (`field_key`) -- e.g. when month is the chosen interval, and 3 months are asked starting from  January 1st, 2012, deals are returned grouped into 3 groups -- January, February and March -- based on the value of the given `field_key`.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealsTimeline.in.json",
-                "out": "./lib/schemas/getDealsTimeline.out.json"
-            }
-        },
-        "getDealActivities": {
-            "main": "./lib/triggers/getDealActivities.js",
-            "title": "List activities associated with a deal",
-            "description": "Lists activities associated with a deal.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealActivities.in.json",
-                "out": "./lib/schemas/getDealActivities.out.json"
-            }
-        },
-        "getDealFiles": {
-            "main": "./lib/triggers/getDealFiles.js",
-            "title": "List files attached to a deal",
-            "description": "Lists files associated with a deal.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealFiles.in.json",
-                "out": "./lib/schemas/getDealFiles.out.json"
-            }
-        },
-        "getDealUpdates": {
-            "main": "./lib/triggers/getDealUpdates.js",
-            "title": "List updates about a deal",
-            "description": "Lists updates about a deal.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealUpdates.in.json",
-                "out": "./lib/schemas/getDealUpdates.out.json"
-            }
-        },
-        "getDealFollowers": {
-            "main": "./lib/triggers/getDealFollowers.js",
-            "title": "List followers of a deal",
-            "description": "Lists the followers of a deal.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealFollowers.in.json",
-                "out": "./lib/schemas/getDealFollowers.out.json"
-            }
-        },
-        "getDealMailMessages": {
-            "main": "./lib/triggers/getDealMailMessages.js",
-            "title": "List mail messages associated with a deal",
-            "description": "Lists mail messages associated with a deal.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealMailMessages.in.json",
-                "out": "./lib/schemas/getDealMailMessages.out.json"
-            }
-        },
-        "getDealParticipants": {
-            "main": "./lib/triggers/getDealParticipants.js",
-            "title": "List participants of a deal",
-            "description": "Lists participants associated with a deal.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealParticipants.in.json",
-                "out": "./lib/schemas/getDealParticipants.out.json"
-            }
-        },
-        "getDealUsers": {
-            "main": "./lib/triggers/getDealUsers.js",
-            "title": "List permitted users",
-            "description": "List users permitted to access a deal",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealUsers.in.json",
-                "out": "./lib/schemas/getDealUsers.out.json"
-            }
-        },
-        "getDealPersons": {
-            "main": "./lib/triggers/getDealPersons.js",
-            "title": "List all persons associated with a deal",
-            "description": "Lists all persons associated with a deal, regardless of whether the person is the primary contact of the deal, or added as a participant.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealPersons.in.json",
-                "out": "./lib/schemas/getDealPersons.out.json"
-            }
-        },
-        "getDealProducts": {
-            "main": "./lib/triggers/getDealProducts.js",
-            "title": "List products attached to a deal",
-            "description": "Lists products attached to a deal.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealProducts.in.json",
-                "out": "./lib/schemas/getDealProducts.out.json"
-            }
-        },
-        "getDealFields": {
-            "main": "./lib/triggers/getDealFields.js",
-            "title": "Get all deal fields",
-            "description": "Returns data about all deal fields",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealFields.in.json",
-                "out": "./lib/schemas/getDealFields.out.json"
             }
         },
         "getFiles": {
@@ -360,21 +105,6 @@
                 "out": "./lib/schemas/getFiles.out.json"
             }
         },
-        "downloadFile": {
-            "main": "./lib/triggers/downloadFile.js",
-            "title": "Download one file",
-            "description": "Initializes a file download.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/downloadFile.in.json",
-                "out": "./lib/schemas/downloadFile.out.json"
-            }
-        },
         "getFilters": {
             "main": "./lib/triggers/getFilters.js",
             "title": "Get all filters",
@@ -388,36 +118,6 @@
             "metadata": {
                 "in": "./lib/schemas/getFilters.in.json",
                 "out": "./lib/schemas/getFilters.out.json"
-            }
-        },
-        "getFilterHelpers": {
-            "main": "./lib/triggers/getFilterHelpers.js",
-            "title": "Get all filter helpers",
-            "description": "Returns all supported filter helpers. It helps to know what conditions and helpers are available when you want to <a href=\"/docs/api/v1/Filters#addFilter\">add</a> or <a href=\"/docs/api/v1/Filters#updateFilter\">update</a> filters. For more information on how filter's helpers can be used, see <a href=\"https://pipedrive.readme.io/docs/adding-a-filter\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getFilterHelpers.in.json",
-                "out": "./lib/schemas/getFilterHelpers.out.json"
-            }
-        },
-        "getGlobalMessages": {
-            "main": "./lib/triggers/getGlobalMessages.js",
-            "title": "Get global messages",
-            "description": "Returns data about global messages to display for the authorized user.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getGlobalMessages.in.json",
-                "out": "./lib/schemas/getGlobalMessages.out.json"
             }
         },
         "getGoals": {
@@ -450,36 +150,6 @@
                 "out": "./lib/schemas/getGoalResult.out.json"
             }
         },
-        "searchItem": {
-            "main": "./lib/triggers/searchItem.js",
-            "title": "Perform a search from multiple item types",
-            "description": "Performs a search from your choice of item types and fields.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/searchItem.in.json",
-                "out": "./lib/schemas/searchItem.out.json"
-            }
-        },
-        "searchItemByField": {
-            "main": "./lib/triggers/searchItemByField.js",
-            "title": "Perform a search using a specific field from an item type",
-            "description": "Performs a search from the values of a specific field. Results can either be the distinct values of the field (useful for searching autocomplete field values), or the IDs of actual items (Deals, Persons, Organizations or Products).",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/searchItemByField.in.json",
-                "out": "./lib/schemas/searchItemByField.out.json"
-            }
-        },
         "getLeads": {
             "main": "./lib/triggers/getLeads.js",
             "title": "Get all leads",
@@ -493,66 +163,6 @@
             "metadata": {
                 "in": "./lib/schemas/getLeads.in.json",
                 "out": "./lib/schemas/getLeads.out.json"
-            }
-        },
-        "getLeadLabels": {
-            "main": "./lib/triggers/getLeadLabels.js",
-            "title": "Get all lead labels",
-            "description": "Returns details of all Lead Labels. This endpoint does not support pagination and all Labels are always returned.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getLeadLabels.in.json",
-                "out": "./lib/schemas/getLeadLabels.out.json"
-            }
-        },
-        "getLeadSources": {
-            "main": "./lib/triggers/getLeadSources.js",
-            "title": "Get all lead sources",
-            "description": "Returns all Lead Sources. Please note that the list of Lead Sources is fixed, it cannot be modified. All Leads created through the Public Pipedrive API will have a Lead Source `API` assigned.\n",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getLeadSources.in.json",
-                "out": "./lib/schemas/getLeadSources.out.json"
-            }
-        },
-        "getMailThreads": {
-            "main": "./lib/triggers/getMailThreads.js",
-            "title": "Get mail threads",
-            "description": "Returns mail threads in specified folder ordered by most recent message within.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getMailThreads.in.json",
-                "out": "./lib/schemas/getMailThreads.out.json"
-            }
-        },
-        "getMailThreadMessages": {
-            "main": "./lib/triggers/getMailThreadMessages.js",
-            "title": "Get all mail messages of mail thread",
-            "description": "Get mail messages inside specified mail thread.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getMailThreadMessages.in.json",
-                "out": "./lib/schemas/getMailThreadMessages.out.json"
             }
         },
         "getNotes": {
@@ -764,21 +374,6 @@
             "metadata": {
                 "in": "./lib/schemas/addCallLog.in.json",
                 "out": "./lib/schemas/addCallLog.out.json"
-            }
-        },
-        "addCallLogAudioFile": {
-            "main": "./lib/actions/addCallLogAudioFile.js",
-            "title": "Attach an audio file to the call log",
-            "description": "Adds an audio recording to the call log. That audio can be played by those who have access to the call log object.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/addCallLogAudioFile.in.json",
-                "out": "./lib/schemas/addCallLogAudioFile.out.json"
             }
         },
         "addDeal": {
