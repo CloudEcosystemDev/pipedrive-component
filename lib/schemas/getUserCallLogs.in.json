@@ -1,15 +1,12 @@
 {
     "type": "object",
     "properties": {
-        "limit": {
-            "required": false,
-            "type": "number",
-            "example": 20
-        },
         "start": {
-            "required": false,
-            "type": "number",
-            "example": "0"
+            "type": "integer",
+            "default": 0
+        },
+        "limit": {
+            "type": "integer"
         }
     }
 }

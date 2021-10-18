@@ -165,21 +165,6 @@
                 "out": "./lib/schemas/searchDeals.out.json"
             }
         },
-        "getDealsByName": {
-            "main": "./lib/triggers/getDealsByName.js",
-            "title": "Find deals by name",
-            "description": "This endpoint is deprecated. Please use <a href=\"https://developers.pipedrive.com/docs/api/v1//Deals#searchDeals\">/v1/deals/search</a> or <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> instead. <br> Searches all deals by their title.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealsByName.in.json",
-                "out": "./lib/schemas/getDealsByName.out.json"
-            }
-        },
         "getDealsSummary": {
             "main": "./lib/triggers/getDealsSummary.js",
             "title": "Get deals summary",
@@ -1528,21 +1513,6 @@
         }
     },
     "actions": {
-        "deleteActivities": {
-            "main": "./lib/actions/deleteActivities.js",
-            "title": "Delete multiple Activities in bulk",
-            "description": "Marks multiple Activities as deleted",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteActivities.in.json",
-                "out": "./lib/schemas/deleteActivities.out.json"
-            }
-        },
         "addActivity": {
             "main": "./lib/actions/addActivity.js",
             "title": "Add an Activity",
@@ -1556,21 +1526,6 @@
             "metadata": {
                 "in": "./lib/schemas/addActivity.in.json",
                 "out": "./lib/schemas/addActivity.out.json"
-            }
-        },
-        "deleteActivity": {
-            "main": "./lib/actions/deleteActivity.js",
-            "title": "Delete an Activity",
-            "description": "Deletes an Activity",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteActivity.in.json",
-                "out": "./lib/schemas/deleteActivity.out.json"
             }
         },
         "getActivity": {
@@ -1588,36 +1543,6 @@
                 "out": "./lib/schemas/getActivity.out.json"
             }
         },
-        "updateActivity": {
-            "main": "./lib/actions/updateActivity.js",
-            "title": "Edit an Activity",
-            "description": "Modifies an Activity. Includes `more_activities_scheduled_in_context` property in response's `additional_data` which indicates whether there are more undone activities scheduled with the same Deal, Person or Organization (depending on the supplied data).",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateActivity.in.json",
-                "out": "./lib/schemas/updateActivity.out.json"
-            }
-        },
-        "deleteActivityTypes": {
-            "main": "./lib/actions/deleteActivityTypes.js",
-            "title": "Delete multiple ActivityTypes in bulk",
-            "description": "Marks multiple ActivityTypes as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteActivityTypes.in.json",
-                "out": "./lib/schemas/deleteActivityTypes.out.json"
-            }
-        },
         "addActivityType": {
             "main": "./lib/actions/addActivityType.js",
             "title": "Add new ActivityType",
@@ -1633,36 +1558,6 @@
                 "out": "./lib/schemas/addActivityType.out.json"
             }
         },
-        "deleteActivityType": {
-            "main": "./lib/actions/deleteActivityType.js",
-            "title": "Delete an ActivityType",
-            "description": "Marks an ActivityType as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteActivityType.in.json",
-                "out": "./lib/schemas/deleteActivityType.out.json"
-            }
-        },
-        "updateActivityType": {
-            "main": "./lib/actions/updateActivityType.js",
-            "title": "Edit an ActivityType",
-            "description": "Updates an ActivityType.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateActivityType.in.json",
-                "out": "./lib/schemas/updateActivityType.out.json"
-            }
-        },
         "addCallLog": {
             "main": "./lib/actions/addCallLog.js",
             "title": "Add a call log",
@@ -1676,21 +1571,6 @@
             "metadata": {
                 "in": "./lib/schemas/addCallLog.in.json",
                 "out": "./lib/schemas/addCallLog.out.json"
-            }
-        },
-        "deleteCallLog": {
-            "main": "./lib/actions/deleteCallLog.js",
-            "title": "Delete a call log",
-            "description": "Deletes a call log. If there is an audio recording attached to it, it will also be deleted. The related activity will not be removed by this request. If you want to remove the related activities, please use the endpoint which is specific for activities.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteCallLog.in.json",
-                "out": "./lib/schemas/deleteCallLog.out.json"
             }
         },
         "getCallLog": {
@@ -1738,36 +1618,6 @@
                 "out": "./lib/schemas/addDeal.out.json"
             }
         },
-        "deleteDeals": {
-            "main": "./lib/actions/deleteDeals.js",
-            "title": "Delete multiple deals in bulk",
-            "description": "Marks multiple deals as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteDeals.in.json",
-                "out": "./lib/schemas/deleteDeals.out.json"
-            }
-        },
-        "deleteDeal": {
-            "main": "./lib/actions/deleteDeal.js",
-            "title": "Delete a deal",
-            "description": "Marks a deal as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteDeal.in.json",
-                "out": "./lib/schemas/deleteDeal.out.json"
-            }
-        },
         "getDeal": {
             "main": "./lib/actions/getDeal.js",
             "title": "Get details of a deal",
@@ -1781,21 +1631,6 @@
             "metadata": {
                 "in": "./lib/schemas/getDeal.in.json",
                 "out": "./lib/schemas/getDeal.out.json"
-            }
-        },
-        "updateDeal": {
-            "main": "./lib/actions/updateDeal.js",
-            "title": "Update a deal",
-            "description": "Updates the properties of a deal. For more information on how to update a deal, see <a href=\"https://pipedrive.readme.io/docs/updating-a-deal\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateDeal.in.json",
-                "out": "./lib/schemas/updateDeal.out.json"
             }
         },
         "duplicateDeal": {
@@ -1828,21 +1663,6 @@
                 "out": "./lib/schemas/addDealFollower.out.json"
             }
         },
-        "deleteDealFollower": {
-            "main": "./lib/actions/deleteDealFollower.js",
-            "title": "Delete a follower from a deal",
-            "description": "Deletes a follower from a deal.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteDealFollower.in.json",
-                "out": "./lib/schemas/deleteDealFollower.out.json"
-            }
-        },
         "mergeDeals": {
             "main": "./lib/actions/mergeDeals.js",
             "title": "Merge two deals",
@@ -1873,21 +1693,6 @@
                 "out": "./lib/schemas/addDealParticipant.out.json"
             }
         },
-        "deleteDealParticipant": {
-            "main": "./lib/actions/deleteDealParticipant.js",
-            "title": "Delete a participant from a deal",
-            "description": "Deletes a participant from a deal.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteDealParticipant.in.json",
-                "out": "./lib/schemas/deleteDealParticipant.out.json"
-            }
-        },
         "addDealProduct": {
             "main": "./lib/actions/addDealProduct.js",
             "title": "Add a product to the deal, eventually creating a new item called a deal-product",
@@ -1901,36 +1706,6 @@
             "metadata": {
                 "in": "./lib/schemas/addDealProduct.in.json",
                 "out": "./lib/schemas/addDealProduct.out.json"
-            }
-        },
-        "updateDealProduct": {
-            "main": "./lib/actions/updateDealProduct.js",
-            "title": "Update product attachment details of the deal-product (a product already attached to a deal)",
-            "description": "Updates product attachment details.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateDealProduct.in.json",
-                "out": "./lib/schemas/updateDealProduct.out.json"
-            }
-        },
-        "deleteDealProduct": {
-            "main": "./lib/actions/deleteDealProduct.js",
-            "title": "Delete an attached product from a deal",
-            "description": "Deletes a product attachment from a deal, using the `product_attachment_id`.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteDealProduct.in.json",
-                "out": "./lib/schemas/deleteDealProduct.out.json"
             }
         },
         "addDealField": {
@@ -1948,21 +1723,6 @@
                 "out": "./lib/schemas/addDealField.out.json"
             }
         },
-        "deleteDealFields": {
-            "main": "./lib/actions/deleteDealFields.js",
-            "title": "Delete multiple deal fields in bulk",
-            "description": "Marks multiple fields as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteDealFields.in.json",
-                "out": "./lib/schemas/deleteDealFields.out.json"
-            }
-        },
         "getDealField": {
             "main": "./lib/actions/getDealField.js",
             "title": "Get one deal field",
@@ -1976,36 +1736,6 @@
             "metadata": {
                 "in": "./lib/schemas/getDealField.in.json",
                 "out": "./lib/schemas/getDealField.out.json"
-            }
-        },
-        "deleteDealField": {
-            "main": "./lib/actions/deleteDealField.js",
-            "title": "Delete a deal field",
-            "description": "Marks a field as deleted. For more information on how to delete a custom field, see <a href=\"https://pipedrive.readme.io/docs/deleting-a-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteDealField.in.json",
-                "out": "./lib/schemas/deleteDealField.out.json"
-            }
-        },
-        "updateDealField": {
-            "main": "./lib/actions/updateDealField.js",
-            "title": "Update a deal field",
-            "description": "Updates a deal field. See an example of updating custom fields' values in <a href=\" https://pipedrive.readme.io/docs/updating-custom-field-value \" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateDealField.in.json",
-                "out": "./lib/schemas/updateDealField.out.json"
             }
         },
         "addFile": {
@@ -2053,21 +1783,6 @@
                 "out": "./lib/schemas/linkFileToItem.out.json"
             }
         },
-        "deleteFile": {
-            "main": "./lib/actions/deleteFile.js",
-            "title": "Delete a file",
-            "description": "Marks a file as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteFile.in.json",
-                "out": "./lib/schemas/deleteFile.out.json"
-            }
-        },
         "getFile": {
             "main": "./lib/actions/getFile.js",
             "title": "Get one file",
@@ -2081,36 +1796,6 @@
             "metadata": {
                 "in": "./lib/schemas/getFile.in.json",
                 "out": "./lib/schemas/getFile.out.json"
-            }
-        },
-        "updateFile": {
-            "main": "./lib/actions/updateFile.js",
-            "title": "Update file details",
-            "description": "Updates the properties of a file.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateFile.in.json",
-                "out": "./lib/schemas/updateFile.out.json"
-            }
-        },
-        "deleteFilters": {
-            "main": "./lib/actions/deleteFilters.js",
-            "title": "Delete multiple filters in bulk",
-            "description": "Marks multiple filters as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteFilters.in.json",
-                "out": "./lib/schemas/deleteFilters.out.json"
             }
         },
         "addFilter": {
@@ -2128,21 +1813,6 @@
                 "out": "./lib/schemas/addFilter.out.json"
             }
         },
-        "deleteFilter": {
-            "main": "./lib/actions/deleteFilter.js",
-            "title": "Delete a filter",
-            "description": "Marks a filter as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteFilter.in.json",
-                "out": "./lib/schemas/deleteFilter.out.json"
-            }
-        },
         "getFilter": {
             "main": "./lib/actions/getFilter.js",
             "title": "Get one filter",
@@ -2158,36 +1828,6 @@
                 "out": "./lib/schemas/getFilter.out.json"
             }
         },
-        "updateFilter": {
-            "main": "./lib/actions/updateFilter.js",
-            "title": "Update filter",
-            "description": "Updates an existing filter.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateFilter.in.json",
-                "out": "./lib/schemas/updateFilter.out.json"
-            }
-        },
-        "deleteGlobalMessage": {
-            "main": "./lib/actions/deleteGlobalMessage.js",
-            "title": "Dismiss a global message",
-            "description": "Removes global message from being shown, if message is dismissible",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteGlobalMessage.in.json",
-                "out": "./lib/schemas/deleteGlobalMessage.out.json"
-            }
-        },
         "addGoal": {
             "main": "./lib/actions/addGoal.js",
             "title": "Add a new goal",
@@ -2201,36 +1841,6 @@
             "metadata": {
                 "in": "./lib/schemas/addGoal.in.json",
                 "out": "./lib/schemas/addGoal.out.json"
-            }
-        },
-        "updateGoal": {
-            "main": "./lib/actions/updateGoal.js",
-            "title": "Update existing goal",
-            "description": "Updates existing goal.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateGoal.in.json",
-                "out": "./lib/schemas/updateGoal.out.json"
-            }
-        },
-        "deleteGoal": {
-            "main": "./lib/actions/deleteGoal.js",
-            "title": "Delete existing goal",
-            "description": "Marks goal as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteGoal.in.json",
-                "out": "./lib/schemas/deleteGoal.out.json"
             }
         },
         "addLead": {
@@ -2263,36 +1873,6 @@
                 "out": "./lib/schemas/getLead.out.json"
             }
         },
-        "updateLead": {
-            "main": "./lib/actions/updateLead.js",
-            "title": "Update a lead",
-            "description": "Updates one or more properties of a Lead. Only properties included in the request will be updated. Send `null` to unset a property (applicable for example for `value`, `person_id` or `organization_id`). If a Lead contains custom fields, the fields' values will be included in the response in the same format as with the `Deals` endpoints. If a custom field's value hasn't been set for the Lead, it won't appear in the response. Please note that Leads do not have a separate set of custom fields, instead they inherit the custom fields' structure from Deals. See an example of updating custom fields' values in <a href=\"https://pipedrive.readme.io/docs/updating-custom-field-value\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateLead.in.json",
-                "out": "./lib/schemas/updateLead.out.json"
-            }
-        },
-        "deleteLead": {
-            "main": "./lib/actions/deleteLead.js",
-            "title": "Delete a lead",
-            "description": "Deletes a specific Lead",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteLead.in.json",
-                "out": "./lib/schemas/deleteLead.out.json"
-            }
-        },
         "addLeadLabel": {
             "main": "./lib/actions/addLeadLabel.js",
             "title": "Add a lead label",
@@ -2306,36 +1886,6 @@
             "metadata": {
                 "in": "./lib/schemas/addLeadLabel.in.json",
                 "out": "./lib/schemas/addLeadLabel.out.json"
-            }
-        },
-        "updateLeadLabel": {
-            "main": "./lib/actions/updateLeadLabel.js",
-            "title": "Update a lead label",
-            "description": "Updates one or more properties of a Lead Label. Only properties included in the request will be updated.\n",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateLeadLabel.in.json",
-                "out": "./lib/schemas/updateLeadLabel.out.json"
-            }
-        },
-        "deleteLeadLabel": {
-            "main": "./lib/actions/deleteLeadLabel.js",
-            "title": "Delete a lead label",
-            "description": "Deletes a specific Lead Label",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteLeadLabel.in.json",
-                "out": "./lib/schemas/deleteLeadLabel.out.json"
             }
         },
         "getMailMessage": {
@@ -2353,21 +1903,6 @@
                 "out": "./lib/schemas/getMailMessage.out.json"
             }
         },
-        "deleteMailThread": {
-            "main": "./lib/actions/deleteMailThread.js",
-            "title": "Delete mail thread",
-            "description": "Marks mail thread as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteMailThread.in.json",
-                "out": "./lib/schemas/deleteMailThread.out.json"
-            }
-        },
         "getMailThread": {
             "main": "./lib/actions/getMailThread.js",
             "title": "Get one mail thread",
@@ -2381,21 +1916,6 @@
             "metadata": {
                 "in": "./lib/schemas/getMailThread.in.json",
                 "out": "./lib/schemas/getMailThread.out.json"
-            }
-        },
-        "updateMailThreadDetails": {
-            "main": "./lib/actions/updateMailThreadDetails.js",
-            "title": "Update mail thread details",
-            "description": "Updates the properties of a mail thread.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateMailThreadDetails.in.json",
-                "out": "./lib/schemas/updateMailThreadDetails.out.json"
             }
         },
         "addNote": {
@@ -2413,21 +1933,6 @@
                 "out": "./lib/schemas/addNote.out.json"
             }
         },
-        "deleteNote": {
-            "main": "./lib/actions/deleteNote.js",
-            "title": "Delete a note",
-            "description": "Deletes a specific note.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteNote.in.json",
-                "out": "./lib/schemas/deleteNote.out.json"
-            }
-        },
         "getNote": {
             "main": "./lib/actions/getNote.js",
             "title": "Get one note",
@@ -2441,21 +1946,6 @@
             "metadata": {
                 "in": "./lib/schemas/getNote.in.json",
                 "out": "./lib/schemas/getNote.out.json"
-            }
-        },
-        "updateNote": {
-            "main": "./lib/actions/updateNote.js",
-            "title": "Update a note",
-            "description": "Updates a note.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateNote.in.json",
-                "out": "./lib/schemas/updateNote.out.json"
             }
         },
         "addNoteComment": {
@@ -2488,51 +1978,6 @@
                 "out": "./lib/schemas/getComment.out.json"
             }
         },
-        "updateCommentForNote": {
-            "main": "./lib/actions/updateCommentForNote.js",
-            "title": "Update a comment related to a note",
-            "description": "Updates a comment related to a note.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateCommentForNote.in.json",
-                "out": "./lib/schemas/updateCommentForNote.out.json"
-            }
-        },
-        "deleteComment": {
-            "main": "./lib/actions/deleteComment.js",
-            "title": "Delete a comment related to a note",
-            "description": "Deletes a comment.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteComment.in.json",
-                "out": "./lib/schemas/deleteComment.out.json"
-            }
-        },
-        "deleteOrganizations": {
-            "main": "./lib/actions/deleteOrganizations.js",
-            "title": "Delete multiple organizations in bulk",
-            "description": "Marks multiple organizations as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteOrganizations.in.json",
-                "out": "./lib/schemas/deleteOrganizations.out.json"
-            }
-        },
         "addOrganization": {
             "main": "./lib/actions/addOrganization.js",
             "title": "Add an organization",
@@ -2546,21 +1991,6 @@
             "metadata": {
                 "in": "./lib/schemas/addOrganization.in.json",
                 "out": "./lib/schemas/addOrganization.out.json"
-            }
-        },
-        "deleteOrganization": {
-            "main": "./lib/actions/deleteOrganization.js",
-            "title": "Delete an organization",
-            "description": "Marks an organization as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteOrganization.in.json",
-                "out": "./lib/schemas/deleteOrganization.out.json"
             }
         },
         "getOrganization": {
@@ -2578,21 +2008,6 @@
                 "out": "./lib/schemas/getOrganization.out.json"
             }
         },
-        "updateOrganization": {
-            "main": "./lib/actions/updateOrganization.js",
-            "title": "Update an organization",
-            "description": "Updates the properties of an organization.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateOrganization.in.json",
-                "out": "./lib/schemas/updateOrganization.out.json"
-            }
-        },
         "addOrganizationFollower": {
             "main": "./lib/actions/addOrganizationFollower.js",
             "title": "Add a follower to an organization",
@@ -2606,21 +2021,6 @@
             "metadata": {
                 "in": "./lib/schemas/addOrganizationFollower.in.json",
                 "out": "./lib/schemas/addOrganizationFollower.out.json"
-            }
-        },
-        "deleteOrganizationFollower": {
-            "main": "./lib/actions/deleteOrganizationFollower.js",
-            "title": "Delete a follower from an organization",
-            "description": "Deletes a follower from an organization. You can retrieve the `follower_id` from the <a href=\"https://developers.pipedrive.com/docs/api/v1/Organizations#getOrganizationFollowers\">List followers of an organization</a> endpoint.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteOrganizationFollower.in.json",
-                "out": "./lib/schemas/deleteOrganizationFollower.out.json"
             }
         },
         "mergeOrganizations": {
@@ -2653,21 +2053,6 @@
                 "out": "./lib/schemas/addOrganizationField.out.json"
             }
         },
-        "deleteOrganizationFields": {
-            "main": "./lib/actions/deleteOrganizationFields.js",
-            "title": "Delete multiple organization fields in bulk",
-            "description": "Marks multiple fields as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteOrganizationFields.in.json",
-                "out": "./lib/schemas/deleteOrganizationFields.out.json"
-            }
-        },
         "getOrganizationField": {
             "main": "./lib/actions/getOrganizationField.js",
             "title": "Get one organization field",
@@ -2681,36 +2066,6 @@
             "metadata": {
                 "in": "./lib/schemas/getOrganizationField.in.json",
                 "out": "./lib/schemas/getOrganizationField.out.json"
-            }
-        },
-        "deleteOrganizationField": {
-            "main": "./lib/actions/deleteOrganizationField.js",
-            "title": "Delete an organization field",
-            "description": "Marks a field as deleted. For more information on how to delete a custom field, see <a href=\"https://pipedrive.readme.io/docs/deleting-a-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteOrganizationField.in.json",
-                "out": "./lib/schemas/deleteOrganizationField.out.json"
-            }
-        },
-        "updateOrganizationField": {
-            "main": "./lib/actions/updateOrganizationField.js",
-            "title": "Update an organization field",
-            "description": "Updates an organization field. See an example of updating custom fields' values in <a href=\" https://pipedrive.readme.io/docs/updating-custom-field-value \" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateOrganizationField.in.json",
-                "out": "./lib/schemas/updateOrganizationField.out.json"
             }
         },
         "addOrganizationRelationship": {
@@ -2728,21 +2083,6 @@
                 "out": "./lib/schemas/addOrganizationRelationship.out.json"
             }
         },
-        "deleteOrganizationRelationship": {
-            "main": "./lib/actions/deleteOrganizationRelationship.js",
-            "title": "Delete an organization relationship",
-            "description": "Deletes an organization relationship and returns the deleted id.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteOrganizationRelationship.in.json",
-                "out": "./lib/schemas/deleteOrganizationRelationship.out.json"
-            }
-        },
         "getOrganizationRelationship": {
             "main": "./lib/actions/getOrganizationRelationship.js",
             "title": "Get one organization relationship",
@@ -2758,21 +2098,6 @@
                 "out": "./lib/schemas/getOrganizationRelationship.out.json"
             }
         },
-        "updateOrganizationRelationship": {
-            "main": "./lib/actions/updateOrganizationRelationship.js",
-            "title": "Update an organization relationship",
-            "description": "Updates and returns an organization relationship.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateOrganizationRelationship.in.json",
-                "out": "./lib/schemas/updateOrganizationRelationship.out.json"
-            }
-        },
         "getPermissionSet": {
             "main": "./lib/actions/getPermissionSet.js",
             "title": "Get one Permission Set",
@@ -2785,21 +2110,6 @@
             "metadata": {
                 "in": "./lib/schemas/getPermissionSet.in.json",
                 "out": "./lib/schemas/getPermissionSet.out.json"
-            }
-        },
-        "deletePersons": {
-            "main": "./lib/actions/deletePersons.js",
-            "title": "Delete multiple persons in bulk",
-            "description": "Marks multiple persons as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deletePersons.in.json",
-                "out": "./lib/schemas/deletePersons.out.json"
             }
         },
         "addPerson": {
@@ -2817,21 +2127,6 @@
                 "out": "./lib/schemas/addPerson.out.json"
             }
         },
-        "deletePerson": {
-            "main": "./lib/actions/deletePerson.js",
-            "title": "Delete a person",
-            "description": "Marks a person as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deletePerson.in.json",
-                "out": "./lib/schemas/deletePerson.out.json"
-            }
-        },
         "getPerson": {
             "main": "./lib/actions/getPerson.js",
             "title": "Get details of a person",
@@ -2845,21 +2140,6 @@
             "metadata": {
                 "in": "./lib/schemas/getPerson.in.json",
                 "out": "./lib/schemas/getPerson.out.json"
-            }
-        },
-        "updatePerson": {
-            "main": "./lib/actions/updatePerson.js",
-            "title": "Update a person",
-            "description": "Updates the properties of a person. For more information on how to update a person, see <a href=\"https://pipedrive.readme.io/docs/updating-a-person\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updatePerson.in.json",
-                "out": "./lib/schemas/updatePerson.out.json"
             }
         },
         "addPersonFollower": {
@@ -2877,21 +2157,6 @@
                 "out": "./lib/schemas/addPersonFollower.out.json"
             }
         },
-        "deletePersonFollower": {
-            "main": "./lib/actions/deletePersonFollower.js",
-            "title": "Deletes a follower from a person.",
-            "description": "Delete a follower from a person",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deletePersonFollower.in.json",
-                "out": "./lib/schemas/deletePersonFollower.out.json"
-            }
-        },
         "mergePersons": {
             "main": "./lib/actions/mergePersons.js",
             "title": "Merge two persons",
@@ -2905,21 +2170,6 @@
             "metadata": {
                 "in": "./lib/schemas/mergePersons.in.json",
                 "out": "./lib/schemas/mergePersons.out.json"
-            }
-        },
-        "deletePersonPicture": {
-            "main": "./lib/actions/deletePersonPicture.js",
-            "title": "Delete person picture",
-            "description": "Delete person picture",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deletePersonPicture.in.json",
-                "out": "./lib/schemas/deletePersonPicture.out.json"
             }
         },
         "addPersonPicture": {
@@ -2952,21 +2202,6 @@
                 "out": "./lib/schemas/addPersonField.out.json"
             }
         },
-        "deletePersonFields": {
-            "main": "./lib/actions/deletePersonFields.js",
-            "title": "Delete multiple person fields in bulk",
-            "description": "Marks multiple fields as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deletePersonFields.in.json",
-                "out": "./lib/schemas/deletePersonFields.out.json"
-            }
-        },
         "getPersonField": {
             "main": "./lib/actions/getPersonField.js",
             "title": "Get one person field",
@@ -2980,36 +2215,6 @@
             "metadata": {
                 "in": "./lib/schemas/getPersonField.in.json",
                 "out": "./lib/schemas/getPersonField.out.json"
-            }
-        },
-        "deletePersonField": {
-            "main": "./lib/actions/deletePersonField.js",
-            "title": "Delete a person field",
-            "description": "Marks a field as deleted. For more information on how to delete a custom field, see <a href=\"https://pipedrive.readme.io/docs/deleting-a-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deletePersonField.in.json",
-                "out": "./lib/schemas/deletePersonField.out.json"
-            }
-        },
-        "updatePersonField": {
-            "main": "./lib/actions/updatePersonField.js",
-            "title": "Update a person field",
-            "description": "Updates a person field. See an example of updating custom fields' values in <a href=\" https://pipedrive.readme.io/docs/updating-custom-field-value \" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updatePersonField.in.json",
-                "out": "./lib/schemas/updatePersonField.out.json"
             }
         },
         "addPipeline": {
@@ -3027,21 +2232,6 @@
                 "out": "./lib/schemas/addPipeline.out.json"
             }
         },
-        "deletePipeline": {
-            "main": "./lib/actions/deletePipeline.js",
-            "title": "Delete a pipeline",
-            "description": "Marks a pipeline as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deletePipeline.in.json",
-                "out": "./lib/schemas/deletePipeline.out.json"
-            }
-        },
         "getPipeline": {
             "main": "./lib/actions/getPipeline.js",
             "title": "Get one pipeline",
@@ -3055,21 +2245,6 @@
             "metadata": {
                 "in": "./lib/schemas/getPipeline.in.json",
                 "out": "./lib/schemas/getPipeline.out.json"
-            }
-        },
-        "updatePipeline": {
-            "main": "./lib/actions/updatePipeline.js",
-            "title": "Edit a pipeline",
-            "description": "Updates pipeline properties",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updatePipeline.in.json",
-                "out": "./lib/schemas/updatePipeline.out.json"
             }
         },
         "addProduct": {
@@ -3087,21 +2262,6 @@
                 "out": "./lib/schemas/addProduct.out.json"
             }
         },
-        "deleteProduct": {
-            "main": "./lib/actions/deleteProduct.js",
-            "title": "Delete a product",
-            "description": "Marks a product as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteProduct.in.json",
-                "out": "./lib/schemas/deleteProduct.out.json"
-            }
-        },
         "getProduct": {
             "main": "./lib/actions/getProduct.js",
             "title": "Get one product",
@@ -3115,21 +2275,6 @@
             "metadata": {
                 "in": "./lib/schemas/getProduct.in.json",
                 "out": "./lib/schemas/getProduct.out.json"
-            }
-        },
-        "updateProduct": {
-            "main": "./lib/actions/updateProduct.js",
-            "title": "Update a product",
-            "description": "Updates product data.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateProduct.in.json",
-                "out": "./lib/schemas/updateProduct.out.json"
             }
         },
         "addProductFollower": {
@@ -3147,36 +2292,6 @@
                 "out": "./lib/schemas/addProductFollower.out.json"
             }
         },
-        "deleteProductFollower": {
-            "main": "./lib/actions/deleteProductFollower.js",
-            "title": "Delete a follower from a product",
-            "description": "Deletes a follower from a product.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteProductFollower.in.json",
-                "out": "./lib/schemas/deleteProductFollower.out.json"
-            }
-        },
-        "deleteProductFields": {
-            "main": "./lib/actions/deleteProductFields.js",
-            "title": "Delete multiple product fields in bulk",
-            "description": "Marks multiple fields as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteProductFields.in.json",
-                "out": "./lib/schemas/deleteProductFields.out.json"
-            }
-        },
         "addProductField": {
             "main": "./lib/actions/addProductField.js",
             "title": "Add a new product field",
@@ -3190,21 +2305,6 @@
             "metadata": {
                 "in": "./lib/schemas/addProductField.in.json",
                 "out": "./lib/schemas/addProductField.out.json"
-            }
-        },
-        "deleteProductField": {
-            "main": "./lib/actions/deleteProductField.js",
-            "title": "Delete a product field",
-            "description": "Marks a field as deleted. For more information on how to delete a custom field, see <a href=\"https://pipedrive.readme.io/docs/deleting-a-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteProductField.in.json",
-                "out": "./lib/schemas/deleteProductField.out.json"
             }
         },
         "getProductField": {
@@ -3222,21 +2322,6 @@
                 "out": "./lib/schemas/getProductField.out.json"
             }
         },
-        "updateProductField": {
-            "main": "./lib/actions/updateProductField.js",
-            "title": "Update a product field",
-            "description": "Updates a product field. See an example of updating custom fields' values in <a href=\" https://pipedrive.readme.io/docs/updating-custom-field-value \" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateProductField.in.json",
-                "out": "./lib/schemas/updateProductField.out.json"
-            }
-        },
         "addRole": {
             "main": "./lib/actions/addRole.js",
             "title": "Add a role",
@@ -3251,20 +2336,6 @@
                 "out": "./lib/schemas/addRole.out.json"
             }
         },
-        "deleteRole": {
-            "main": "./lib/actions/deleteRole.js",
-            "title": "Delete a role",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteRole.in.json",
-                "out": "./lib/schemas/deleteRole.out.json"
-            }
-        },
         "getRole": {
             "main": "./lib/actions/getRole.js",
             "title": "Get one role",
@@ -3277,35 +2348,6 @@
             "metadata": {
                 "in": "./lib/schemas/getRole.in.json",
                 "out": "./lib/schemas/getRole.out.json"
-            }
-        },
-        "updateRole": {
-            "main": "./lib/actions/updateRole.js",
-            "title": "Update role details",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateRole.in.json",
-                "out": "./lib/schemas/updateRole.out.json"
-            }
-        },
-        "deleteRoleAssignment": {
-            "main": "./lib/actions/deleteRoleAssignment.js",
-            "title": "Delete a role assignment",
-            "description": "Delete assignment from a role",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteRoleAssignment.in.json",
-                "out": "./lib/schemas/deleteRoleAssignment.out.json"
             }
         },
         "addRoleAssignment": {
@@ -3337,21 +2379,6 @@
                 "out": "./lib/schemas/addOrUpdateRoleSetting.out.json"
             }
         },
-        "deleteStages": {
-            "main": "./lib/actions/deleteStages.js",
-            "title": "Delete multiple stages in bulk",
-            "description": "Marks multiple stages as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteStages.in.json",
-                "out": "./lib/schemas/deleteStages.out.json"
-            }
-        },
         "addStage": {
             "main": "./lib/actions/addStage.js",
             "title": "Add a new stage",
@@ -3367,21 +2394,6 @@
                 "out": "./lib/schemas/addStage.out.json"
             }
         },
-        "deleteStage": {
-            "main": "./lib/actions/deleteStage.js",
-            "title": "Delete a stage",
-            "description": "Marks a stage as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteStage.in.json",
-                "out": "./lib/schemas/deleteStage.out.json"
-            }
-        },
         "getStage": {
             "main": "./lib/actions/getStage.js",
             "title": "Get one stage",
@@ -3395,66 +2407,6 @@
             "metadata": {
                 "in": "./lib/schemas/getStage.in.json",
                 "out": "./lib/schemas/getStage.out.json"
-            }
-        },
-        "updateStage": {
-            "main": "./lib/actions/updateStage.js",
-            "title": "Update stage details",
-            "description": "Updates the properties of a stage.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateStage.in.json",
-                "out": "./lib/schemas/updateStage.out.json"
-            }
-        },
-        "getSubscription": {
-            "main": "./lib/actions/getSubscription.js",
-            "title": "Get details of a subscription",
-            "description": "Returns details of an installment or a recurring Subscription.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getSubscription.in.json",
-                "out": "./lib/schemas/getSubscription.out.json"
-            }
-        },
-        "deleteSubscription": {
-            "main": "./lib/actions/deleteSubscription.js",
-            "title": "Delete a subscription",
-            "description": "Marks an installment or a recurring Subscription as deleted.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteSubscription.in.json",
-                "out": "./lib/schemas/deleteSubscription.out.json"
-            }
-        },
-        "findSubscriptionByDeal": {
-            "main": "./lib/actions/findSubscriptionByDeal.js",
-            "title": "Find subscription by deal",
-            "description": "Returns details of an installment or a recurring Subscription by Deal ID.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/findSubscriptionByDeal.in.json",
-                "out": "./lib/schemas/findSubscriptionByDeal.out.json"
             }
         },
         "addRecurringSubscription": {
@@ -3487,36 +2439,6 @@
                 "out": "./lib/schemas/addSubscriptionInstallment.out.json"
             }
         },
-        "updateRecurringSubscription": {
-            "main": "./lib/actions/updateRecurringSubscription.js",
-            "title": "Update a recurring subscription",
-            "description": "Updates a recurring Subscription.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateRecurringSubscription.in.json",
-                "out": "./lib/schemas/updateRecurringSubscription.out.json"
-            }
-        },
-        "updateSubscriptionInstallment": {
-            "main": "./lib/actions/updateSubscriptionInstallment.js",
-            "title": "Update an installment subscription",
-            "description": "Updates an installment Subscription.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateSubscriptionInstallment.in.json",
-                "out": "./lib/schemas/updateSubscriptionInstallment.out.json"
-            }
-        },
         "cancelRecurringSubscription": {
             "main": "./lib/actions/cancelRecurringSubscription.js",
             "title": "Cancel a recurring subscription",
@@ -3547,36 +2469,6 @@
                 "out": "./lib/schemas/addTeam.out.json"
             }
         },
-        "getTeam": {
-            "main": "./lib/actions/getTeam.js",
-            "title": "Get a single team",
-            "description": "Returns data about a specific team",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getTeam.in.json",
-                "out": "./lib/schemas/getTeam.out.json"
-            }
-        },
-        "updateTeam": {
-            "main": "./lib/actions/updateTeam.js",
-            "title": "Update a team",
-            "description": "Updates an existing team and returns the updated object",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateTeam.in.json",
-                "out": "./lib/schemas/updateTeam.out.json"
-            }
-        },
         "addTeamUser": {
             "main": "./lib/actions/addTeamUser.js",
             "title": "Add users to a team",
@@ -3590,21 +2482,6 @@
             "metadata": {
                 "in": "./lib/schemas/addTeamUser.in.json",
                 "out": "./lib/schemas/addTeamUser.out.json"
-            }
-        },
-        "deleteTeamUser": {
-            "main": "./lib/actions/deleteTeamUser.js",
-            "title": "Delete users from a team",
-            "description": "Deletes users from an existing team",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteTeamUser.in.json",
-                "out": "./lib/schemas/deleteTeamUser.out.json"
             }
         },
         "getUserTeams": {
@@ -3637,51 +2514,6 @@
                 "out": "./lib/schemas/addUser.out.json"
             }
         },
-        "getUser": {
-            "main": "./lib/actions/getUser.js",
-            "title": "Get one user",
-            "description": "Returns data about a specific user within the company",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/getUser.in.json",
-                "out": "./lib/schemas/getUser.out.json"
-            }
-        },
-        "updateUser": {
-            "main": "./lib/actions/updateUser.js",
-            "title": "Update user details",
-            "description": "Updates the properties of a user. Currently, only `active_flag` can be updated.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateUser.in.json",
-                "out": "./lib/schemas/updateUser.out.json"
-            }
-        },
-        "deleteUserRoleAssignment": {
-            "main": "./lib/actions/deleteUserRoleAssignment.js",
-            "title": "Delete a role assignment",
-            "description": "Delete a role assignment for a user",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteUserRoleAssignment.in.json",
-                "out": "./lib/schemas/deleteUserRoleAssignment.out.json"
-            }
-        },
         "addUserRoleAssignment": {
             "main": "./lib/actions/addUserRoleAssignment.js",
             "title": "Add role assignment",
@@ -3710,21 +2542,6 @@
             "metadata": {
                 "in": "./lib/schemas/addWebhook.in.json",
                 "out": "./lib/schemas/addWebhook.out.json"
-            }
-        },
-        "deleteWebhook": {
-            "main": "./lib/actions/deleteWebhook.js",
-            "title": "Delete existing webhook",
-            "description": "Deletes the specified webhook.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteWebhook.in.json",
-                "out": "./lib/schemas/deleteWebhook.out.json"
             }
         }
     }

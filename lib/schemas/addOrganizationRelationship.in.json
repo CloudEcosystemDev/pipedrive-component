@@ -5,7 +5,7 @@
             "title": "addOrganizationRelationshipRequest",
             "allOf": [
                 {
-                    "title": "organizationRelationshipRequest",
+                    "title": "organizationRelationship",
                     "type": "object",
                     "properties": {
                         "org_id": {
