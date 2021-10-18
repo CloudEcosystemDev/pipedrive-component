@@ -331,36 +331,6 @@
         }
     },
     "actions": {
-        "addActivity": {
-            "main": "./lib/actions/addActivity.js",
-            "title": "Add an Activity",
-            "description": "Adds a new Activity. Includes `more_activities_scheduled_in_context` property in response's `additional_data` which indicates whether there are more undone Activities scheduled with the same Deal, Person or Organization (depending on the supplied data). For more information on how to add an Activity, see <a href=\"https://pipedrive.readme.io/docs/adding-an-activity\" target=\"_blank\" rel=\"noopener noreferrer\">this tutorial</a>.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/addActivity.in.json",
-                "out": "./lib/schemas/addActivity.out.json"
-            }
-        },
-        "addActivityType": {
-            "main": "./lib/actions/addActivityType.js",
-            "title": "Add new ActivityType",
-            "description": "Adds a new ActivityType and returns it upon success.",
-            "fields": {
-                "verbose": {
-                    "viewClass": "CheckBoxView",
-                    "label": "Debug this step (log more data)"
-                }
-            },
-            "metadata": {
-                "in": "./lib/schemas/addActivityType.in.json",
-                "out": "./lib/schemas/addActivityType.out.json"
-            }
-        },
         "addCallLog": {
             "main": "./lib/actions/addCallLog.js",
             "title": "Add a call log",
