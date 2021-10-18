@@ -1,4 +1,4 @@
-# <p align="center" width="100%"> <img src="./logo.png" width="250" height="250"> </p> 
+# <p align="center" width="100%"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFM2pAS4s5pzGxGM8yCGsgw7FeE9128uOj2w&usqp=CAU" width="250" height="250"> </p> 
 # <p align="center" width="100%"> Pipedrive API v1 OIH Connector </p>
 
 ## Description
