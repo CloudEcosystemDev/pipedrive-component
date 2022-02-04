@@ -21,11 +21,11 @@
                 },
                 "subject": {
                     "type": "string",
-                    "description": "Name of the activity this call is attached to"
+                    "description": "The name of the activity this call is attached to"
                 },
                 "duration": {
                     "type": "string",
-                    "description": "Call duration in seconds"
+                    "description": "The duration of the call in seconds"
                 },
                 "outcome": {
                     "type": "string",
@@ -59,19 +59,19 @@
                 },
                 "person_id": {
                     "type": "integer",
-                    "description": "The ID of the Person this call is associated with"
+                    "description": "The ID of the person this call is associated with"
                 },
                 "org_id": {
                     "type": "integer",
-                    "description": "The ID of the Organization this call is associated with"
+                    "description": "The ID of the organization this call is associated with"
                 },
                 "deal_id": {
                     "type": "integer",
-                    "description": "The ID of the Deal this call is associated with"
+                    "description": "The ID of the deal this call is associated with"
                 },
                 "note": {
                     "type": "string",
-                    "description": "Note for the call log in HTML format"
+                    "description": "The note for the call log in HTML format"
                 }
             }
         }

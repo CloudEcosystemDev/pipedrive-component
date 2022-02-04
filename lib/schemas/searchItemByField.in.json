@@ -10,6 +10,7 @@
             "type": "string",
             "enum": [
                 "dealField",
+                "leadField",
                 "personField",
                 "organizationField",
                 "productField"

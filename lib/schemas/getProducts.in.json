@@ -4,6 +4,9 @@
         "user_id": {
             "type": "integer"
         },
+        "filter_id": {
+            "type": "integer"
+        },
         "ids": {
             "type": "array",
             "items": {

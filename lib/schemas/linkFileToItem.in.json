@@ -22,11 +22,11 @@
                 },
                 "item_id": {
                     "type": "integer",
-                    "description": "ID of the item to associate the file with"
+                    "description": "The ID of the item to associate the file with"
                 },
                 "remote_id": {
                     "type": "string",
-                    "description": "The remote item id"
+                    "description": "The remote item ID"
                 },
                 "remote_location": {
                     "type": "string",
