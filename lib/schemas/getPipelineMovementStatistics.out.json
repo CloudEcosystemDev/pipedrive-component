@@ -1,191 +1,213 @@
 {
     "type": "object",
-    "properties": {
-        "movements_between_stages": {
+    "title": "getPipelineMovementStatisticsResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
             "type": "object",
-            "description": "Movements between Stages",
             "properties": {
-                "count": {
-                    "type": "integer",
-                    "description": "The count of the Deals that have been moved between Stages"
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
                 }
             }
         },
-        "new_deals": {
+        {
             "type": "object",
-            "description": "Deals summary",
             "properties": {
-                "count": {
-                    "type": "integer",
-                    "description": "Deals count"
-                },
-                "deals_ids": {
-                    "type": "array",
-                    "description": "IDs of the Deals that have been moved",
-                    "items": {
-                        "type": "integer"
-                    }
-                },
-                "values": {
+                "data": {
                     "type": "object",
-                    "description": "Deals values",
+                    "description": "The pipeline object",
                     "properties": {
-                        "CURRENCY_ID": {
-                            "type": "integer",
-                            "description": "Deals value"
-                        }
-                    }
-                },
-                "formatted_values": {
-                    "type": "object",
-                    "description": "Deals values formatted",
-                    "properties": {
-                        "CURRENCY_ID": {
-                            "type": "string",
-                            "description": "Deals value formatted"
-                        }
-                    }
-                }
-            }
-        },
-        "deals_left_open": {
-            "type": "object",
-            "description": "Deals summary",
-            "properties": {
-                "count": {
-                    "type": "integer",
-                    "description": "Deals count"
-                },
-                "deals_ids": {
-                    "type": "array",
-                    "description": "IDs of the Deals that have been moved",
-                    "items": {
-                        "type": "integer"
-                    }
-                },
-                "values": {
-                    "type": "object",
-                    "description": "Deals values",
-                    "properties": {
-                        "CURRENCY_ID": {
-                            "type": "integer",
-                            "description": "Deals value"
-                        }
-                    }
-                },
-                "formatted_values": {
-                    "type": "object",
-                    "description": "Deals values formatted",
-                    "properties": {
-                        "CURRENCY_ID": {
-                            "type": "string",
-                            "description": "Deals value formatted"
-                        }
-                    }
-                }
-            }
-        },
-        "won_deals": {
-            "type": "object",
-            "description": "Deals summary",
-            "properties": {
-                "count": {
-                    "type": "integer",
-                    "description": "Deals count"
-                },
-                "deals_ids": {
-                    "type": "array",
-                    "description": "IDs of the Deals that have been moved",
-                    "items": {
-                        "type": "integer"
-                    }
-                },
-                "values": {
-                    "type": "object",
-                    "description": "Deals values",
-                    "properties": {
-                        "CURRENCY_ID": {
-                            "type": "integer",
-                            "description": "Deals value"
-                        }
-                    }
-                },
-                "formatted_values": {
-                    "type": "object",
-                    "description": "Deals values formatted",
-                    "properties": {
-                        "CURRENCY_ID": {
-                            "type": "string",
-                            "description": "Deals value formatted"
-                        }
-                    }
-                }
-            }
-        },
-        "lost_deals": {
-            "type": "object",
-            "description": "Deals summary",
-            "properties": {
-                "count": {
-                    "type": "integer",
-                    "description": "Deals count"
-                },
-                "deals_ids": {
-                    "type": "array",
-                    "description": "IDs of the Deals that have been moved",
-                    "items": {
-                        "type": "integer"
-                    }
-                },
-                "values": {
-                    "type": "object",
-                    "description": "Deals values",
-                    "properties": {
-                        "CURRENCY_ID": {
-                            "type": "integer",
-                            "description": "Deals value"
-                        }
-                    }
-                },
-                "formatted_values": {
-                    "type": "object",
-                    "description": "Deals values formatted",
-                    "properties": {
-                        "CURRENCY_ID": {
-                            "type": "string",
-                            "description": "Deals value formatted"
-                        }
-                    }
-                }
-            }
-        },
-        "average_age_in_days": {
-            "type": "object",
-            "description": "Moved Deals average age in days",
-            "properties": {
-                "across_all_stages": {
-                    "type": "integer",
-                    "description": "Moved Deals average age across all Stages"
-                },
-                "by_stages": {
-                    "type": "array",
-                    "description": "Moved Deals average age by Stages",
-                    "items": {
-                        "type": "object",
-                        "description": "Moved Deals average age by the Stage",
-                        "properties": {
-                            "stage_id": {
-                                "type": "integer",
-                                "description": "The Stage ID"
-                            },
-                            "value": {
-                                "type": "integer",
-                                "description": "Average Deals age in specific Stage"
+                        "movements_between_stages": {
+                            "type": "object",
+                            "description": "Movements between stages",
+                            "properties": {
+                                "count": {
+                                    "type": "integer",
+                                    "description": "The count of the deals that have been moved between stages"
+                                }
+                            }
+                        },
+                        "new_deals": {
+                            "type": "object",
+                            "description": "Deals summary",
+                            "properties": {
+                                "count": {
+                                    "type": "integer",
+                                    "description": "The count of the deals"
+                                },
+                                "deals_ids": {
+                                    "type": "array",
+                                    "description": "The IDs of the deals that have been moved",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "values": {
+                                    "type": "object",
+                                    "description": "The values of the deals",
+                                    "properties": {
+                                        "CURRENCY_ID": {
+                                            "type": "integer",
+                                            "description": "The value of the deals"
+                                        }
+                                    }
+                                },
+                                "formatted_values": {
+                                    "type": "object",
+                                    "description": "The formatted values of the deals",
+                                    "properties": {
+                                        "CURRENCY_ID": {
+                                            "type": "string",
+                                            "description": "The formatted values of the deals"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "deals_left_open": {
+                            "type": "object",
+                            "description": "Deals summary",
+                            "properties": {
+                                "count": {
+                                    "type": "integer",
+                                    "description": "The count of the deals"
+                                },
+                                "deals_ids": {
+                                    "type": "array",
+                                    "description": "The IDs of the deals that have been moved",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "values": {
+                                    "type": "object",
+                                    "description": "The values of the deals",
+                                    "properties": {
+                                        "CURRENCY_ID": {
+                                            "type": "integer",
+                                            "description": "The value of the deals"
+                                        }
+                                    }
+                                },
+                                "formatted_values": {
+                                    "type": "object",
+                                    "description": "The formatted values of the deals",
+                                    "properties": {
+                                        "CURRENCY_ID": {
+                                            "type": "string",
+                                            "description": "The formatted values of the deals"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "won_deals": {
+                            "type": "object",
+                            "description": "Deals summary",
+                            "properties": {
+                                "count": {
+                                    "type": "integer",
+                                    "description": "The count of the deals"
+                                },
+                                "deals_ids": {
+                                    "type": "array",
+                                    "description": "The IDs of the deals that have been moved",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "values": {
+                                    "type": "object",
+                                    "description": "The values of the deals",
+                                    "properties": {
+                                        "CURRENCY_ID": {
+                                            "type": "integer",
+                                            "description": "The value of the deals"
+                                        }
+                                    }
+                                },
+                                "formatted_values": {
+                                    "type": "object",
+                                    "description": "The formatted values of the deals",
+                                    "properties": {
+                                        "CURRENCY_ID": {
+                                            "type": "string",
+                                            "description": "The formatted values of the deals"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "lost_deals": {
+                            "type": "object",
+                            "description": "Deals summary",
+                            "properties": {
+                                "count": {
+                                    "type": "integer",
+                                    "description": "The count of the deals"
+                                },
+                                "deals_ids": {
+                                    "type": "array",
+                                    "description": "The IDs of the deals that have been moved",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "values": {
+                                    "type": "object",
+                                    "description": "The values of the deals",
+                                    "properties": {
+                                        "CURRENCY_ID": {
+                                            "type": "integer",
+                                            "description": "The value of the deals"
+                                        }
+                                    }
+                                },
+                                "formatted_values": {
+                                    "type": "object",
+                                    "description": "The formatted values of the deals",
+                                    "properties": {
+                                        "CURRENCY_ID": {
+                                            "type": "string",
+                                            "description": "The formatted values of the deals"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "average_age_in_days": {
+                            "type": "object",
+                            "description": "The moved deals average age in days",
+                            "properties": {
+                                "across_all_stages": {
+                                    "type": "integer",
+                                    "description": "The moved deals average age across all stages"
+                                },
+                                "by_stages": {
+                                    "type": "array",
+                                    "description": "The moved deals average age by stages",
+                                    "items": {
+                                        "type": "object",
+                                        "description": "The moved deals average age by the stage",
+                                        "properties": {
+                                            "stage_id": {
+                                                "type": "integer",
+                                                "description": "The stage ID"
+                                            },
+                                            "value": {
+                                                "type": "integer",
+                                                "description": "The average deals age in specific stage"
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
+    ]
 }

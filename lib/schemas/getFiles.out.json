@@ -1,39 +1,163 @@
 {
+    "title": "getFilesResponse200",
     "type": "object",
     "properties": {
-        "pagination": {
-            "title": "paginationDetails",
-            "description": "Pagination details of the list",
-            "type": "object",
-            "allOf": [
-                {
-                    "description": "The additional data of the list",
-                    "type": "object",
-                    "properties": {
-                        "start": {
-                            "type": "integer",
-                            "description": "Pagination start"
-                        },
-                        "limit": {
-                            "type": "integer",
-                            "description": "Items shown per page"
-                        },
-                        "more_items_in_collection": {
-                            "type": "boolean",
-                            "description": "If there are more list items in the collection than displayed or not"
-                        }
-                    }
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "next_start": {
-                            "type": "integer",
-                            "description": "Next pagination start"
-                        }
+        "success": {
+            "type": "boolean",
+            "description": "If the request was successful or not"
+        },
+        "data": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "description": "The file data",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "The ID of the file"
+                    },
+                    "user_id": {
+                        "type": "integer",
+                        "description": "The ID of the user to associate the file with"
+                    },
+                    "deal_id": {
+                        "type": "integer",
+                        "description": "The ID of the deal to associate the file with"
+                    },
+                    "person_id": {
+                        "type": "integer",
+                        "description": "The ID of the person to associate the file with"
+                    },
+                    "org_id": {
+                        "type": "integer",
+                        "description": "The ID of the organization to associate the file with"
+                    },
+                    "product_id": {
+                        "type": "integer",
+                        "description": "The ID of the product to associate the file with"
+                    },
+                    "activity_id": {
+                        "type": "integer",
+                        "description": "The ID of the activity to associate the file with"
+                    },
+                    "add_time": {
+                        "type": "string",
+                        "description": "The date and time when the file was added/created. Format: YYYY-MM-DD HH:MM:SS"
+                    },
+                    "update_time": {
+                        "type": "string",
+                        "description": "The last updated date and time of the file. Format: YYYY-MM-DD HH:MM:SS"
+                    },
+                    "file_name": {
+                        "type": "string",
+                        "description": "The original name of the file"
+                    },
+                    "file_size": {
+                        "type": "string",
+                        "description": "The size of the file"
+                    },
+                    "active_flag": {
+                        "type": "boolean",
+                        "description": "Whether the user is active or not. false = Not activated, true = Activated"
+                    },
+                    "inline_flag": {
+                        "type": "boolean",
+                        "description": "Whether the file was uploaded as inline or not"
+                    },
+                    "remote_location": {
+                        "type": "string",
+                        "description": "The location type to send the file to. Only googledrive is supported at the moment."
+                    },
+                    "remote_id": {
+                        "type": "string",
+                        "description": "The ID of the remote item"
+                    },
+                    "cid": {
+                        "type": "string",
+                        "description": "The ID of the inline attachment"
+                    },
+                    "s3_bucket": {
+                        "type": "string",
+                        "description": "The location of the cloud storage"
+                    },
+                    "mail_message_id": {
+                        "type": "string",
+                        "description": "The ID of the mail message to associate the file with"
+                    },
+                    "mail_template_id": {
+                        "type": "string",
+                        "description": "The ID of the mail template to associate the file with"
+                    },
+                    "deal_name": {
+                        "type": "string",
+                        "description": "The name of the deal associated with the file"
+                    },
+                    "person_name": {
+                        "type": "string",
+                        "description": "The name of the person associated with the file"
+                    },
+                    "org_name": {
+                        "type": "string",
+                        "description": "The name of the organization associated with the file"
+                    },
+                    "product_name": {
+                        "type": "string",
+                        "description": "The name of the product associated with the file"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The URL of the download file"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The visible name of the file"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the file"
                     }
                 }
-            ]
+            },
+            "description": "The array of all uploaded files"
+        },
+        "additional_data": {
+            "type": "object",
+            "properties": {
+                "pagination": {
+                    "title": "paginationDetails",
+                    "description": "Pagination details of the list",
+                    "type": "object",
+                    "allOf": [
+                        {
+                            "description": "The additional data of the list",
+                            "type": "object",
+                            "properties": {
+                                "start": {
+                                    "type": "integer",
+                                    "description": "Pagination start"
+                                },
+                                "limit": {
+                                    "type": "integer",
+                                    "description": "Items shown per page"
+                                },
+                                "more_items_in_collection": {
+                                    "type": "boolean",
+                                    "description": "If there are more list items in the collection than displayed or not"
+                                }
+                            }
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "next_start": {
+                                    "type": "integer",
+                                    "description": "Next pagination start"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
         }
     }
 }

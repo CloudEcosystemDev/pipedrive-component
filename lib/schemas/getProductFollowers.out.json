@@ -1,17 +1,63 @@
 {
-    "type": "object",
-    "properties": {
-        "start": {
-            "type": "integer",
-            "description": "Pagination start"
+    "title": "getProductFollowersResponseSuccess",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
         },
-        "limit": {
-            "type": "integer",
-            "description": "Items shown per page"
-        },
-        "more_items_in_collection": {
-            "type": "boolean",
-            "description": "If there are more list items in the collection than displayed or not"
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "description": "The list of followers",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "user_id": {
+                                "type": "integer",
+                                "description": "The ID of the user"
+                            },
+                            "id": {
+                                "type": "integer",
+                                "description": "The ID of the user follower"
+                            },
+                            "product_id": {
+                                "type": "integer",
+                                "description": "The ID of the product"
+                            },
+                            "add_time": {
+                                "type": "string",
+                                "description": "The date and time when the follower was added to the person"
+                            }
+                        }
+                    }
+                },
+                "additional_data": {
+                    "description": "The additional data of the list",
+                    "type": "object",
+                    "properties": {
+                        "start": {
+                            "type": "integer",
+                            "description": "Pagination start"
+                        },
+                        "limit": {
+                            "type": "integer",
+                            "description": "Items shown per page"
+                        },
+                        "more_items_in_collection": {
+                            "type": "boolean",
+                            "description": "If there are more list items in the collection than displayed or not"
+                        }
+                    }
+                }
+            }
         }
-    }
+    ]
 }

@@ -12,11 +12,11 @@
             "properties": {
                 "name": {
                     "type": "string",
-                    "description": "Name of the user"
+                    "description": "The name of the user"
                 },
                 "email": {
                     "type": "string",
-                    "description": "Email of the user"
+                    "description": "The email of the user"
                 },
                 "active_flag": {
                     "type": "boolean",

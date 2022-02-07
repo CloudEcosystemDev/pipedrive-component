@@ -15,7 +15,7 @@
                 "file": {
                     "type": "string",
                     "format": "binary",
-                    "description": "One image supplied in the multipart/form-data encoding."
+                    "description": "One image supplied in the multipart/form-data encoding"
                 },
                 "crop_x": {
                     "type": "integer",
@@ -27,11 +27,11 @@
                 },
                 "crop_width": {
                     "type": "integer",
-                    "description": "Width of cropping area (in pixels)"
+                    "description": "The width of the cropping area (in pixels)"
                 },
                 "crop_height": {
                     "type": "integer",
-                    "description": "Height of cropping area (in pixels)"
+                    "description": "The height of the cropping area (in pixels)"
                 }
             }
         }

@@ -12,11 +12,11 @@
             "properties": {
                 "deal_id": {
                     "type": "integer",
-                    "description": "ID of the Deal this Installment Subscription is associated with"
+                    "description": "The ID of the deal this installment subscription is associated with"
                 },
                 "currency": {
                     "type": "string",
-                    "description": "The currency of the Installment Subscription. Accepts a 3-character currency code."
+                    "description": "The currency of the installment subscription. Accepts a 3-character currency code."
                 },
                 "payments": {
                     "type": "array",
@@ -27,7 +27,7 @@
                 },
                 "update_deal_value": {
                     "type": "boolean",
-                    "description": "Indicates that the Deal value must be set to the Installment Subscription's total value"
+                    "description": "Indicates that the deal value must be set to the installment subscription's total value"
                 }
             }
         }

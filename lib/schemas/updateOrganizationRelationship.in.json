@@ -11,7 +11,7 @@
             "properties": {
                 "org_id": {
                     "type": "integer",
-                    "description": "ID of the base organization for the returned calculated values"
+                    "description": "The ID of the base organization for the returned calculated values"
                 },
                 "type": {
                     "type": "string",

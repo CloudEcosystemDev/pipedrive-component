@@ -1,17 +1,41 @@
 {
-    "type": "object",
-    "properties": {
-        "id": {
-            "type": "integer",
-            "description": "The ID of User Permission Set"
+    "title": "getPermissionSetsResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
         },
-        "name": {
-            "type": "string",
-            "description": "The name of Permission Set"
-        },
-        "assignment_count": {
-            "type": "integer",
-            "description": "The number of Users assigned to this Permission Set"
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "description": "The ID of user permission set"
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "The name of the permission set"
+                            },
+                            "assignment_count": {
+                                "type": "integer",
+                                "description": "The number of users assigned to this permission set"
+                            }
+                        }
+                    },
+                    "description": "The array of permission set"
+                }
+            }
         }
-    }
+    ]
 }

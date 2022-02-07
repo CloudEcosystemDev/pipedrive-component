@@ -1,50 +1,173 @@
 {
-    "type": "object",
-    "properties": {
-        "organization": {
+    "title": "addOrganizationRelationshipResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
             "type": "object",
             "properties": {
-                "ORGANIZATION_ID": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "data": {
                     "type": "object",
-                    "description": "The ID of the Organization associated with the item",
-                    "allOf": [
-                        {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "integer",
-                                    "description": "The ID of the Organization associated with the item"
-                                }
-                            }
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "description": "The ID of the organization relationship"
                         },
-                        {
+                        "type": {
+                            "type": "string",
+                            "description": "The type of the relationship"
+                        },
+                        "rel_owner_org_id": {
+                            "title": "relationshipOrganizationInfoItem",
+                            "allOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string",
+                                            "description": "The name of the organization associated with the item"
+                                        },
+                                        "people_count": {
+                                            "type": "integer",
+                                            "description": "The number of people connected with the organization that is associated with the item"
+                                        },
+                                        "owner_id": {
+                                            "type": "integer",
+                                            "description": "The ID of the owner of the organization that is associated with the item"
+                                        },
+                                        "address": {
+                                            "type": "string",
+                                            "description": "The address of the organization"
+                                        },
+                                        "cc_email": {
+                                            "type": "string",
+                                            "description": "The BCC email of the organization associated with the item"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "value": {
+                                            "type": "integer",
+                                            "description": "The ID of the organization"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "rel_linked_org_id": {
+                            "title": "relationshipOrganizationInfoItem",
+                            "allOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string",
+                                            "description": "The name of the organization associated with the item"
+                                        },
+                                        "people_count": {
+                                            "type": "integer",
+                                            "description": "The number of people connected with the organization that is associated with the item"
+                                        },
+                                        "owner_id": {
+                                            "type": "integer",
+                                            "description": "The ID of the owner of the organization that is associated with the item"
+                                        },
+                                        "address": {
+                                            "type": "string",
+                                            "description": "The address of the organization"
+                                        },
+                                        "cc_email": {
+                                            "type": "string",
+                                            "description": "The BCC email of the organization associated with the item"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "value": {
+                                            "type": "integer",
+                                            "description": "The ID of the organization"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "add_time": {
+                            "type": "string",
+                            "description": "The creation date and time of the relationship"
+                        },
+                        "update_time": {
+                            "type": "string",
+                            "description": "The last updated date and time of the relationship"
+                        },
+                        "active_flag": {
+                            "type": "string",
+                            "description": "Whether the relationship is active or not"
+                        }
+                    }
+                },
+                "related_objects": {
+                    "type": "object",
+                    "properties": {
+                        "organization": {
                             "type": "object",
                             "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "description": "The name of the Organization associated with the item"
-                                },
-                                "people_count": {
-                                    "type": "integer",
-                                    "description": "The number of people connected with the Organization that is associated with the item"
-                                },
-                                "owner_id": {
-                                    "type": "integer",
-                                    "description": "The ID of the owner of the Organization that is associated with the item"
-                                },
-                                "address": {
-                                    "type": "string",
-                                    "description": "The address of the Organization"
-                                },
-                                "cc_email": {
-                                    "type": "string",
-                                    "description": "The CC email of the Organization associated with the item"
+                                "ORGANIZATION_ID": {
+                                    "type": "object",
+                                    "description": "The ID of the organization associated with the item",
+                                    "allOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "The ID of the organization associated with the item"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the organization associated with the item"
+                                                },
+                                                "people_count": {
+                                                    "type": "integer",
+                                                    "description": "The number of people connected with the organization that is associated with the item"
+                                                },
+                                                "owner_id": {
+                                                    "type": "integer",
+                                                    "description": "The ID of the owner of the organization that is associated with the item"
+                                                },
+                                                "address": {
+                                                    "type": "string",
+                                                    "description": "The address of the organization"
+                                                },
+                                                "cc_email": {
+                                                    "type": "string",
+                                                    "description": "The BCC email of the organization associated with the item"
+                                                }
+                                            }
+                                        }
+                                    ]
                                 }
                             }
                         }
-                    ]
+                    }
                 }
             }
         }
-    }
+    ]
 }

@@ -14,7 +14,7 @@
             "properties": {
                 "merge_with_id": {
                     "type": "integer",
-                    "description": "ID of the deal that the deal will be merged with"
+                    "description": "The ID of the deal that the deal will be merged with"
                 }
             }
         }

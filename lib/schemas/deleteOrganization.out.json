@@ -1,9 +1,19 @@
 {
+    "title": "deleteOrganizationResponse200",
     "type": "object",
     "properties": {
-        "id": {
-            "type": "integer",
-            "description": "The ID of the Organization that was deleted"
+        "success": {
+            "type": "boolean",
+            "description": "If the request was successful or not"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the organization that was deleted"
+                }
+            }
         }
     }
 }

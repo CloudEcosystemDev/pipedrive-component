@@ -1,23 +1,104 @@
 {
-    "type": "object",
-    "properties": {
-        "pagination": {
-            "description": "The pagination details in the Role list",
+    "title": "getRolesResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
             "type": "object",
             "properties": {
-                "start": {
-                    "type": "integer",
-                    "description": "Pagination start"
-                },
-                "limit": {
-                    "type": "integer",
-                    "description": "Items shown per page"
-                },
-                "more_items_in_collection": {
+                "success": {
                     "type": "boolean",
-                    "description": "Whether there are more list items in the collection than displayed"
+                    "description": "If the response is successful or not"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "title": "fullRole",
+                        "allOf": [
+                            {
+                                "description": "The details of the sub-role",
+                                "title": "subRole",
+                                "allOf": [
+                                    {
+                                        "title": "baseRoleRequest",
+                                        "description": "The details of the role",
+                                        "type": "object",
+                                        "properties": {
+                                            "parent_role_id": {
+                                                "type": "integer",
+                                                "description": "The ID of the parent role"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "description": "The name of the role"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "description": "The ID of the role"
+                                            },
+                                            "active_flag": {
+                                                "type": "boolean",
+                                                "description": "Whether the role is active or not"
+                                            },
+                                            "assignment_count": {
+                                                "type": "string",
+                                                "description": "The number of users assigned to this role"
+                                            },
+                                            "sub_role_count": {
+                                                "type": "string",
+                                                "description": "The number of sub-roles"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "level": {
+                                        "type": "integer",
+                                        "description": "The level of role in the role hierarchy"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "description": "The array of roles"
+                },
+                "additional_data": {
+                    "description": "The additional data in the role list",
+                    "type": "object",
+                    "properties": {
+                        "pagination": {
+                            "description": "The pagination details in the role list",
+                            "type": "object",
+                            "properties": {
+                                "start": {
+                                    "type": "integer",
+                                    "description": "Pagination start"
+                                },
+                                "limit": {
+                                    "type": "integer",
+                                    "description": "Items shown per page"
+                                },
+                                "more_items_in_collection": {
+                                    "type": "boolean",
+                                    "description": "Whether there are more list items in the collection than displayed"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
-    }
+    ]
 }

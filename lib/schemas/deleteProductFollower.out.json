@@ -1,13 +1,23 @@
 {
+    "title": "deleteProductFollowerResponse200",
     "type": "object",
     "properties": {
-        "id": {
-            "allOf": [
-                {
-                    "type": "integer"
+        "success": {
+            "type": "boolean",
+            "description": "If the response is successful or not"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "allOf": [
+                        {
+                            "type": "integer"
+                        }
+                    ],
+                    "description": "The ID of the removed follower"
                 }
-            ],
-            "description": "The ID of removed Follower"
+            }
         }
     }
 }

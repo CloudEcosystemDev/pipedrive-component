@@ -1,11 +1,21 @@
 {
+    "title": "deleteOrganizationsResponse200",
     "type": "object",
     "properties": {
-        "id": {
-            "type": "array",
-            "description": "The IDs of the Organizations that were deleted",
-            "items": {
-                "type": "number"
+        "success": {
+            "type": "boolean",
+            "description": "If the request was successful or not"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "array",
+                    "description": "The IDs of the organizations that were deleted",
+                    "items": {
+                        "type": "number"
+                    }
+                }
             }
         }
     }

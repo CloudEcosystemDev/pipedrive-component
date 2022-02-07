@@ -1,13 +1,34 @@
 {
-    "type": "object",
-    "properties": {
-        "user_id": {
-            "type": "integer",
-            "description": "The ID of the User that was added to the Role"
+    "title": "addRoleAssignmentResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
         },
-        "role_id": {
-            "type": "integer",
-            "description": "The ID of the Role the User was added to"
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "user_id": {
+                            "type": "integer",
+                            "description": "The ID of the user that was added to the role"
+                        },
+                        "role_id": {
+                            "type": "integer",
+                            "description": "The ID of the role the user was added to"
+                        }
+                    },
+                    "description": "The response data"
+                }
+            }
         }
-    }
+    ]
 }

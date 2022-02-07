@@ -38,7 +38,7 @@
                 },
                 "item_id": {
                     "type": "integer",
-                    "description": "ID of the item to associate the file with"
+                    "description": "The ID of the item to associate the file with"
                 },
                 "remote_location": {
                     "type": "string",

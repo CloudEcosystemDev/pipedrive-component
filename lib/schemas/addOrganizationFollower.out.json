@@ -1,17 +1,40 @@
 {
+    "title": "addOrganizationFollowerResponse200",
     "type": "object",
     "properties": {
-        "user_id": {
-            "type": "integer",
-            "description": "The user ID of the follower related to the item"
+        "success": {
+            "type": "boolean",
+            "description": "If the request was successful or not"
         },
-        "id": {
-            "type": "integer",
-            "description": "The ID of the follower"
-        },
-        "add_time": {
-            "type": "integer",
-            "description": "The date and time of adding the follower to the item"
+        "data": {
+            "allOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "org_id": {
+                            "type": "integer",
+                            "description": "The ID of the organization"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "user_id": {
+                            "type": "integer",
+                            "description": "The user ID of the follower related to the item"
+                        },
+                        "id": {
+                            "type": "integer",
+                            "description": "The ID of the follower"
+                        },
+                        "add_time": {
+                            "type": "integer",
+                            "description": "The date and time of adding the follower to the item"
+                        }
+                    }
+                }
+            ]
         }
     }
 }

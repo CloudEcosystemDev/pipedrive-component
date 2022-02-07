@@ -11,7 +11,7 @@
             "properties": {
                 "name": {
                     "type": "string",
-                    "description": "Name of the field"
+                    "description": "The name of the field"
                 },
                 "options": {
                     "type": "string",

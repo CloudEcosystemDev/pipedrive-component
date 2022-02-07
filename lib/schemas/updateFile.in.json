@@ -11,11 +11,11 @@
             "properties": {
                 "name": {
                     "type": "string",
-                    "description": "Visible name of the file"
+                    "description": "The visible name of the file"
                 },
                 "description": {
                     "type": "string",
-                    "description": "Description of the file"
+                    "description": "The description of the file"
                 }
             }
         }

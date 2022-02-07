@@ -12,11 +12,11 @@
                 "name": {
                     "type": "string",
                     "example": "call",
-                    "description": "The name of the ActivityType"
+                    "description": "The name of the activity type"
                 },
                 "icon_key": {
                     "type": "string",
-                    "description": "Icon graphic to use for representing this activity type.",
+                    "description": "Icon graphic to use for representing this activity type",
                     "enum": [
                         "task",
                         "email",
@@ -63,7 +63,7 @@
                 "color": {
                     "type": "string",
                     "example": "FFFFFF",
-                    "description": "A designated color for the ActivityType in 6-character HEX format (e.g. `FFFFFF` for white, `000000` for black)"
+                    "description": "A designated color for the activity type in 6-character HEX format (e.g. `FFFFFF` for white, `000000` for black)"
                 }
             }
         }

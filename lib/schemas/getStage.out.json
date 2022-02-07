@@ -1,83 +1,148 @@
 {
+    "title": "getStageResponse200",
     "type": "object",
     "properties": {
-        "deals_summary": {
+        "success": {
+            "type": "boolean",
+            "description": "If the request was successful or not"
+        },
+        "data": {
             "type": "object",
-            "description": "Deals summary",
-            "properties": {
-                "per_stages": {
+            "description": "The stage object",
+            "allOf": [
+                {
                     "type": "object",
-                    "description": "The Stage objects containing Deals currency information",
                     "properties": {
-                        "STAGE_ID": {
+                        "id": {
+                            "type": "integer",
+                            "description": "The ID of the stage"
+                        },
+                        "order_nr": {
+                            "type": "integer",
+                            "description": "Defines the order of the stage"
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "The name of the stage"
+                        },
+                        "active_flag": {
+                            "type": "boolean",
+                            "description": "Whether the stage is active or deleted"
+                        },
+                        "deal_probability": {
+                            "type": "integer",
+                            "description": "The success probability percentage of the deal. Used/shown when the deal weighted values are used."
+                        },
+                        "pipeline_id": {
+                            "type": "integer",
+                            "description": "The ID of the pipeline to add the stage to"
+                        },
+                        "rotten_flag": {
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ],
+                            "description": "Whether deals in this stage can become rotten"
+                        },
+                        "rotten_days": {
+                            "type": "integer",
+                            "description": "The number of days the deals not updated in this stage would become rotten. Applies only if the `rotten_flag` is set."
+                        },
+                        "add_time": {
+                            "type": "string",
+                            "description": "The stage creation time. Format: YYYY-MM-DD HH:MM:SS."
+                        },
+                        "update_time": {
+                            "type": "string",
+                            "description": "The stage update time. Format: YYYY-MM-DD HH:MM:SS."
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "deals_summary": {
                             "type": "object",
-                            "description": "The currency summaries per stage. This parameter is dynamic and changes according to `stage_id` value.",
+                            "description": "Deals summary",
                             "properties": {
-                                "CURRENCY_ID": {
+                                "per_stages": {
                                     "type": "object",
-                                    "description": "The currency summary. This parameter is dynamic and changes according to `currency_id` value.",
+                                    "description": "The stage objects containing deals currency information",
                                     "properties": {
-                                        "count": {
+                                        "STAGE_ID": {
+                                            "type": "object",
+                                            "description": "The currency summaries per stage. This parameter is dynamic and changes according to `stage_id` value.",
+                                            "properties": {
+                                                "CURRENCY_ID": {
+                                                    "type": "object",
+                                                    "description": "The currency summary. This parameter is dynamic and changes according to `currency_id` value.",
+                                                    "properties": {
+                                                        "count": {
+                                                            "type": "integer",
+                                                            "description": "Deals count per currency"
+                                                        },
+                                                        "value": {
+                                                            "type": "integer",
+                                                            "description": "Deals value per currency"
+                                                        },
+                                                        "value_formatted": {
+                                                            "type": "string",
+                                                            "description": "Deals value formatted per currency"
+                                                        },
+                                                        "weighted_value": {
+                                                            "type": "integer",
+                                                            "description": "Deals weighted value per currency"
+                                                        },
+                                                        "weighted_value_formatted": {
+                                                            "type": "string",
+                                                            "description": "Deals weighted value formatted per currency"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "per_currency": {
+                                    "type": "object",
+                                    "description": "The currency count summary",
+                                    "properties": {
+                                        "CURRENCY_ID": {
                                             "type": "integer",
-                                            "description": "Deals count per currency"
-                                        },
-                                        "value": {
-                                            "type": "integer",
-                                            "description": "Deals value per currency"
-                                        },
-                                        "value_formatted": {
-                                            "type": "string",
-                                            "description": "Deals value formatted per currency"
-                                        },
-                                        "weighted_value": {
-                                            "type": "integer",
-                                            "description": "Deals weighted value per currency"
-                                        },
-                                        "weighted_value_formatted": {
-                                            "type": "string",
-                                            "description": "Deals weighted value formatted per currency"
+                                            "description": "Deals count per currency. This parameter is dynamic and changes according to `currency_id` value."
+                                        }
+                                    }
+                                },
+                                "total_count": {
+                                    "type": "integer",
+                                    "description": "Deals count"
+                                },
+                                "per_currency_full": {
+                                    "type": "object",
+                                    "description": "Full currency summaries",
+                                    "properties": {
+                                        "CURRENCY_ID": {
+                                            "type": "object",
+                                            "description": "The currency summary. This parameter is dynamic and changes according to `currency_id` value.",
+                                            "properties": {
+                                                "count": {
+                                                    "type": "integer",
+                                                    "description": "Deals count per currency"
+                                                },
+                                                "value": {
+                                                    "type": "integer",
+                                                    "description": "Deals value per currency"
+                                                }
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
                     }
-                },
-                "per_currency": {
-                    "type": "object",
-                    "description": "The currency count summary",
-                    "properties": {
-                        "CURRENCY_ID": {
-                            "type": "integer",
-                            "description": "Deals count per currency. This parameter is dynamic and changes according to `currency_id` value."
-                        }
-                    }
-                },
-                "total_count": {
-                    "type": "integer",
-                    "description": "Deals count"
-                },
-                "per_currency_full": {
-                    "type": "object",
-                    "description": "Full currency summaries",
-                    "properties": {
-                        "CURRENCY_ID": {
-                            "type": "object",
-                            "description": "The currency summary. This parameter is dynamic and changes according to `currency_id` value.",
-                            "properties": {
-                                "count": {
-                                    "type": "integer",
-                                    "description": "Deals count per currency"
-                                },
-                                "value": {
-                                    "type": "integer",
-                                    "description": "Deals value per currency"
-                                }
-                            }
-                        }
-                    }
                 }
-            }
+            ]
         }
     }
 }

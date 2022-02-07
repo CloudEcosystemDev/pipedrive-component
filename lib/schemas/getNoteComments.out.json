@@ -1,17 +1,98 @@
 {
+    "title": "getCommentsResponse200",
     "type": "object",
     "properties": {
-        "start": {
-            "type": "integer",
-            "description": "Pagination start"
-        },
-        "limit": {
-            "type": "integer",
-            "description": "Items shown per page"
-        },
-        "more_items_in_collection": {
+        "success": {
             "type": "boolean",
-            "description": "If there are more list items in the collection than displayed or not"
+            "description": "If the request was successful or not"
+        },
+        "data": {
+            "type": "array",
+            "description": "The array of comments",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "uuid": {
+                        "type": "string",
+                        "format": "uuid",
+                        "description": "The ID of the note"
+                    },
+                    "active_flag": {
+                        "type": "boolean",
+                        "description": "Whether the note is active or deleted"
+                    },
+                    "add_time": {
+                        "type": "string",
+                        "description": "The creation date and time of the note"
+                    },
+                    "update_time": {
+                        "type": "string",
+                        "description": "The creation date and time of the note"
+                    },
+                    "content": {
+                        "type": "string",
+                        "description": "The content of the note in HTML format. Subject to sanitization on the back-end."
+                    },
+                    "object_id": {
+                        "type": "string",
+                        "description": "The ID of the object that the comment is attached to, will be the id of the note"
+                    },
+                    "object_type": {
+                        "type": "string",
+                        "description": "The type of object that the comment is attached to, will be \"note\""
+                    },
+                    "user_id": {
+                        "type": "integer",
+                        "description": "The ID of the user who created the comment"
+                    },
+                    "updater_id": {
+                        "type": "integer",
+                        "description": "The ID of the user who last updated the comment"
+                    },
+                    "company_id": {
+                        "type": "integer",
+                        "description": "The ID of the company"
+                    }
+                }
+            }
+        },
+        "additional_data": {
+            "type": "object",
+            "properties": {
+                "pagination": {
+                    "type": "object",
+                    "description": "The pagination details of the list",
+                    "allOf": [
+                        {
+                            "description": "The additional data of the list",
+                            "type": "object",
+                            "properties": {
+                                "start": {
+                                    "type": "integer",
+                                    "description": "Pagination start"
+                                },
+                                "limit": {
+                                    "type": "integer",
+                                    "description": "Items shown per page"
+                                },
+                                "more_items_in_collection": {
+                                    "type": "boolean",
+                                    "description": "If there are more list items in the collection than displayed or not"
+                                }
+                            }
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "next_start": {
+                                    "type": "integer",
+                                    "description": "Next pagination start"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
         }
     }
 }

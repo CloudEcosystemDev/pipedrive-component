@@ -1,13 +1,23 @@
 {
+    "title": "deleteProductResponse200",
     "type": "object",
     "properties": {
-        "id": {
-            "allOf": [
-                {
-                    "type": "integer"
+        "success": {
+            "type": "boolean",
+            "description": "If the response is successful or not"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "allOf": [
+                        {
+                            "type": "integer"
+                        }
+                    ],
+                    "description": "The ID of the removed product"
                 }
-            ],
-            "description": "The ID of removed Product"
+            }
         }
     }
 }

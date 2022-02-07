@@ -1,21 +1,31 @@
 {
+    "title": "addDealFollowerResponse200",
     "type": "object",
     "properties": {
-        "user_id": {
-            "type": "integer",
-            "description": "The User ID who added the Follower"
+        "success": {
+            "type": "boolean",
+            "description": "If the response is successful or not"
         },
-        "id": {
-            "type": "integer",
-            "description": "The Follower ID"
-        },
-        "deal_id": {
-            "type": "integer",
-            "description": "The ID of the Deal which the Follower was added to"
-        },
-        "add_time": {
-            "type": "string",
-            "description": "The date and time when the Deal Follower was added"
+        "data": {
+            "type": "object",
+            "properties": {
+                "user_id": {
+                    "type": "integer",
+                    "description": "The user ID who added the follower"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "The follower ID"
+                },
+                "deal_id": {
+                    "type": "integer",
+                    "description": "The ID of the deal which the follower was added to"
+                },
+                "add_time": {
+                    "type": "string",
+                    "description": "The date and time when the deal follower was added"
+                }
+            }
         }
     }
 }

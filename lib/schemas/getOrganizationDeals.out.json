@@ -1,188 +1,664 @@
 {
-    "type": "object",
-    "properties": {
-        "organization": {
+    "title": "getAssociatedDealsResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
             "type": "object",
             "properties": {
-                "ORGANIZATION_ID": {
-                    "type": "object",
-                    "description": "The ID of the Organization associated with the item",
-                    "allOf": [
-                        {
-                            "type": "object",
-                            "properties": {
-                                "active_flag": {
-                                    "type": "boolean",
-                                    "description": "If the associated Organization is active or not"
-                                }
-                            }
-                        },
-                        {
-                            "type": "object",
-                            "description": "The ID of the Organization associated with the item",
-                            "allOf": [
-                                {
-                                    "type": "object",
-                                    "properties": {
-                                        "id": {
-                                            "type": "integer",
-                                            "description": "The ID of the Organization associated with the item"
-                                        }
-                                    }
-                                },
-                                {
-                                    "type": "object",
-                                    "properties": {
-                                        "name": {
-                                            "type": "string",
-                                            "description": "The name of the Organization associated with the item"
-                                        },
-                                        "people_count": {
-                                            "type": "integer",
-                                            "description": "The number of people connected with the Organization that is associated with the item"
-                                        },
-                                        "owner_id": {
-                                            "type": "integer",
-                                            "description": "The ID of the owner of the Organization that is associated with the item"
-                                        },
-                                        "address": {
-                                            "type": "string",
-                                            "description": "The address of the Organization"
-                                        },
-                                        "cc_email": {
-                                            "type": "string",
-                                            "description": "The CC email of the Organization associated with the item"
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    ]
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
                 }
             }
         },
-        "person": {
+        {
             "type": "object",
             "properties": {
-                "PERSON_ID": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "title": "dealNonStrict",
+                        "allOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer",
+                                        "description": "The ID of the deal"
+                                    },
+                                    "creator_user_id": {
+                                        "type": "object",
+                                        "description": "The creator of the deal",
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "description": "The ID of the deal creator"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "description": "The name of the deal creator"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "description": "The email of the deal creator"
+                                            },
+                                            "has_pic": {
+                                                "type": "boolean",
+                                                "description": "If the creator has a picture or not"
+                                            },
+                                            "pic_hash": {
+                                                "type": "string",
+                                                "nullable": true,
+                                                "description": "The creator picture hash"
+                                            },
+                                            "active_flag": {
+                                                "type": "boolean",
+                                                "description": "Whether the creator is active or not"
+                                            },
+                                            "value": {
+                                                "type": "integer",
+                                                "description": "The ID of the deal creator"
+                                            }
+                                        }
+                                    },
+                                    "user_id": {
+                                        "title": "dealUserDataWithId",
+                                        "allOf": [
+                                            {
+                                                "description": "The user who is associated with the deal",
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the user"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "The name of the user"
+                                                    },
+                                                    "email": {
+                                                        "type": "string",
+                                                        "description": "The email of the user"
+                                                    },
+                                                    "has_pic": {
+                                                        "type": "boolean",
+                                                        "description": "If the user has a picture or not"
+                                                    },
+                                                    "pic_hash": {
+                                                        "type": "string",
+                                                        "nullable": true,
+                                                        "description": "The user picture hash"
+                                                    },
+                                                    "active_flag": {
+                                                        "type": "boolean",
+                                                        "description": "Whether the user is active or not"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the user"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "person_id": {
+                                        "title": "dealPersonDataWithId",
+                                        "allOf": [
+                                            {
+                                                "type": "object",
+                                                "description": "The person who is associated with the deal",
+                                                "properties": {
+                                                    "active_flag": {
+                                                        "type": "boolean",
+                                                        "description": "Whether the associated person is active or not"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "The name of the person associated with the deal"
+                                                    },
+                                                    "email": {
+                                                        "type": "array",
+                                                        "description": "The emails of the person associated with the deal",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "label": {
+                                                                    "type": "string",
+                                                                    "description": "The type of the email"
+                                                                },
+                                                                "value": {
+                                                                    "type": "string",
+                                                                    "description": "The email of the associated person"
+                                                                },
+                                                                "primary": {
+                                                                    "type": "boolean",
+                                                                    "description": "If this is the primary email or not"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "phone": {
+                                                        "type": "array",
+                                                        "description": "The phone numbers of the person associated with the deal",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "label": {
+                                                                    "type": "string",
+                                                                    "description": "The type of the phone number"
+                                                                },
+                                                                "value": {
+                                                                    "type": "string",
+                                                                    "description": "The phone number of the person associated with the deal"
+                                                                },
+                                                                "primary": {
+                                                                    "type": "boolean",
+                                                                    "description": "If this is the primary phone number or not"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "owner_id": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the owner of the person that is associated with the deal"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the person associated with the deal"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "org_id": {
+                                        "title": "dealOrganizationDataWithId",
+                                        "allOf": [
+                                            {
+                                                "type": "object",
+                                                "description": "The organization which is associated with the deal",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "The name of the organization associated with the deal"
+                                                    },
+                                                    "people_count": {
+                                                        "type": "integer",
+                                                        "description": "The number of people connected with the organization that is associated with the deal"
+                                                    },
+                                                    "owner_id": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the owner of the organization that is associated with the deal"
+                                                    },
+                                                    "address": {
+                                                        "type": "string",
+                                                        "description": "The address of the organization that is associated with the deal"
+                                                    },
+                                                    "active_flag": {
+                                                        "type": "boolean",
+                                                        "description": "Whether the associated organization is active or not"
+                                                    },
+                                                    "cc_email": {
+                                                        "type": "string",
+                                                        "description": "The BCC email of the organization associated with the deal"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the organization associated with the deal"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "title": "baseDeal",
+                                "type": "object",
+                                "properties": {
+                                    "stage_id": {
+                                        "type": "integer",
+                                        "description": "The ID of the deal stage"
+                                    },
+                                    "title": {
+                                        "type": "string",
+                                        "description": "The title of the deal"
+                                    },
+                                    "value": {
+                                        "type": "number",
+                                        "description": "The value of the deal"
+                                    },
+                                    "currency": {
+                                        "type": "string",
+                                        "description": "The currency associated with the deal"
+                                    },
+                                    "add_time": {
+                                        "type": "string",
+                                        "description": "The creation date and time of the deal"
+                                    },
+                                    "update_time": {
+                                        "type": "string",
+                                        "description": "The last updated date and time of the deal"
+                                    },
+                                    "stage_change_time": {
+                                        "type": "string",
+                                        "description": "The last updated date and time of the deal stage"
+                                    },
+                                    "active": {
+                                        "type": "boolean",
+                                        "description": "Whether the deal is active or not"
+                                    },
+                                    "deleted": {
+                                        "type": "boolean",
+                                        "description": "Whether the deal is deleted or not"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "description": "The status of the deal"
+                                    },
+                                    "probability": {
+                                        "type": "number",
+                                        "nullable": true,
+                                        "description": "The success probability percentage of the deal"
+                                    },
+                                    "next_activity_date": {
+                                        "type": "string",
+                                        "description": "The date of the next activity associated with the deal"
+                                    },
+                                    "next_activity_time": {
+                                        "type": "string",
+                                        "description": "The time of the next activity associated with the deal"
+                                    },
+                                    "next_activity_id": {
+                                        "type": "integer",
+                                        "nullable": true,
+                                        "description": "The ID of the next activity associated with the deal"
+                                    },
+                                    "last_activity_id": {
+                                        "type": "integer",
+                                        "nullable": true,
+                                        "description": "The ID of the last activity associated with the deal"
+                                    },
+                                    "last_activity_date": {
+                                        "type": "string",
+                                        "nullable": true,
+                                        "description": "The date of the last activity associated with the deal"
+                                    },
+                                    "lost_reason": {
+                                        "type": "string",
+                                        "nullable": true,
+                                        "description": "The reason for losing the deal"
+                                    },
+                                    "visible_to": {
+                                        "type": "string",
+                                        "description": "The visibility of the deal"
+                                    },
+                                    "close_time": {
+                                        "type": "string",
+                                        "nullable": true,
+                                        "description": "The date and time of closing the deal"
+                                    },
+                                    "pipeline_id": {
+                                        "type": "integer",
+                                        "description": "The ID of pipeline associated with the deal"
+                                    },
+                                    "won_time": {
+                                        "type": "string",
+                                        "description": "The date and time of changing the deal status as won"
+                                    },
+                                    "first_won_time": {
+                                        "type": "string",
+                                        "description": "The date and time of the first time changing the deal status as won"
+                                    },
+                                    "lost_time": {
+                                        "type": "string",
+                                        "description": "The date and time of changing the deal status as lost"
+                                    },
+                                    "products_count": {
+                                        "type": "integer",
+                                        "description": "The number of products associated with the deal"
+                                    },
+                                    "files_count": {
+                                        "type": "integer",
+                                        "description": "The number of files associated with the deal"
+                                    },
+                                    "notes_count": {
+                                        "type": "integer",
+                                        "description": "The number of notes associated with the deal"
+                                    },
+                                    "followers_count": {
+                                        "type": "integer",
+                                        "description": "The number of followers associated with the deal"
+                                    },
+                                    "email_messages_count": {
+                                        "type": "integer",
+                                        "description": "The number of emails associated with the deal"
+                                    },
+                                    "activities_count": {
+                                        "type": "integer",
+                                        "description": "The number of activities associated with the deal"
+                                    },
+                                    "done_activities_count": {
+                                        "type": "integer",
+                                        "description": "The number of completed activities associated with the deal"
+                                    },
+                                    "undone_activities_count": {
+                                        "type": "integer",
+                                        "description": "The number of incomplete activities associated with the deal"
+                                    },
+                                    "participants_count": {
+                                        "type": "integer",
+                                        "description": "The number of participants associated with the deal"
+                                    },
+                                    "expected_close_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "description": "The expected close date of the deal"
+                                    },
+                                    "last_incoming_mail_time": {
+                                        "type": "string",
+                                        "description": "The date and time of the last incoming email associated with the deal"
+                                    },
+                                    "last_outgoing_mail_time": {
+                                        "type": "string",
+                                        "description": "The date and time of the last outgoing email associated with the deal"
+                                    },
+                                    "label": {
+                                        "type": "string",
+                                        "description": "The label assigned to the deal"
+                                    },
+                                    "stage_order_nr": {
+                                        "type": "integer",
+                                        "description": "The order number of the deal stage associated with the deal"
+                                    },
+                                    "person_name": {
+                                        "type": "string",
+                                        "description": "The name of the person associated with the deal"
+                                    },
+                                    "org_name": {
+                                        "type": "string",
+                                        "description": "The name of the organization associated with the deal"
+                                    },
+                                    "next_activity_subject": {
+                                        "type": "string",
+                                        "description": "The subject of the next activity associated with the deal"
+                                    },
+                                    "next_activity_type": {
+                                        "type": "string",
+                                        "description": "The type of the next activity associated with the deal"
+                                    },
+                                    "next_activity_duration": {
+                                        "type": "string",
+                                        "description": "The duration of the next activity associated with the deal"
+                                    },
+                                    "next_activity_note": {
+                                        "type": "string",
+                                        "description": "The note of the next activity associated with the deal"
+                                    },
+                                    "formatted_value": {
+                                        "type": "string",
+                                        "description": "The deal value formatted with selected currency. E.g. US$500"
+                                    },
+                                    "weighted_value": {
+                                        "type": "number",
+                                        "description": "Probability times deal value. Probability can either be deal probability or if not set, then stage probability."
+                                    },
+                                    "formatted_weighted_value": {
+                                        "type": "string",
+                                        "description": "The weighted_value formatted with selected currency. E.g. US$500"
+                                    },
+                                    "weighted_value_currency": {
+                                        "type": "string",
+                                        "description": "The currency associated with the deal"
+                                    },
+                                    "rotten_time": {
+                                        "type": "string",
+                                        "nullable": true,
+                                        "description": "The date and time of changing the deal status as rotten"
+                                    },
+                                    "owner_name": {
+                                        "type": "string",
+                                        "description": "The name of the deal owner"
+                                    },
+                                    "cc_email": {
+                                        "type": "string",
+                                        "description": "The BCC email of the deal"
+                                    },
+                                    "org_hidden": {
+                                        "type": "boolean",
+                                        "description": "If the organization that is associated with the deal is hidden or not"
+                                    },
+                                    "person_hidden": {
+                                        "type": "boolean",
+                                        "description": "If the person that is associated with the deal is hidden or not"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "description": "The array of deals"
+                },
+                "additional_data": {
+                    "description": "The additional data of the list",
                     "type": "object",
-                    "description": "The ID of the Person associated with the item",
-                    "allOf": [
-                        {
+                    "properties": {
+                        "start": {
+                            "type": "integer",
+                            "description": "Pagination start"
+                        },
+                        "limit": {
+                            "type": "integer",
+                            "description": "Items shown per page"
+                        },
+                        "more_items_in_collection": {
+                            "type": "boolean",
+                            "description": "If there are more list items in the collection than displayed or not"
+                        }
+                    }
+                },
+                "related_objects": {
+                    "type": "object",
+                    "properties": {
+                        "organization": {
                             "type": "object",
                             "properties": {
-                                "active_flag": {
-                                    "type": "boolean",
-                                    "description": "If the associated Person is active or not"
+                                "ORGANIZATION_ID": {
+                                    "type": "object",
+                                    "description": "The ID of the organization associated with the item",
+                                    "allOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "active_flag": {
+                                                    "type": "boolean",
+                                                    "description": "Whether the associated organization is active or not"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "object",
+                                            "description": "The ID of the organization associated with the item",
+                                            "allOf": [
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "integer",
+                                                            "description": "The ID of the organization associated with the item"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "name": {
+                                                            "type": "string",
+                                                            "description": "The name of the organization associated with the item"
+                                                        },
+                                                        "people_count": {
+                                                            "type": "integer",
+                                                            "description": "The number of people connected with the organization that is associated with the item"
+                                                        },
+                                                        "owner_id": {
+                                                            "type": "integer",
+                                                            "description": "The ID of the owner of the organization that is associated with the item"
+                                                        },
+                                                        "address": {
+                                                            "type": "string",
+                                                            "description": "The address of the organization"
+                                                        },
+                                                        "cc_email": {
+                                                            "type": "string",
+                                                            "description": "The BCC email of the organization associated with the item"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 }
                             }
                         },
-                        {
+                        "person": {
                             "type": "object",
                             "properties": {
-                                "id": {
-                                    "type": "integer",
-                                    "description": "The ID of the Person associated with the item"
-                                },
-                                "name": {
-                                    "type": "string",
-                                    "description": "The name of the Person associated with the item"
-                                },
-                                "email": {
-                                    "type": "array",
-                                    "description": "The emails of the Person associated with the item",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "label": {
-                                                "type": "string",
-                                                "description": "The type of the email"
-                                            },
-                                            "value": {
-                                                "type": "string",
-                                                "description": "The email of the associated Person"
-                                            },
-                                            "primary": {
-                                                "type": "boolean",
-                                                "description": "If this is the primary email or not"
+                                "PERSON_ID": {
+                                    "type": "object",
+                                    "description": "The ID of the person associated with the item",
+                                    "allOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "active_flag": {
+                                                    "type": "boolean",
+                                                    "description": "Whether the associated person is active or not"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "The ID of the person associated with the item"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the person associated with the item"
+                                                },
+                                                "email": {
+                                                    "type": "array",
+                                                    "description": "The emails of the person associated with the item",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "label": {
+                                                                "type": "string",
+                                                                "description": "The type of the email"
+                                                            },
+                                                            "value": {
+                                                                "type": "string",
+                                                                "description": "The email of the associated person"
+                                                            },
+                                                            "primary": {
+                                                                "type": "boolean",
+                                                                "description": "Whether this is the primary email or not"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "phone": {
+                                                    "type": "array",
+                                                    "description": "The phone numbers of the person associated with the item",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "label": {
+                                                                "type": "string",
+                                                                "description": "The type of the phone number"
+                                                            },
+                                                            "value": {
+                                                                "type": "string",
+                                                                "description": "The phone number of the person associated with the item"
+                                                            },
+                                                            "primary": {
+                                                                "type": "boolean",
+                                                                "description": "Whether this is the primary phone number or not"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "owner_id": {
+                                                    "type": "integer",
+                                                    "description": "The ID of the owner of the person that is associated with the item"
+                                                }
                                             }
                                         }
-                                    }
-                                },
-                                "phone": {
-                                    "type": "array",
-                                    "description": "The phone numbers of the Person associated with the item",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "label": {
-                                                "type": "string",
-                                                "description": "The type of the phone number"
-                                            },
-                                            "value": {
-                                                "type": "string",
-                                                "description": "The phone number of the Person associated with the item"
-                                            },
-                                            "primary": {
-                                                "type": "boolean",
-                                                "description": "If this is the primary phone number or not"
-                                            }
-                                        }
-                                    }
-                                },
-                                "owner_id": {
-                                    "type": "integer",
-                                    "description": "The ID of the owner of the Person that is associated with the item"
-                                }
-                            }
-                        }
-                    ]
-                }
-            }
-        },
-        "user": {
-            "type": "object",
-            "properties": {
-                "USER_ID": {
-                    "type": "object",
-                    "title": "userDataWithId",
-                    "allOf": [
-                        {
-                            "properties": {
-                                "id": {
-                                    "type": "integer",
-                                    "description": "The ID of the User"
-                                },
-                                "name": {
-                                    "type": "string",
-                                    "description": "The name of the User"
-                                },
-                                "email": {
-                                    "type": "string",
-                                    "description": "The email of the User"
-                                },
-                                "has_pic": {
-                                    "type": "integer",
-                                    "description": "Whether the User has picture or not. 0 = No picture, 1 = Has picture."
-                                },
-                                "pic_hash": {
-                                    "type": "string",
-                                    "nullable": true,
-                                    "description": "The User picture hash"
-                                },
-                                "active_flag": {
-                                    "type": "boolean",
-                                    "description": "If the User is activated or not"
+                                    ]
                                 }
                             }
                         },
-                        {
+                        "user": {
                             "type": "object",
-                            "description": "The ID of the User"
+                            "properties": {
+                                "USER_ID": {
+                                    "type": "object",
+                                    "title": "userDataWithId",
+                                    "allOf": [
+                                        {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "The ID of the user"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the user"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "description": "The email of the user"
+                                                },
+                                                "has_pic": {
+                                                    "type": "integer",
+                                                    "description": "Whether the user has picture or not. 0 = No picture, 1 = Has picture."
+                                                },
+                                                "pic_hash": {
+                                                    "type": "string",
+                                                    "nullable": true,
+                                                    "description": "The user picture hash"
+                                                },
+                                                "active_flag": {
+                                                    "type": "boolean",
+                                                    "description": "Whether the user is active or not"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "object",
+                                            "description": "The ID of the user"
+                                        }
+                                    ]
+                                }
+                            }
                         }
-                    ]
+                    }
                 }
             }
         }
-    }
+    ]
 }

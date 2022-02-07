@@ -1,9 +1,77 @@
 {
     "type": "object",
-    "properties": {
-        "selected": {
-            "type": "boolean",
-            "description": "A boolean that shows if the Pipeline is selected from a filter or not"
+    "title": "getPipelinesResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "description": "Pipelines array",
+                    "items": {
+                        "type": "object",
+                        "title": "basePipelineWithSelectedFlag",
+                        "allOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer",
+                                        "description": "The ID of the pipeline"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "The name of the pipeline"
+                                    },
+                                    "url_title": {
+                                        "type": "string",
+                                        "description": "The pipeline title displayed in the URL"
+                                    },
+                                    "order_nr": {
+                                        "type": "integer",
+                                        "description": "Defines the order of pipelines. First order (`order_nr=0`) is the default pipeline."
+                                    },
+                                    "active": {
+                                        "type": "boolean",
+                                        "description": "Whether this pipeline will be made inactive (hidden) or active"
+                                    },
+                                    "deal_probability": {
+                                        "type": "boolean",
+                                        "description": "Whether deal probability is disabled or enabled for this pipeline"
+                                    },
+                                    "add_time": {
+                                        "type": "string",
+                                        "description": "The pipeline creation time. Format: YYYY-MM-DD HH:MM:SS."
+                                    },
+                                    "update_time": {
+                                        "type": "string",
+                                        "description": "The pipeline update time. Format: YYYY-MM-DD HH:MM:SS."
+                                    }
+                                }
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "selected": {
+                                        "type": "boolean",
+                                        "description": "A boolean that shows if the pipeline is selected from a filter or not"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
         }
-    }
+    ]
 }

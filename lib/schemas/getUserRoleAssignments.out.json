@@ -1,23 +1,90 @@
 {
-    "type": "object",
-    "properties": {
-        "pagination": {
-            "description": "The pagination details in the Role list",
+    "title": "getUserRoleAssignmentsResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
             "type": "object",
             "properties": {
-                "start": {
-                    "type": "integer",
-                    "description": "Pagination start"
-                },
-                "limit": {
-                    "type": "integer",
-                    "description": "Items shown per page"
-                },
-                "more_items_in_collection": {
+                "success": {
                     "type": "boolean",
-                    "description": "Whether there are more list items in the collection than displayed"
+                    "description": "If the response is successful or not"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "title": "roleAssignment",
+                        "allOf": [
+                            {
+                                "title": "baseRoleRequest",
+                                "description": "The details of the role",
+                                "type": "object",
+                                "properties": {
+                                    "parent_role_id": {
+                                        "type": "integer",
+                                        "description": "The ID of the parent role"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "The name of the role"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer",
+                                        "description": "The user ID"
+                                    },
+                                    "role_id": {
+                                        "type": "integer",
+                                        "description": "The role ID"
+                                    },
+                                    "active_flag": {
+                                        "type": "boolean",
+                                        "description": "Whether the role is active or not"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "description": "The assignment type"
+                                    }
+                                }
+                            }
+                        ],
+                        "description": "The assignment data of the role"
+                    },
+                    "description": "The role assignments"
+                },
+                "additional_data": {
+                    "description": "The additional data in the role list",
+                    "type": "object",
+                    "properties": {
+                        "pagination": {
+                            "description": "The pagination details in the role list",
+                            "type": "object",
+                            "properties": {
+                                "start": {
+                                    "type": "integer",
+                                    "description": "Pagination start"
+                                },
+                                "limit": {
+                                    "type": "integer",
+                                    "description": "Items shown per page"
+                                },
+                                "more_items_in_collection": {
+                                    "type": "boolean",
+                                    "description": "Whether there are more list items in the collection than displayed"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
-    }
+    ]
 }

@@ -11,11 +11,11 @@
             "properties": {
                 "name": {
                     "type": "string",
-                    "description": "The name of the ActivityType"
+                    "description": "The name of the activity type"
                 },
                 "icon_key": {
                     "type": "string",
-                    "description": "Icon graphic to use for representing this activity type.",
+                    "description": "Icon graphic to use for representing this activity type",
                     "enum": [
                         "task",
                         "email",
@@ -61,11 +61,11 @@
                 },
                 "color": {
                     "type": "string",
-                    "description": "A designated color for the ActivityType in 6-character HEX format (e.g. `FFFFFF` for white, `000000` for black)"
+                    "description": "A designated color for the activity type in 6-character HEX format (e.g. `FFFFFF` for white, `000000` for black)"
                 },
                 "order_nr": {
                     "type": "integer",
-                    "description": "An order number for this ActivityType. Order numbers should be used to order the types in the ActivityType selections."
+                    "description": "An order number for this activity type. Order numbers should be used to order the types in the activity type selections."
                 }
             }
         }

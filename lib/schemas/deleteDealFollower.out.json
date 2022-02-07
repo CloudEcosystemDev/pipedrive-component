@@ -1,9 +1,19 @@
 {
+    "title": "deleteDealFollowerResponse200",
     "type": "object",
     "properties": {
-        "id": {
-            "type": "integer",
-            "description": "The ID of the Deal Follower that was deleted"
+        "success": {
+            "type": "boolean",
+            "description": "If the request was successful or not"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the deal follower that was deleted"
+                }
+            }
         }
     }
 }

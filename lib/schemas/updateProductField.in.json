@@ -14,14 +14,14 @@
             "properties": {
                 "name": {
                     "type": "string",
-                    "description": "Name of the field"
+                    "description": "The name of the field"
                 },
                 "options": {
                     "type": "array",
                     "items": {
                         "type": "object"
                     },
-                    "description": "When field_type is either set or enum, possible options on update must be supplied as an array of objects each containing id and label, for example: [{\"id\":1, \"label\":\"red\"},{\"id\":2, \"label\":\"blue\"},{\"id\":3, \"label\":\"lilac\"}]"
+                    "description": "When `field_type` is either set or enum, possible options on update must be supplied as an array of objects each containing id and label, for example: [{\"id\":1, \"label\":\"red\"},{\"id\":2, \"label\":\"blue\"},{\"id\":3, \"label\":\"lilac\"}]"
                 }
             }
         }

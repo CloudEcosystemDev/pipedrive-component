@@ -1,57 +1,126 @@
 {
+    "title": "getProductAttachementResponse200",
     "type": "object",
     "properties": {
-        "id": {
-            "type": "integer",
-            "description": "The ID of the deal-product (the ID of the Product attached to the Deal)"
-        },
-        "company_id": {
-            "type": "integer",
-            "description": "The ID of the Company"
-        },
-        "deal_id": {
-            "type": "integer",
-            "description": "The ID of the Deal"
-        },
-        "product_id": {
-            "type": "integer",
-            "description": "The ID of the Product"
-        },
-        "duration_unit": {
-            "type": "string",
-            "description": "The type of the duration. (For example hourly, daily, etc.)"
-        },
-        "sum_no_discount": {
-            "type": "number",
-            "description": "The Product sum without the discount"
-        },
-        "sum": {
-            "type": "number",
-            "description": "The sum of all the Products attached to the Deal"
-        },
-        "currency": {
-            "type": "string",
-            "description": "The currency associated with the Deal Product"
-        },
-        "add_time": {
-            "type": "string",
-            "description": "The date and time when the Product was added to the Deal"
-        },
-        "last_edit": {
-            "type": "string",
-            "description": "The date and time when the Deal Product was last edited"
-        },
-        "active_flag": {
+        "success": {
             "type": "boolean",
-            "description": "Boolean indicates if the Product is activated or not"
+            "description": "If the response is successful or not"
         },
-        "tax": {
-            "type": "number",
-            "description": "The Product tax"
-        },
-        "name": {
-            "type": "string",
-            "description": "The Product name"
+        "data": {
+            "description": "The updated product object attached to the deal",
+            "allOf": [
+                {
+                    "allOf": [
+                        {
+                            "title": "basicDealProductRequest",
+                            "type": "object",
+                            "properties": {
+                                "item_price": {
+                                    "type": "number",
+                                    "description": "The price at which this product will be added to the deal"
+                                },
+                                "quantity": {
+                                    "type": "integer",
+                                    "description": "Quantity – e.g. how many items of this product will be added to the deal"
+                                },
+                                "discount_percentage": {
+                                    "type": "number",
+                                    "default": 0,
+                                    "description": "The discount %. If omitted, will be set to 0."
+                                },
+                                "duration": {
+                                    "type": "number",
+                                    "default": 1,
+                                    "description": "The duration of the product (when product durations are not enabled for the company or if omitted, defaults to 1)"
+                                },
+                                "product_variation_id": {
+                                    "type": "integer",
+                                    "description": "The ID of the product variation to use. When omitted, no variation will be used."
+                                },
+                                "comments": {
+                                    "type": "string",
+                                    "description": "Any textual comment associated with this product-deal attachment. Visible and editable in the application UI."
+                                },
+                                "tax": {
+                                    "type": "number",
+                                    "description": "The tax percentage",
+                                    "default": 0
+                                },
+                                "enabled_flag": {
+                                    "allOf": [
+                                        {
+                                            "title": "numberBoolean",
+                                            "type": "number",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        }
+                                    ],
+                                    "description": "Whether the product is enabled on the deal or not. This makes it possible to add products to a deal with a specific price and discount criteria - but keep them disabled, which refrains them from being included in the deal price calculation. When omitted, the product will be marked as enabled by default."
+                                }
+                            }
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "description": "The ID of the deal-product (the ID of the product attached to the deal)"
+                                },
+                                "company_id": {
+                                    "type": "integer",
+                                    "description": "The ID of the company"
+                                },
+                                "deal_id": {
+                                    "type": "integer",
+                                    "description": "The ID of the deal"
+                                },
+                                "product_id": {
+                                    "type": "integer",
+                                    "description": "The ID of the product"
+                                },
+                                "duration_unit": {
+                                    "type": "string",
+                                    "description": "The type of the duration. (For example hourly, daily, etc.)"
+                                },
+                                "sum_no_discount": {
+                                    "type": "number",
+                                    "description": "The product sum without the discount"
+                                },
+                                "sum": {
+                                    "type": "number",
+                                    "description": "The sum of all the products attached to the deal"
+                                },
+                                "currency": {
+                                    "type": "string",
+                                    "description": "The currency associated with the deal product"
+                                },
+                                "add_time": {
+                                    "type": "string",
+                                    "description": "The date and time when the product was added to the deal"
+                                },
+                                "last_edit": {
+                                    "type": "string",
+                                    "description": "The date and time when the deal product was last edited"
+                                },
+                                "active_flag": {
+                                    "type": "boolean",
+                                    "description": "Whether the product is active or not"
+                                },
+                                "tax": {
+                                    "type": "number",
+                                    "description": "The product tax"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The product name"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
         }
     }
 }

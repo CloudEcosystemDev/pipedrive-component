@@ -1,21 +1,45 @@
 {
-    "type": "object",
-    "properties": {
-        "id": {
-            "type": "integer",
-            "description": "The ID of the assignment of the Permission Set"
+    "title": "userAssignmentsToPermissionSetResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
         },
-        "user_id": {
-            "type": "integer",
-            "description": "The ID of the User in the Permission Set"
-        },
-        "permission_set_id": {
-            "type": "integer",
-            "description": "The ID of the Permission Set"
-        },
-        "name": {
-            "type": "string",
-            "description": "The name of the Permission Set"
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "description": "The ID of the assignment of the permission set"
+                            },
+                            "user_id": {
+                                "type": "integer",
+                                "description": "The ID of the user in the permission set"
+                            },
+                            "permission_set_id": {
+                                "type": "integer",
+                                "description": "The ID of the permission set"
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "The name of the permission set"
+                            }
+                        }
+                    },
+                    "description": "An array of the assignments of the user"
+                }
+            }
         }
-    }
+    ]
 }
