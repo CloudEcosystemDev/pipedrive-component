@@ -1,12 +1,34 @@
 {
-    "type": "object",
-    "properties": {
-        "contents": {
-            "type": "array",
-            "description": "A permission assigned to this Permission Set",
-            "items": {
-                "type": "string"
+    "title": "singlePermissionSetResponse200",
+    "allOf": [
+        {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of user permission set"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the permission set"
+                },
+                "assignment_count": {
+                    "type": "integer",
+                    "description": "The number of users assigned to this permission set"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "contents": {
+                    "type": "array",
+                    "description": "A permission assigned to this permission set",
+                    "items": {
+                        "type": "string"
+                    }
+                }
             }
         }
-    }
+    ]
 }

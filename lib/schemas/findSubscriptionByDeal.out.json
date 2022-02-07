@@ -1,74 +1,94 @@
 {
-    "type": "object",
-    "properties": {
-        "id": {
-            "type": "integer",
-            "description": "The ID of the Subscription"
+    "title": "subscriptionsIdResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
         },
-        "user_id": {
-            "type": "integer",
-            "description": "The ID of the User who created Subscription"
-        },
-        "deal_id": {
-            "type": "integer",
-            "description": "The ID of the Deal this Subscription associated with"
-        },
-        "description": {
-            "type": "string",
-            "description": "Description of the recurring Subscription"
-        },
-        "is_active": {
-            "type": "boolean",
-            "description": "The Subscription status"
-        },
-        "cycles_count": {
-            "type": "integer",
-            "description": "Shows how many payments a Recurring Subscription has"
-        },
-        "cycle_amount": {
-            "type": "integer",
-            "description": "Amount of each payment"
-        },
-        "infinite": {
-            "type": "boolean",
-            "description": "Indicates that the Recurring Subscription will last until it's manually canceled or deleted"
-        },
-        "currency": {
-            "type": "string",
-            "description": "The currency of the Subscription"
-        },
-        "cadence_type": {
-            "type": "string",
-            "description": "Interval between payments"
-        },
-        "start_date": {
-            "type": "string",
-            "format": "date",
-            "description": "The start date of the Recurring Subscription"
-        },
-        "end_date": {
-            "type": "string",
-            "format": "date",
-            "description": "The end date of the Subscription"
-        },
-        "lifetime_value": {
-            "type": "number",
-            "format": "double",
-            "description": "The total value of all payments"
-        },
-        "final_status": {
-            "type": "string",
-            "description": "The final status of the Subscription"
-        },
-        "add_time": {
-            "type": "string",
-            "format": "datetime",
-            "description": "The creation time of the Subscription"
-        },
-        "update_time": {
-            "type": "string",
-            "format": "datetime",
-            "description": "The update time of the Subscription"
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "description": "The ID of the subscription"
+                        },
+                        "user_id": {
+                            "type": "integer",
+                            "description": "The ID of the user who created the subscription"
+                        },
+                        "deal_id": {
+                            "type": "integer",
+                            "description": "The ID of the deal this subscription is associated with"
+                        },
+                        "description": {
+                            "type": "string",
+                            "description": "The description of the recurring subscription"
+                        },
+                        "is_active": {
+                            "type": "boolean",
+                            "description": "The subscription status"
+                        },
+                        "cycles_count": {
+                            "type": "integer",
+                            "description": "Shows how many payments a recurring subscription has"
+                        },
+                        "cycle_amount": {
+                            "type": "integer",
+                            "description": "The amount of each payment"
+                        },
+                        "infinite": {
+                            "type": "boolean",
+                            "description": "Indicates that the recurring subscription will last until it is manually canceled or deleted"
+                        },
+                        "currency": {
+                            "type": "string",
+                            "description": "The currency of the subscription"
+                        },
+                        "cadence_type": {
+                            "type": "string",
+                            "description": "The interval between payments"
+                        },
+                        "start_date": {
+                            "type": "string",
+                            "format": "date",
+                            "description": "The start date of the recurring subscription"
+                        },
+                        "end_date": {
+                            "type": "string",
+                            "format": "date",
+                            "description": "The end date of the subscription"
+                        },
+                        "lifetime_value": {
+                            "type": "number",
+                            "format": "double",
+                            "description": "The total value of all payments"
+                        },
+                        "final_status": {
+                            "type": "string",
+                            "description": "The final status of the subscription"
+                        },
+                        "add_time": {
+                            "type": "string",
+                            "format": "datetime",
+                            "description": "The creation time of the subscription"
+                        },
+                        "update_time": {
+                            "type": "string",
+                            "format": "datetime",
+                            "description": "The update time of the subscription"
+                        }
+                    }
+                }
+            }
         }
-    }
+    ]
 }

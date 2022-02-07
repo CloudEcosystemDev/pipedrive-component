@@ -17,7 +17,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "description": "List of User IDs"
+                    "description": "The list of user IDs"
                 }
             }
         }

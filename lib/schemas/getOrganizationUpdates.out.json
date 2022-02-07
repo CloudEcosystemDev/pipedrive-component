@@ -1,94 +1,152 @@
 {
-    "type": "object",
-    "properties": {
-        "organization": {
+    "title": "getAssociatedUpdatesResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
             "type": "object",
             "properties": {
-                "ORGANIZATION_ID": {
-                    "type": "object",
-                    "description": "The ID of the Organization associated with the item",
-                    "allOf": [
-                        {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "integer",
-                                    "description": "The ID of the Organization associated with the item"
-                                }
-                            }
-                        },
-                        {
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "description": "The name of the Organization associated with the item"
-                                },
-                                "people_count": {
-                                    "type": "integer",
-                                    "description": "The number of people connected with the Organization that is associated with the item"
-                                },
-                                "owner_id": {
-                                    "type": "integer",
-                                    "description": "The ID of the owner of the Organization that is associated with the item"
-                                },
-                                "address": {
-                                    "type": "string",
-                                    "description": "The address of the Organization"
-                                },
-                                "cc_email": {
-                                    "type": "string",
-                                    "description": "The CC email of the Organization associated with the item"
-                                }
-                            }
-                        }
-                    ]
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
                 }
             }
         },
-        "user": {
+        {
             "type": "object",
             "properties": {
-                "USER_ID": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "object": {
+                                "type": "string",
+                                "description": "The type of the person update. (Possible object types - organizationChange, dealChange, file, activity)"
+                            },
+                            "timestamp": {
+                                "type": "string",
+                                "description": "The creation date and time of the update"
+                            },
+                            "data": {
+                                "type": "object",
+                                "description": "The data related to the update"
+                            }
+                        }
+                    }
+                },
+                "additional_data": {
+                    "description": "The additional data of the list",
                     "type": "object",
-                    "title": "userDataWithId",
-                    "allOf": [
-                        {
+                    "properties": {
+                        "start": {
+                            "type": "integer",
+                            "description": "Pagination start"
+                        },
+                        "limit": {
+                            "type": "integer",
+                            "description": "Items shown per page"
+                        },
+                        "more_items_in_collection": {
+                            "type": "boolean",
+                            "description": "If there are more list items in the collection than displayed or not"
+                        }
+                    }
+                },
+                "related_objects": {
+                    "type": "object",
+                    "properties": {
+                        "organization": {
+                            "type": "object",
                             "properties": {
-                                "id": {
-                                    "type": "integer",
-                                    "description": "The ID of the User"
-                                },
-                                "name": {
-                                    "type": "string",
-                                    "description": "The name of the User"
-                                },
-                                "email": {
-                                    "type": "string",
-                                    "description": "The email of the User"
-                                },
-                                "has_pic": {
-                                    "type": "integer",
-                                    "description": "Whether the User has picture or not. 0 = No picture, 1 = Has picture."
-                                },
-                                "pic_hash": {
-                                    "type": "string",
-                                    "nullable": true,
-                                    "description": "The User picture hash"
-                                },
-                                "active_flag": {
-                                    "type": "boolean",
-                                    "description": "If the User is activated or not"
+                                "ORGANIZATION_ID": {
+                                    "type": "object",
+                                    "description": "The ID of the organization associated with the item",
+                                    "allOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "The ID of the organization associated with the item"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the organization associated with the item"
+                                                },
+                                                "people_count": {
+                                                    "type": "integer",
+                                                    "description": "The number of people connected with the organization that is associated with the item"
+                                                },
+                                                "owner_id": {
+                                                    "type": "integer",
+                                                    "description": "The ID of the owner of the organization that is associated with the item"
+                                                },
+                                                "address": {
+                                                    "type": "string",
+                                                    "description": "The address of the organization"
+                                                },
+                                                "cc_email": {
+                                                    "type": "string",
+                                                    "description": "The BCC email of the organization associated with the item"
+                                                }
+                                            }
+                                        }
+                                    ]
                                 }
                             }
                         },
-                        {
+                        "user": {
                             "type": "object",
-                            "description": "The ID of the User"
+                            "properties": {
+                                "USER_ID": {
+                                    "type": "object",
+                                    "title": "userDataWithId",
+                                    "allOf": [
+                                        {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "The ID of the user"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the user"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "description": "The email of the user"
+                                                },
+                                                "has_pic": {
+                                                    "type": "integer",
+                                                    "description": "Whether the user has picture or not. 0 = No picture, 1 = Has picture."
+                                                },
+                                                "pic_hash": {
+                                                    "type": "string",
+                                                    "nullable": true,
+                                                    "description": "The user picture hash"
+                                                },
+                                                "active_flag": {
+                                                    "type": "boolean",
+                                                    "description": "Whether the user is active or not"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "object",
+                                            "description": "The ID of the user"
+                                        }
+                                    ]
+                                }
+                            }
                         }
-                    ]
+                    }
                 }
             }
         }
-    }
+    ]
 }

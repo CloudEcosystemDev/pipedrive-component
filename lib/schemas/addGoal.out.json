@@ -1,96 +1,106 @@
 {
+    "title": "addOrUpdateGoalResponse200",
     "type": "object",
     "properties": {
-        "goal": {
+        "success": {
+            "type": "boolean",
+            "description": "If the request was successful or not"
+        },
+        "data": {
             "type": "object",
             "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "ID of the goal"
-                },
-                "owner_id": {
-                    "type": "string",
-                    "description": "ID of the creator of the goal"
-                },
-                "title": {
-                    "type": "string",
-                    "description": "The title of the goal"
-                },
-                "type": {
+                "goal": {
                     "type": "object",
-                    "description": "Type of the goal",
-                    "properties": {
-                        "name": {
-                            "type": "string",
-                            "description": "Name of the goal type"
-                        },
-                        "params": {
-                            "type": "object",
-                            "description": "Parameters that accompany the goal type",
-                            "properties": {
-                                "pipeline_id": {
-                                    "type": "string",
-                                    "description": "Pipeline ID of the goal"
-                                }
-                            }
-                        }
-                    }
-                },
-                "assignee": {
-                    "type": "object",
-                    "description": "Who is the goal assigned to",
                     "properties": {
                         "id": {
-                            "type": "object",
-                            "description": "ID of the goal assignee"
+                            "type": "string",
+                            "description": "The ID of the goal"
+                        },
+                        "owner_id": {
+                            "type": "string",
+                            "description": "The ID of the creator of the goal"
+                        },
+                        "title": {
+                            "type": "string",
+                            "description": "The title of the goal"
                         },
                         "type": {
-                            "type": "string",
-                            "description": "Type of the assignee"
-                        }
-                    }
-                },
-                "interval": {
-                    "type": "string",
-                    "description": "Interval of the goal"
-                },
-                "duration": {
-                    "type": "object",
-                    "description": "Duration of the goal",
-                    "properties": {
-                        "start": {
-                            "type": "string",
-                            "description": "Start date of the goal"
+                            "type": "object",
+                            "description": "The type of the goal",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "The name of the goal type"
+                                },
+                                "params": {
+                                    "type": "object",
+                                    "description": "The parameters that accompany the goal type",
+                                    "properties": {
+                                        "pipeline_id": {
+                                            "type": "string",
+                                            "description": "The pipeline ID of the goal"
+                                        }
+                                    }
+                                }
+                            }
                         },
-                        "end": {
-                            "type": "string",
-                            "description": "End date of the goal"
-                        }
-                    }
-                },
-                "expected_outcome": {
-                    "type": "object",
-                    "description": "Expected outcome of the goal",
-                    "properties": {
-                        "target": {
-                            "type": "integer",
-                            "description": "Numeric target of the goal"
+                        "assignee": {
+                            "type": "object",
+                            "description": "Who the goal is assigned to",
+                            "properties": {
+                                "id": {
+                                    "type": "object",
+                                    "description": "The ID of the goal assignee"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "description": "The type of the assignee"
+                                }
+                            }
                         },
-                        "tracking_metric": {
+                        "interval": {
                             "type": "string",
-                            "description": "Tracking metric of the goal"
+                            "description": "The interval of the goal"
+                        },
+                        "duration": {
+                            "type": "object",
+                            "description": "The duration of the goal",
+                            "properties": {
+                                "start": {
+                                    "type": "string",
+                                    "description": "The start date of the goal"
+                                },
+                                "end": {
+                                    "type": "string",
+                                    "description": "The end date of the goal"
+                                }
+                            }
+                        },
+                        "expected_outcome": {
+                            "type": "object",
+                            "description": "The expected outcome of the goal",
+                            "properties": {
+                                "target": {
+                                    "type": "integer",
+                                    "description": "The numeric target of the goal"
+                                },
+                                "tracking_metric": {
+                                    "type": "string",
+                                    "description": "The tracking metric of the goal"
+                                }
+                            }
+                        },
+                        "is_active": {
+                            "type": "boolean",
+                            "description": "Whether the goal is currently active or not"
+                        },
+                        "report_ids": {
+                            "type": "array",
+                            "description": "The IDs of the reports that belong to the goal",
+                            "items": {
+                                "type": "integer"
+                            }
                         }
-                    }
-                },
-                "is_active": {
-                    "type": "boolean",
-                    "description": "If the goal is currently active or not"
-                },
-                "report_ids": {
-                    "type": "array",
-                    "description": "The IDs of the reports that belong to the goal",
-                    "items": {
-                        "type": "integer"
                     }
                 }
             }

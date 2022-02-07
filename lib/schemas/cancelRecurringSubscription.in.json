@@ -15,7 +15,7 @@
                 "end_date": {
                     "type": "string",
                     "format": "date",
-                    "description": "Subscription termination date. All payments after specified date will be deleted. Default value is the current date."
+                    "description": "The subscription termination date. All payments after specified date will be deleted. Default value is the current date."
                 }
             }
         }

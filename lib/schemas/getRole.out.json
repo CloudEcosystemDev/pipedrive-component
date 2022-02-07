@@ -1,47 +1,110 @@
 {
-    "type": "object",
-    "properties": {
-        "settings": {
-            "description": "The settings for the Role",
+    "title": "getRoleResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
             "type": "object",
             "properties": {
-                "deal_default_visibility": {
-                    "type": "number",
-                    "description": "The default visibility level of the Deals for the Role"
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "description": "The details of the sub-role",
+                    "title": "subRole",
+                    "allOf": [
+                        {
+                            "title": "baseRoleRequest",
+                            "description": "The details of the role",
+                            "type": "object",
+                            "properties": {
+                                "parent_role_id": {
+                                    "type": "integer",
+                                    "description": "The ID of the parent role"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The name of the role"
+                                }
+                            }
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "description": "The ID of the role"
+                                },
+                                "active_flag": {
+                                    "type": "boolean",
+                                    "description": "Whether the role is active or not"
+                                },
+                                "assignment_count": {
+                                    "type": "string",
+                                    "description": "The number of users assigned to this role"
+                                },
+                                "sub_role_count": {
+                                    "type": "string",
+                                    "description": "The number of sub-roles"
+                                }
+                            }
+                        }
+                    ]
                 },
-                "lead_default_visibility": {
-                    "type": "number",
-                    "description": "The default visibility level of the Leads for the Role"
-                },
-                "org_default_visibility": {
-                    "type": "number",
-                    "description": "The default visibility level of the Organizations for the Role"
-                },
-                "person_default_visibility": {
-                    "type": "number",
-                    "description": "The default visibility level of the People for the Role"
-                },
-                "product_default_visibility": {
-                    "type": "number",
-                    "description": "The default visibility level of the Products for the Role"
-                },
-                "deal_access_level": {
-                    "type": "number",
-                    "description": "The access level of the Deals for the Role (only for default Role)"
-                },
-                "org_access_level": {
-                    "type": "number",
-                    "description": "The access level of the Organizations for the Role (only for default Role)"
-                },
-                "person_access_level": {
-                    "type": "number",
-                    "description": "The access level of the People for the Role (only for default Role)"
-                },
-                "product_access_level": {
-                    "type": "number",
-                    "description": "The access level of the Products for the Role (only for default Role)"
+                "additional_data": {
+                    "type": "object",
+                    "description": "The additional data in the role",
+                    "properties": {
+                        "settings": {
+                            "description": "The settings for the role",
+                            "type": "object",
+                            "properties": {
+                                "deal_default_visibility": {
+                                    "type": "number",
+                                    "description": "The default visibility level of the deals for the role"
+                                },
+                                "lead_default_visibility": {
+                                    "type": "number",
+                                    "description": "The default visibility level of the leads for the role"
+                                },
+                                "org_default_visibility": {
+                                    "type": "number",
+                                    "description": "The default visibility level of the organizations for the role"
+                                },
+                                "person_default_visibility": {
+                                    "type": "number",
+                                    "description": "The default visibility level of the people for the role"
+                                },
+                                "product_default_visibility": {
+                                    "type": "number",
+                                    "description": "The default visibility level of the products for the role"
+                                },
+                                "deal_access_level": {
+                                    "type": "number",
+                                    "description": "The access level of the deals for the role (only for default role)"
+                                },
+                                "org_access_level": {
+                                    "type": "number",
+                                    "description": "The access level of the organizations for the role (only for default role)"
+                                },
+                                "person_access_level": {
+                                    "type": "number",
+                                    "description": "The access level of the people for the role (only for default role)"
+                                },
+                                "product_access_level": {
+                                    "type": "number",
+                                    "description": "The access level of the products for the role (only for default role)"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
-    }
+    ]
 }

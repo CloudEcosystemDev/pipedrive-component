@@ -15,11 +15,11 @@
             "properties": {
                 "description": {
                     "type": "string",
-                    "description": "Description of the Recurring Subscription"
+                    "description": "The description of the recurring subscription"
                 },
                 "cycle_amount": {
                     "type": "integer",
-                    "description": "Amount of each payment"
+                    "description": "The amount of each payment"
                 },
                 "payments": {
                     "type": "array",
@@ -30,7 +30,7 @@
                 },
                 "update_deal_value": {
                     "type": "boolean",
-                    "description": "Indicates that the Deal value must be set to Recurring Subscription's MRR value"
+                    "description": "Indicates that the deal value must be set to recurring subscription's MRR value"
                 },
                 "effective_date": {
                     "type": "string",

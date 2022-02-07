@@ -22,7 +22,7 @@
                 },
                 "update_deal_value": {
                     "type": "boolean",
-                    "description": "Indicates that the Deal value must be set to Installment Subscription's total value"
+                    "description": "Indicates that the deal value must be set to installment subscription's total value"
                 }
             }
         }

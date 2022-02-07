@@ -26,11 +26,11 @@
                         },
                         "person_id": {
                             "type": "integer",
-                            "description": "The ID of the person this note will be attached to"
+                            "description": "The ID of the person the note will be attached to"
                         },
                         "org_id": {
                             "type": "integer",
-                            "description": "The ID of the organization this note will be attached to"
+                            "description": "The ID of the organization the note will be attached to"
                         }
                     }
                 },
@@ -39,15 +39,15 @@
                     "properties": {
                         "content": {
                             "type": "string",
-                            "description": "Content of the note in HTML format. Subject to sanitization on the back-end."
+                            "description": "The content of the note in HTML format. Subject to sanitization on the back-end."
                         },
                         "user_id": {
                             "type": "integer",
-                            "description": "ID of the user who will be marked as the author of this note. Only an admin can change the author."
+                            "description": "The ID of the user who will be marked as the author of the note. Only an admin can change the author."
                         },
                         "add_time": {
                             "type": "string",
-                            "description": "Optional creation date & time of the Note in UTC. Can be set in the past or in the future. Requires admin user API token. Format: YYYY-MM-DD HH:MM:SS"
+                            "description": "The optional creation date & time of the note in UTC. Can be set in the past or in the future. Requires admin user API token. Format: YYYY-MM-DD HH:MM:SS"
                         },
                         "pinned_to_lead_flag": {
                             "allOf": [
@@ -60,7 +60,7 @@
                                     ]
                                 }
                             ],
-                            "description": "If set, then results are filtered by note to lead pinning state (`lead_id` is also required)"
+                            "description": "If set, the results are filtered by note to lead pinning state (`lead_id` is also required)"
                         },
                         "pinned_to_deal_flag": {
                             "allOf": [
@@ -73,7 +73,7 @@
                                     ]
                                 }
                             ],
-                            "description": "If set, then results are filtered by note to deal pinning state (`deal_id` is also required)."
+                            "description": "If set, the results are filtered by note to deal pinning state (`deal_id` is also required)"
                         },
                         "pinned_to_organization_flag": {
                             "allOf": [
@@ -86,7 +86,7 @@
                                     ]
                                 }
                             ],
-                            "description": "If set, then results are filtered by note to organization pinning state (`org_id` is also required)."
+                            "description": "If set, the results are filtered by note to organization pinning state (`org_id` is also required)"
                         },
                         "pinned_to_person_flag": {
                             "allOf": [
@@ -99,7 +99,7 @@
                                     ]
                                 }
                             ],
-                            "description": "If set, then results are filtered by note to person pinning state (`person_id` is also required)."
+                            "description": "If set, the results are filtered by note to person pinning state (`person_id` is also required)"
                         }
                     }
                 }

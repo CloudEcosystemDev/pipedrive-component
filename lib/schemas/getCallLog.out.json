@@ -1,17 +1,119 @@
 {
-    "type": "object",
-    "properties": {
-        "id": {
-            "type": "string",
-            "description": "The call log ID, generated when the call log was created"
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
         },
-        "has_recording": {
-            "type": "boolean",
-            "description": "If the call log has an audio recording attached, the value should be true"
-        },
-        "company_id": {
-            "type": "integer",
-            "description": "The Company ID of the owner of the call log"
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "allOf": [
+                        {
+                            "title": "responseCallLogObject",
+                            "allOf": [
+                                {
+                                    "title": "addCallLogRequest",
+                                    "type": "object",
+                                    "required": [
+                                        "to_phone_number",
+                                        "outcome",
+                                        "start_time",
+                                        "end_time"
+                                    ],
+                                    "properties": {
+                                        "user_id": {
+                                            "type": "integer",
+                                            "description": "The ID of the owner of the call log"
+                                        },
+                                        "activity_id": {
+                                            "type": "integer",
+                                            "description": "If specified, this activity will be converted into a call log, with the information provided. When this field is used, you don't need to specify `deal_id`, `person_id` or `org_id`, as they will be ignored in favor of the values already available in the activity."
+                                        },
+                                        "subject": {
+                                            "type": "string",
+                                            "description": "The name of the activity this call is attached to"
+                                        },
+                                        "duration": {
+                                            "type": "string",
+                                            "description": "The duration of the call in seconds"
+                                        },
+                                        "outcome": {
+                                            "type": "string",
+                                            "enum": [
+                                                "connected",
+                                                "no_answer",
+                                                "left_message",
+                                                "left_voicemail",
+                                                "wrong_number",
+                                                "busy"
+                                            ],
+                                            "description": "Describes the outcome of the call"
+                                        },
+                                        "from_phone_number": {
+                                            "type": "string",
+                                            "description": "The number that made the call"
+                                        },
+                                        "to_phone_number": {
+                                            "type": "string",
+                                            "description": "The number called"
+                                        },
+                                        "start_time": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "description": "The date and time of the start of the call in UTC. Format: YYYY-MM-DD HH:MM:SS."
+                                        },
+                                        "end_time": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "description": "The date and time of the end of the call in UTC. Format: YYYY-MM-DD HH:MM:SS."
+                                        },
+                                        "person_id": {
+                                            "type": "integer",
+                                            "description": "The ID of the person this call is associated with"
+                                        },
+                                        "org_id": {
+                                            "type": "integer",
+                                            "description": "The ID of the organization this call is associated with"
+                                        },
+                                        "deal_id": {
+                                            "type": "integer",
+                                            "description": "The ID of the deal this call is associated with"
+                                        },
+                                        "note": {
+                                            "type": "string",
+                                            "description": "The note for the call log in HTML format"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "description": "The call log ID, generated when the call log was created"
+                                        },
+                                        "has_recording": {
+                                            "type": "boolean",
+                                            "description": "If the call log has an audio recording attached, the value should be true"
+                                        },
+                                        "company_id": {
+                                            "type": "integer",
+                                            "description": "The company ID of the owner of the call log"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
         }
-    }
+    ]
 }

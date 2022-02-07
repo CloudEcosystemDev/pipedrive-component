@@ -1,4 +1,31 @@
 {
+    "title": "newFollowerResponse200",
     "type": "object",
-    "properties": {}
+    "properties": {
+        "success": {
+            "type": "boolean",
+            "description": "If the response is successful or not"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "user_id": {
+                    "type": "integer",
+                    "description": "The ID of the user that was added as follower"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the follower"
+                },
+                "product_id": {
+                    "type": "integer",
+                    "description": "The ID of the product"
+                },
+                "add_time": {
+                    "type": "string",
+                    "description": "The follower creation time. Format: YYYY-MM-DD HH:MM:SS"
+                }
+            }
+        }
+    }
 }

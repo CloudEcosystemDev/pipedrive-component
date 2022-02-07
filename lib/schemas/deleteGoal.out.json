@@ -1,4 +1,5 @@
 {
+    "title": "deleteGoalResponse200",
     "type": "object",
     "properties": {
         "success": {

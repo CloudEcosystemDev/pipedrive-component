@@ -1,13 +1,124 @@
 {
-    "type": "object",
-    "properties": {
-        "add_time": {
-            "type": "string",
-            "description": "The Team creation time. Format: YYYY-MM-DD HH:MM:SS"
+    "title": "teamsResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
         },
-        "created_by_user_id": {
-            "type": "integer",
-            "description": "ID of the User who created the Team"
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "title": "baseTeam",
+                        "allOf": [
+                            {
+                                "title": "teamId",
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer",
+                                        "description": "The team ID"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "object",
+                                "title": "updateTeamWithAdditionalProperties",
+                                "allOf": [
+                                    {
+                                        "title": "updateTeamRequest",
+                                        "allOf": [
+                                            {
+                                                "title": "addTeamRequest",
+                                                "type": "object",
+                                                "required": [
+                                                    "name",
+                                                    "manager_id"
+                                                ],
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "The team name"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "description": "The team description"
+                                                    },
+                                                    "manager_id": {
+                                                        "type": "integer",
+                                                        "description": "The team manager ID"
+                                                    },
+                                                    "users": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "integer"
+                                                        },
+                                                        "description": "The list of user IDs"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "active_flag": {
+                                                        "allOf": [
+                                                            {
+                                                                "title": "numberBoolean",
+                                                                "type": "number",
+                                                                "enum": [
+                                                                    0,
+                                                                    1
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "description": "Flag that indicates whether the team is active"
+                                                    },
+                                                    "deleted_flag": {
+                                                        "allOf": [
+                                                            {
+                                                                "title": "numberBoolean",
+                                                                "type": "number",
+                                                                "enum": [
+                                                                    0,
+                                                                    1
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "description": "Flag that indicates whether the team is deleted"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "object",
+                                        "title": "baseTeamAdditionalProperties",
+                                        "properties": {
+                                            "add_time": {
+                                                "type": "string",
+                                                "description": "The team creation time. Format: YYYY-MM-DD HH:MM:SS"
+                                            },
+                                            "created_by_user_id": {
+                                                "type": "integer",
+                                                "description": "The ID of the user who created the team"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
         }
-    }
+    ]
 }

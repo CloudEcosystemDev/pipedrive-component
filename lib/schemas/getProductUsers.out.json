@@ -1,9 +1,27 @@
 {
-    "type": "object",
-    "properties": {
-        "success": {
-            "type": "boolean",
-            "description": "If the response is successful or not"
+    "title": "userIds",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The list of user IDs"
+                }
+            }
         }
-    }
+    ]
 }

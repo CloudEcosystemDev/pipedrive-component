@@ -1,4 +1,5 @@
 {
-    "type": "object",
-    "properties": {}
+    "title": "downloadFileResponse200",
+    "type": "string",
+    "format": "byte"
 }

@@ -1,9 +1,19 @@
 {
+    "title": "deleteOrganizationFollowerResponse200",
     "type": "object",
     "properties": {
-        "id": {
-            "type": "integer",
-            "description": "The ID of the follower that was deleted from the Organization"
+        "success": {
+            "type": "boolean",
+            "description": "If the request was successful or not"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The ID of the follower that was deleted from the organization"
+                }
+            }
         }
     }
 }

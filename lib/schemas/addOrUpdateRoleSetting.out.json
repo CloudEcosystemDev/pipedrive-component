@@ -1,20 +1,41 @@
 {
-    "type": "object",
-    "properties": {
-        "id": {
-            "type": "integer",
-            "description": "The ID of the Role"
+    "title": "addOrUpdateRoleSettingResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
         },
-        "deal_default_visibility": {
-            "type": "number",
-            "enum": [
-                "deal_default_visibility",
-                "lead_default_visibility",
-                "org_default_visibility",
-                "person_default_visibility",
-                "product_default_visibility"
-            ],
-            "description": "The setting"
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "description": "The ID of the role"
+                        },
+                        "deal_default_visibility": {
+                            "type": "number",
+                            "enum": [
+                                "deal_default_visibility",
+                                "lead_default_visibility",
+                                "org_default_visibility",
+                                "person_default_visibility",
+                                "product_default_visibility"
+                            ],
+                            "description": "The setting"
+                        }
+                    },
+                    "description": "The response data"
+                }
+            }
         }
-    }
+    ]
 }

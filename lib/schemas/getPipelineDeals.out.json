@@ -1,17 +1,284 @@
 {
+    "title": "getStageDealsResponse200",
     "type": "object",
     "properties": {
-        "start": {
-            "type": "integer",
-            "description": "Pagination start"
-        },
-        "limit": {
-            "type": "integer",
-            "description": "Items shown per page"
-        },
-        "more_items_in_collection": {
+        "success": {
             "type": "boolean",
-            "description": "If there are more list items in the collection than displayed or not"
+            "description": "If the request was successful or not"
+        },
+        "data": {
+            "type": "array",
+            "items": {
+                "title": "dealStrict",
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "description": "The ID of the deal"
+                            },
+                            "creator_user_id": {
+                                "type": "integer",
+                                "description": "The ID of the deal creator"
+                            },
+                            "user_id": {
+                                "type": "integer",
+                                "description": "The ID of the user"
+                            },
+                            "person_id": {
+                                "type": "integer",
+                                "description": "The ID of the person associated with the deal"
+                            },
+                            "org_id": {
+                                "type": "integer",
+                                "description": "The ID of the organization associated with the deal"
+                            }
+                        }
+                    },
+                    {
+                        "title": "baseDeal",
+                        "type": "object",
+                        "properties": {
+                            "stage_id": {
+                                "type": "integer",
+                                "description": "The ID of the deal stage"
+                            },
+                            "title": {
+                                "type": "string",
+                                "description": "The title of the deal"
+                            },
+                            "value": {
+                                "type": "number",
+                                "description": "The value of the deal"
+                            },
+                            "currency": {
+                                "type": "string",
+                                "description": "The currency associated with the deal"
+                            },
+                            "add_time": {
+                                "type": "string",
+                                "description": "The creation date and time of the deal"
+                            },
+                            "update_time": {
+                                "type": "string",
+                                "description": "The last updated date and time of the deal"
+                            },
+                            "stage_change_time": {
+                                "type": "string",
+                                "description": "The last updated date and time of the deal stage"
+                            },
+                            "active": {
+                                "type": "boolean",
+                                "description": "Whether the deal is active or not"
+                            },
+                            "deleted": {
+                                "type": "boolean",
+                                "description": "Whether the deal is deleted or not"
+                            },
+                            "status": {
+                                "type": "string",
+                                "description": "The status of the deal"
+                            },
+                            "probability": {
+                                "type": "number",
+                                "nullable": true,
+                                "description": "The success probability percentage of the deal"
+                            },
+                            "next_activity_date": {
+                                "type": "string",
+                                "description": "The date of the next activity associated with the deal"
+                            },
+                            "next_activity_time": {
+                                "type": "string",
+                                "description": "The time of the next activity associated with the deal"
+                            },
+                            "next_activity_id": {
+                                "type": "integer",
+                                "nullable": true,
+                                "description": "The ID of the next activity associated with the deal"
+                            },
+                            "last_activity_id": {
+                                "type": "integer",
+                                "nullable": true,
+                                "description": "The ID of the last activity associated with the deal"
+                            },
+                            "last_activity_date": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The date of the last activity associated with the deal"
+                            },
+                            "lost_reason": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The reason for losing the deal"
+                            },
+                            "visible_to": {
+                                "type": "string",
+                                "description": "The visibility of the deal"
+                            },
+                            "close_time": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The date and time of closing the deal"
+                            },
+                            "pipeline_id": {
+                                "type": "integer",
+                                "description": "The ID of pipeline associated with the deal"
+                            },
+                            "won_time": {
+                                "type": "string",
+                                "description": "The date and time of changing the deal status as won"
+                            },
+                            "first_won_time": {
+                                "type": "string",
+                                "description": "The date and time of the first time changing the deal status as won"
+                            },
+                            "lost_time": {
+                                "type": "string",
+                                "description": "The date and time of changing the deal status as lost"
+                            },
+                            "products_count": {
+                                "type": "integer",
+                                "description": "The number of products associated with the deal"
+                            },
+                            "files_count": {
+                                "type": "integer",
+                                "description": "The number of files associated with the deal"
+                            },
+                            "notes_count": {
+                                "type": "integer",
+                                "description": "The number of notes associated with the deal"
+                            },
+                            "followers_count": {
+                                "type": "integer",
+                                "description": "The number of followers associated with the deal"
+                            },
+                            "email_messages_count": {
+                                "type": "integer",
+                                "description": "The number of emails associated with the deal"
+                            },
+                            "activities_count": {
+                                "type": "integer",
+                                "description": "The number of activities associated with the deal"
+                            },
+                            "done_activities_count": {
+                                "type": "integer",
+                                "description": "The number of completed activities associated with the deal"
+                            },
+                            "undone_activities_count": {
+                                "type": "integer",
+                                "description": "The number of incomplete activities associated with the deal"
+                            },
+                            "participants_count": {
+                                "type": "integer",
+                                "description": "The number of participants associated with the deal"
+                            },
+                            "expected_close_date": {
+                                "type": "string",
+                                "format": "date",
+                                "description": "The expected close date of the deal"
+                            },
+                            "last_incoming_mail_time": {
+                                "type": "string",
+                                "description": "The date and time of the last incoming email associated with the deal"
+                            },
+                            "last_outgoing_mail_time": {
+                                "type": "string",
+                                "description": "The date and time of the last outgoing email associated with the deal"
+                            },
+                            "label": {
+                                "type": "string",
+                                "description": "The label assigned to the deal"
+                            },
+                            "stage_order_nr": {
+                                "type": "integer",
+                                "description": "The order number of the deal stage associated with the deal"
+                            },
+                            "person_name": {
+                                "type": "string",
+                                "description": "The name of the person associated with the deal"
+                            },
+                            "org_name": {
+                                "type": "string",
+                                "description": "The name of the organization associated with the deal"
+                            },
+                            "next_activity_subject": {
+                                "type": "string",
+                                "description": "The subject of the next activity associated with the deal"
+                            },
+                            "next_activity_type": {
+                                "type": "string",
+                                "description": "The type of the next activity associated with the deal"
+                            },
+                            "next_activity_duration": {
+                                "type": "string",
+                                "description": "The duration of the next activity associated with the deal"
+                            },
+                            "next_activity_note": {
+                                "type": "string",
+                                "description": "The note of the next activity associated with the deal"
+                            },
+                            "formatted_value": {
+                                "type": "string",
+                                "description": "The deal value formatted with selected currency. E.g. US$500"
+                            },
+                            "weighted_value": {
+                                "type": "number",
+                                "description": "Probability times deal value. Probability can either be deal probability or if not set, then stage probability."
+                            },
+                            "formatted_weighted_value": {
+                                "type": "string",
+                                "description": "The weighted_value formatted with selected currency. E.g. US$500"
+                            },
+                            "weighted_value_currency": {
+                                "type": "string",
+                                "description": "The currency associated with the deal"
+                            },
+                            "rotten_time": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The date and time of changing the deal status as rotten"
+                            },
+                            "owner_name": {
+                                "type": "string",
+                                "description": "The name of the deal owner"
+                            },
+                            "cc_email": {
+                                "type": "string",
+                                "description": "The BCC email of the deal"
+                            },
+                            "org_hidden": {
+                                "type": "boolean",
+                                "description": "If the organization that is associated with the deal is hidden or not"
+                            },
+                            "person_hidden": {
+                                "type": "boolean",
+                                "description": "If the person that is associated with the deal is hidden or not"
+                            }
+                        }
+                    }
+                ]
+            },
+            "description": "The array of deals"
+        },
+        "additional_data": {
+            "description": "The additional data of the list",
+            "type": "object",
+            "properties": {
+                "start": {
+                    "type": "integer",
+                    "description": "Pagination start"
+                },
+                "limit": {
+                    "type": "integer",
+                    "description": "Items shown per page"
+                },
+                "more_items_in_collection": {
+                    "type": "boolean",
+                    "description": "If there are more list items in the collection than displayed or not"
+                }
+            }
         }
     }
 }

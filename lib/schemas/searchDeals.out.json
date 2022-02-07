@@ -1,17 +1,157 @@
 {
-    "type": "object",
-    "properties": {
-        "start": {
-            "type": "integer",
-            "description": "Pagination start"
+    "title": "searchDealsResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
         },
-        "limit": {
-            "type": "integer",
-            "description": "Items shown per page"
-        },
-        "more_items_in_collection": {
-            "type": "boolean",
-            "description": "If there are more list items in the collection than displayed or not"
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "items": {
+                            "type": "array",
+                            "description": "The array of deals",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "result_score": {
+                                        "type": "number",
+                                        "description": "Search result relevancy"
+                                    },
+                                    "item": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "description": "The ID of the deal"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "description": "The type of the item"
+                                            },
+                                            "title": {
+                                                "type": "string",
+                                                "description": "The title of the deal"
+                                            },
+                                            "value": {
+                                                "type": "integer",
+                                                "description": "The value of the deal"
+                                            },
+                                            "currency": {
+                                                "type": "integer",
+                                                "description": "The currency of the deal"
+                                            },
+                                            "status": {
+                                                "type": "string",
+                                                "description": "The status of the deal"
+                                            },
+                                            "visible_to": {
+                                                "type": "integer",
+                                                "description": "The visibility of the deal"
+                                            },
+                                            "owner": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the owner of the deal"
+                                                    }
+                                                }
+                                            },
+                                            "stage": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the stage of the deal"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "The name of the stage of the deal"
+                                                    }
+                                                }
+                                            },
+                                            "person": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the person the deal is associated with"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "The name of the person the deal is associated with"
+                                                    }
+                                                }
+                                            },
+                                            "organization": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the organization the deal is associated with"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "The name of the organization the deal is associated with"
+                                                    }
+                                                }
+                                            },
+                                            "custom_fields": {
+                                                "type": "integer",
+                                                "description": "Custom fields"
+                                            },
+                                            "notes": {
+                                                "type": "array",
+                                                "description": "An array of notes",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "additional_data": {
+                    "type": "object",
+                    "properties": {
+                        "pagination": {
+                            "description": "Pagination details of the list",
+                            "type": "object",
+                            "properties": {
+                                "start": {
+                                    "type": "integer",
+                                    "description": "Pagination start"
+                                },
+                                "limit": {
+                                    "type": "integer",
+                                    "description": "Items shown per page"
+                                },
+                                "more_items_in_collection": {
+                                    "type": "boolean",
+                                    "description": "Whether there are more list items in the collection than displayed"
+                                },
+                                "next_start": {
+                                    "type": "integer",
+                                    "description": "Next pagination start"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-    }
+    ]
 }

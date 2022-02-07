@@ -1,33 +1,47 @@
 {
+    "title": "getCurrenciesResponse200",
     "type": "object",
     "properties": {
-        "id": {
-            "type": "integer",
-            "description": "ID of the Currency"
-        },
-        "code": {
-            "type": "string",
-            "description": "Code of the Currency"
-        },
-        "name": {
-            "type": "string",
-            "description": "Name of the Currency"
-        },
-        "decimal_points": {
-            "type": "integer",
-            "description": "The amount of decimal points of the Currency"
-        },
-        "symbol": {
-            "type": "string",
-            "description": "Symbol of the Currency"
-        },
-        "active_flag": {
+        "success": {
             "type": "boolean",
-            "description": "Whether the Currency is active or not"
+            "description": "If the response is successful or not"
         },
-        "is_custom_flag": {
-            "type": "boolean",
-            "description": "Whether the Currency is a custom one or not"
+        "data": {
+            "type": "array",
+            "description": "The array of currencies",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "The ID of the currency"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "The code of the currency"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the currency"
+                    },
+                    "decimal_points": {
+                        "type": "integer",
+                        "description": "The amount of decimal points of the currency"
+                    },
+                    "symbol": {
+                        "type": "string",
+                        "description": "The symbol of the currency"
+                    },
+                    "active_flag": {
+                        "type": "boolean",
+                        "description": "Whether the currency is active or not"
+                    },
+                    "is_custom_flag": {
+                        "type": "boolean",
+                        "description": "Whether the currency is a custom one or not"
+                    }
+                }
+            }
         }
     }
 }

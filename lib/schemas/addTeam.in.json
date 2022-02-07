@@ -11,22 +11,22 @@
             "properties": {
                 "name": {
                     "type": "string",
-                    "description": "The Team name"
+                    "description": "The team name"
                 },
                 "description": {
                     "type": "string",
-                    "description": "The Team description"
+                    "description": "The team description"
                 },
                 "manager_id": {
                     "type": "integer",
-                    "description": "The Team manager ID"
+                    "description": "The team manager ID"
                 },
                 "users": {
                     "type": "array",
                     "items": {
                         "type": "integer"
                     },
-                    "description": "List of User IDs"
+                    "description": "The list of user IDs"
                 }
             }
         }

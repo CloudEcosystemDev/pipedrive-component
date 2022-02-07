@@ -1,25 +1,69 @@
 {
+    "title": "getAssociatedFollowersResponse200",
     "type": "object",
     "properties": {
-        "pagination": {
-            "description": "Pagination details of the list",
+        "success": {
+            "type": "boolean",
+            "description": "If the request was successful or not"
+        },
+        "data": {
+            "type": "array",
+            "description": "The array of followers",
+            "items": {
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "org_id": {
+                                "type": "integer",
+                                "description": "The ID of the organization"
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "user_id": {
+                                "type": "integer",
+                                "description": "The user ID of the follower related to the item"
+                            },
+                            "id": {
+                                "type": "integer",
+                                "description": "The ID of the follower"
+                            },
+                            "add_time": {
+                                "type": "integer",
+                                "description": "The date and time of adding the follower to the item"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "additional_data": {
             "type": "object",
             "properties": {
-                "start": {
-                    "type": "integer",
-                    "description": "Pagination start"
-                },
-                "limit": {
-                    "type": "integer",
-                    "description": "Items shown per page"
-                },
-                "more_items_in_collection": {
-                    "type": "boolean",
-                    "description": "Whether there are more list items in the collection than displayed"
-                },
-                "next_start": {
-                    "type": "integer",
-                    "description": "Next pagination start"
+                "pagination": {
+                    "description": "Pagination details of the list",
+                    "type": "object",
+                    "properties": {
+                        "start": {
+                            "type": "integer",
+                            "description": "Pagination start"
+                        },
+                        "limit": {
+                            "type": "integer",
+                            "description": "Items shown per page"
+                        },
+                        "more_items_in_collection": {
+                            "type": "boolean",
+                            "description": "Whether there are more list items in the collection than displayed"
+                        },
+                        "next_start": {
+                            "type": "integer",
+                            "description": "Next pagination start"
+                        }
+                    }
                 }
             }
         }

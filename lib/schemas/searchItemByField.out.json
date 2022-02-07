@@ -1,27 +1,60 @@
 {
-    "type": "object",
-    "properties": {
-        "pagination": {
-            "description": "Pagination details of the list",
+    "title": "searchItemByFieldResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
             "type": "object",
             "properties": {
-                "start": {
-                    "type": "integer",
-                    "description": "Pagination start"
-                },
-                "limit": {
-                    "type": "integer",
-                    "description": "Items shown per page"
-                },
-                "more_items_in_collection": {
+                "success": {
                     "type": "boolean",
-                    "description": "Whether there are more list items in the collection than displayed"
+                    "description": "If the response is successful or not"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "description": "The array of results",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "description": "The ID of the item"
+                            }
+                        }
+                    }
                 },
-                "next_start": {
-                    "type": "integer",
-                    "description": "Next pagination start"
+                "additional_data": {
+                    "type": "object",
+                    "properties": {
+                        "pagination": {
+                            "description": "Pagination details of the list",
+                            "type": "object",
+                            "properties": {
+                                "start": {
+                                    "type": "integer",
+                                    "description": "Pagination start"
+                                },
+                                "limit": {
+                                    "type": "integer",
+                                    "description": "Items shown per page"
+                                },
+                                "more_items_in_collection": {
+                                    "type": "boolean",
+                                    "description": "Whether there are more list items in the collection than displayed"
+                                },
+                                "next_start": {
+                                    "type": "integer",
+                                    "description": "Next pagination start"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
-    }
+    ]
 }

@@ -10,15 +10,15 @@
             "properties": {
                 "title": {
                     "type": "string",
-                    "description": "The name of the Lead"
+                    "description": "The name of the lead"
                 },
                 "owner_id": {
                     "type": "integer",
-                    "description": "The ID of the User which will be the owner of the created Lead. If not provided, the user making the request will be used."
+                    "description": "The ID of the user which will be the owner of the created lead. If not provided, the user making the request will be used."
                 },
                 "label_ids": {
                     "type": "array",
-                    "description": "The IDs of the Lead Labels which will be associated with the Lead",
+                    "description": "The IDs of the lead labels which will be associated with the lead",
                     "items": {
                         "type": "string",
                         "format": "uuid"
@@ -26,15 +26,15 @@
                 },
                 "person_id": {
                     "type": "integer",
-                    "description": "The ID of a Person which this Lead will be linked to. If the Person does not exist yet, it needs to be created first. This property is required unless `organization_id` is specified."
+                    "description": "The ID of a person which this lead will be linked to. If the person does not exist yet, it needs to be created first. This property is required unless `organization_id` is specified."
                 },
                 "organization_id": {
                     "type": "integer",
-                    "description": "The ID of an Organization which this Lead will be linked to. If the Organization does not exist yet, it needs to be created first. This property is required unless `person_id` is specified."
+                    "description": "The ID of an organization which this lead will be linked to. If the organization does not exist yet, it needs to be created first. This property is required unless `person_id` is specified."
                 },
                 "value": {
                     "type": "object",
-                    "description": "The potential value of the Lead.",
+                    "description": "The potential value of the lead",
                     "required": [
                         "amount",
                         "currency"
@@ -51,7 +51,7 @@
                 "expected_close_date": {
                     "type": "string",
                     "format": "date",
-                    "description": "The date of when the Deal which will be created from the Lead is expected to be closed. In ISO 8601 format: YYYY-MM-DD."
+                    "description": "The date of when the deal which will be created from the lead is expected to be closed. In ISO 8601 format: YYYY-MM-DD."
                 },
                 "visible_to": {
                     "allOf": [
@@ -59,11 +59,13 @@
                             "type": "string",
                             "enum": [
                                 "1",
-                                "3"
+                                "3",
+                                "5",
+                                "7"
                             ]
                         }
                     ],
-                    "description": "Visibility of the Lead. If omitted, visibility will be set to the default visibility setting of this item type for the authorized user.<table><tr><th>Value</th><th>Description</th></tr><tr><td>`1`</td><td>Owner &amp; followers (private)</td></tr><tr><td>`3`</td><td>Entire company (shared)</td></tr></table>"
+                    "description": "The visibility of the lead. If omitted, the visibility will be set to the default visibility setting of this item type for the authorized user.<table><tr><th>Value</th><th>Description</th></tr><tr><td>`1`</td><td>Owner &amp; followers (private)</td></tr><tr><td>`3`</td><td>Entire company (shared)</td></tr></table>"
                 },
                 "was_seen": {
                     "type": "boolean",
@@ -71,7 +73,7 @@
                         true,
                         false
                     ],
-                    "description": "A flag indicating whether the Lead was seen by someone in the Pipedrive UI"
+                    "description": "A flag indicating whether the lead was seen by someone in the Pipedrive UI"
                 }
             }
         }

@@ -1,11 +1,20 @@
 {
+    "title": "deleteActivitiesResponse200",
     "type": "object",
     "properties": {
-        "id": {
-            "type": "array",
-            "description": "An array of IDs of Activities that were deleted",
-            "items": {
-                "type": "integer"
+        "success": {
+            "type": "boolean"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "array",
+                    "description": "An array of the IDs of activities that were deleted",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
             }
         }
     }

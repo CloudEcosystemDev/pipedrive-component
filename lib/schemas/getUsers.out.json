@@ -1,96 +1,119 @@
 {
-    "type": "object",
-    "properties": {
-        "id": {
-            "type": "integer",
-            "description": "The User ID"
-        },
-        "name": {
-            "type": "string",
-            "description": "The User name"
-        },
-        "default_currency": {
-            "type": "string",
-            "description": "The User default currency"
-        },
-        "locale": {
-            "type": "string",
-            "description": "The User locale"
-        },
-        "lang": {
-            "type": "integer",
-            "description": "The User language ID"
-        },
-        "email": {
-            "type": "string",
-            "description": "The User email"
-        },
-        "phone": {
-            "type": "string",
-            "description": "The User phone"
-        },
-        "activated": {
-            "type": "boolean",
-            "description": "Boolean that indicates if the User is activated"
-        },
-        "last_login": {
-            "type": "string",
-            "description": "The User last login date and time. Format: YYYY-MM-DD HH:MM:SS"
-        },
-        "created": {
-            "type": "string",
-            "description": "The User creation date and time. Format: YYYY-MM-DD HH:MM:SS"
-        },
-        "modified": {
-            "type": "string",
-            "description": "The User last modification date and time. Format: YYYY-MM-DD HH:MM:SS"
-        },
-        "signup_flow_variation": {
-            "type": "string",
-            "nullable": true,
-            "description": "The variation of signup flow (if exists). E.g. google"
-        },
-        "has_created_company": {
-            "type": "boolean",
-            "description": "Boolean that indicates if the User has created a Company"
-        },
-        "is_admin": {
-            "allOf": [
-                {
-                    "title": "numberBoolean",
-                    "type": "number",
-                    "enum": [
-                        0,
-                        1
-                    ]
+    "title": "usersResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
                 }
-            ],
-            "description": "Indication if the User is admin (1 = true, 0 = false)"
+            }
         },
-        "active_flag": {
-            "type": "boolean",
-            "description": "Boolean that indicates if the User is activated"
-        },
-        "timezone_name": {
-            "type": "string",
-            "description": "The User timezone name"
-        },
-        "timezone_offset": {
-            "type": "string",
-            "description": "The User timezone offset"
-        },
-        "role_id": {
-            "type": "integer",
-            "description": "The ID of the User role"
-        },
-        "icon_url": {
-            "type": "string",
-            "nullable": true,
-            "description": "The User icon URL"
-        },
-        "is_you": {
-            "type": "boolean",
-            "description": "Boolean that indicates if the requested User is the same which is logged in (in this case, always true)"
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "description": "The user ID"
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "The user name"
+                            },
+                            "default_currency": {
+                                "type": "string",
+                                "description": "The user default currency"
+                            },
+                            "locale": {
+                                "type": "string",
+                                "description": "The user locale"
+                            },
+                            "lang": {
+                                "type": "integer",
+                                "description": "The user language ID"
+                            },
+                            "email": {
+                                "type": "string",
+                                "description": "The user email"
+                            },
+                            "phone": {
+                                "type": "string",
+                                "description": "The user phone"
+                            },
+                            "activated": {
+                                "type": "boolean",
+                                "description": "Boolean that indicates whether the user is activated"
+                            },
+                            "last_login": {
+                                "type": "string",
+                                "description": "The last login date and time of the user. Format: YYYY-MM-DD HH:MM:SS"
+                            },
+                            "created": {
+                                "type": "string",
+                                "description": "The creation date and time of the user. Format: YYYY-MM-DD HH:MM:SS"
+                            },
+                            "modified": {
+                                "type": "string",
+                                "description": "The last modification date and time of the user. Format: YYYY-MM-DD HH:MM:SS"
+                            },
+                            "signup_flow_variation": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The variation of signup flow (if exists). E.g. google"
+                            },
+                            "has_created_company": {
+                                "type": "boolean",
+                                "description": "Boolean that indicates whether the user has created a company"
+                            },
+                            "is_admin": {
+                                "allOf": [
+                                    {
+                                        "title": "numberBoolean",
+                                        "type": "number",
+                                        "enum": [
+                                            0,
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "description": "Indication if the user is admin (1 = true, 0 = false)"
+                            },
+                            "active_flag": {
+                                "type": "boolean",
+                                "description": "Boolean that indicates whether the user is activated"
+                            },
+                            "timezone_name": {
+                                "type": "string",
+                                "description": "The user timezone name"
+                            },
+                            "timezone_offset": {
+                                "type": "string",
+                                "description": "The user timezone offset"
+                            },
+                            "role_id": {
+                                "type": "integer",
+                                "description": "The ID of the user role"
+                            },
+                            "icon_url": {
+                                "type": "string",
+                                "nullable": true,
+                                "description": "The user icon URL"
+                            },
+                            "is_you": {
+                                "type": "boolean",
+                                "description": "Boolean that indicates if the requested user is the same which is logged in (in this case, always true)"
+                            }
+                        }
+                    }
+                }
+            }
         }
-    }
+    ]
 }

@@ -11,15 +11,15 @@
             "properties": {
                 "name": {
                     "type": "string",
-                    "description": "Name of the Stage"
+                    "description": "The name of the stage"
                 },
                 "pipeline_id": {
                     "type": "integer",
-                    "description": "The ID of the Pipeline to add Stage to."
+                    "description": "The ID of the pipeline to add stage to"
                 },
                 "deal_probability": {
                     "type": "integer",
-                    "description": "Deal success probability percentage. Used/shown when Deal weighted values are used"
+                    "description": "The success probability percentage of the deal. Used/shown when deal weighted values are used."
                 },
                 "rotten_flag": {
                     "type": "integer",
@@ -27,11 +27,11 @@
                         0,
                         1
                     ],
-                    "description": "Whether Deals in this stage can become rotten"
+                    "description": "Whether deals in this stage can become rotten"
                 },
                 "rotten_days": {
                     "type": "integer",
-                    "description": "The number of days the Deals not updated in this Stage would become rotten. Applies only if the `rotten_flag` is set."
+                    "description": "The number of days the deals not updated in this stage would become rotten. Applies only if the `rotten_flag` is set."
                 }
             }
         }

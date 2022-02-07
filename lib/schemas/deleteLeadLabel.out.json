@@ -1,9 +1,18 @@
 {
+    "title": "leadIdResponse200",
     "type": "object",
     "properties": {
-        "id": {
-            "type": "string",
-            "format": "uuid"
+        "success": {
+            "type": "boolean"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                }
+            }
         }
     }
 }

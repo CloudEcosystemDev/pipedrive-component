@@ -1,75 +1,103 @@
 {
-    "type": "object",
-    "properties": {
-        "id": {
-            "type": "integer",
-            "description": "The ID of the Payment"
+    "title": "paymentResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
         },
-        "subscription_id": {
-            "type": "integer",
-            "description": "The ID of the Subscription this Payment is associated with"
-        },
-        "deal_id": {
-            "type": "integer",
-            "description": "The ID of the Deal this Payment is associated with"
-        },
-        "is_active": {
-            "type": "boolean",
-            "description": "The Payment status"
-        },
-        "amount": {
-            "type": "number",
-            "format": "double",
-            "description": "The Payment amount"
-        },
-        "currency": {
-            "type": "string",
-            "description": "The currency of the Payment"
-        },
-        "change_amount": {
-            "type": "number",
-            "format": "double",
-            "description": "Difference between the amount of the current Payment and the previous Payment. The value can be either positive or negative."
-        },
-        "due_at": {
-            "type": "string",
-            "format": "date",
-            "description": "Date when Payment occurs"
-        },
-        "revenue_movement_type": {
-            "type": "string",
-            "enum": [
-                "new",
-                "recurring",
-                "expansion",
-                "contraction",
-                "none",
-                "churn"
-            ],
-            "description": "Represents the movement of revenue in comparison with the previous Payment. Possible values are: `New` - first Payment of the subscription. `Recurring` - no movement. `Expansion` - current Payment amount > previous Payment amount. `Contraction` - current Payment amount < previous Payment amount. `Churn` - last Payment of the subscription."
-        },
-        "payment_type": {
-            "type": "string",
-            "enum": [
-                "recurring",
-                "additional",
-                "installment"
-            ],
-            "description": "The type of the Payment. Possible values are: `Recurring` - payments occur over fixed intervals of time, `Additional` - extra payment not the recurring payment of the recurring subscription, `Installment` - payment of the installment subscription."
-        },
-        "description": {
-            "type": "string",
-            "description": "The description of the Payment"
-        },
-        "add_time": {
-            "type": "string",
-            "format": "datetime",
-            "description": "The creation time of the Payment"
-        },
-        "update_time": {
-            "type": "string",
-            "format": "datetime",
-            "description": "The update time of the Payment"
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer",
+                                        "description": "The ID of the payment"
+                                    },
+                                    "subscription_id": {
+                                        "type": "integer",
+                                        "description": "The ID of the subscription this payment is associated with"
+                                    },
+                                    "deal_id": {
+                                        "type": "integer",
+                                        "description": "The ID of the deal this payment is associated with"
+                                    },
+                                    "is_active": {
+                                        "type": "boolean",
+                                        "description": "The payment status"
+                                    },
+                                    "amount": {
+                                        "type": "number",
+                                        "format": "double",
+                                        "description": "The payment amount"
+                                    },
+                                    "currency": {
+                                        "type": "string",
+                                        "description": "The currency of the payment"
+                                    },
+                                    "change_amount": {
+                                        "type": "number",
+                                        "format": "double",
+                                        "description": "The difference between the amount of the current payment and the previous payment. The value can be either positive or negative."
+                                    },
+                                    "due_at": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "description": "The date when payment occurs"
+                                    },
+                                    "revenue_movement_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "new",
+                                            "recurring",
+                                            "expansion",
+                                            "contraction",
+                                            "none",
+                                            "churn"
+                                        ],
+                                        "description": "Represents the movement of revenue in comparison with the previous payment. Possible values are: `New` - first payment of the subscription. `Recurring` - no movement. `Expansion` - current payment amount > previous payment amount. `Contraction` - current payment amount < previous payment amount. `Churn` - last payment of the subscription."
+                                    },
+                                    "payment_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "recurring",
+                                            "additional",
+                                            "installment"
+                                        ],
+                                        "description": "The type of the payment. Possible values are: `Recurring` - payments occur over fixed intervals of time, `Additional` - extra payment not the recurring payment of the recurring subscription, `Installment` - payment of the installment subscription."
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "description": "The description of the payment"
+                                    },
+                                    "add_time": {
+                                        "type": "string",
+                                        "format": "datetime",
+                                        "description": "The creation time of the payment"
+                                    },
+                                    "update_time": {
+                                        "type": "string",
+                                        "format": "datetime",
+                                        "description": "The update time of the payment"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-    }
+    ]
 }

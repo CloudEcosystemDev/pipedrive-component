@@ -1,34 +1,56 @@
 {
     "type": "object",
-    "properties": {
-        "stage_conversions": {
-            "type": "array",
-            "description": "The Stage conversions",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "from_stage_id": {
-                        "type": "integer",
-                        "description": "The Stage ID from where conversion starts"
-                    },
-                    "to_stage_id": {
-                        "type": "integer",
-                        "description": "The Stage ID to where conversion ends"
-                    },
-                    "conversion_rate": {
-                        "type": "integer",
-                        "description": "Conversion rate"
-                    }
+    "title": "getPipelineConversionStatisticsResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
                 }
             }
         },
-        "won_conversion": {
-            "type": "integer",
-            "description": "Won conversion"
-        },
-        "lost_conversion": {
-            "type": "integer",
-            "description": "Lost conversion"
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "description": "The pipeline object",
+                    "properties": {
+                        "stage_conversions": {
+                            "type": "array",
+                            "description": "The stage conversions",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "from_stage_id": {
+                                        "type": "integer",
+                                        "description": "The stage ID from where conversion starts"
+                                    },
+                                    "to_stage_id": {
+                                        "type": "integer",
+                                        "description": "The stage ID to where conversion ends"
+                                    },
+                                    "conversion_rate": {
+                                        "type": "integer",
+                                        "description": "The conversion rate"
+                                    }
+                                }
+                            }
+                        },
+                        "won_conversion": {
+                            "type": "integer",
+                            "description": "The won conversion"
+                        },
+                        "lost_conversion": {
+                            "type": "integer",
+                            "description": "The lost conversion"
+                        }
+                    }
+                }
+            }
         }
-    }
+    ]
 }

@@ -1,43 +1,75 @@
 {
-    "type": "object",
-    "properties": {
-        "id": {
-            "type": "integer",
-            "description": "The ID of the Global Message"
-        },
-        "user_id": {
-            "type": "integer",
-            "description": "The ID of the User related to the Global Message"
-        },
-        "company_id": {
-            "type": "integer",
-            "description": "The ID of the Company related to the Global Message"
-        },
-        "type_info": {
+    "title": "getGlobalMessagesResponse200",
+    "allOf": [
+        {
             "type": "object",
-            "description": "The Global Message type info",
             "properties": {
-                "message_type": {
-                    "type": "string",
-                    "description": "The Global Message type for validation checks"
-                },
-                "dismissible_flag": {
+                "success": {
                     "type": "boolean",
-                    "description": "Whether a User can dismiss the Global Message or not"
-                },
-                "priority": {
-                    "type": "integer",
-                    "description": "Sorts messages by priority DESC (from 0 to 10)"
+                    "description": "If the request was successful or not"
                 }
             }
         },
-        "user_data": {
+        {
             "type": "object",
-            "description": "The User data for the Global Message (such as `user_id`, `name`, `email`, `phone`)"
-        },
-        "html": {
-            "type": "string",
-            "description": "HTML for each returned Global Message to render views"
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "description": "The global message data",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "description": "The ID of the global message"
+                            },
+                            "user_id": {
+                                "type": "integer",
+                                "description": "The ID of the user related to the global message"
+                            },
+                            "company_id": {
+                                "type": "integer",
+                                "description": "The ID of the company related to the global message"
+                            },
+                            "type_info": {
+                                "type": "object",
+                                "description": "The global message type info",
+                                "properties": {
+                                    "message_type": {
+                                        "type": "string",
+                                        "description": "The global message type for validation checks"
+                                    },
+                                    "dismissible_flag": {
+                                        "type": "boolean",
+                                        "description": "Whether a user can dismiss the global message or not"
+                                    },
+                                    "priority": {
+                                        "type": "integer",
+                                        "description": "Sorts messages by priority DESC (from 0 to 10)"
+                                    }
+                                }
+                            },
+                            "user_data": {
+                                "type": "object",
+                                "description": "The user data for the global message (such as `user_id`, `name`, `email`, `phone`)"
+                            },
+                            "html": {
+                                "type": "string",
+                                "description": "HTML for each returned global message to render views"
+                            }
+                        }
+                    },
+                    "description": "The array of global messages"
+                },
+                "handle_time": {
+                    "type": "number",
+                    "description": "The total time of the controller processing"
+                },
+                "_req_time_ctx_ms": {
+                    "type": "object",
+                    "description": "The list of timers formatted by name and elapsed time in ms (such as `app`, `app_xss_clean`, `app_sanitizer_xss`)"
+                }
+            }
         }
-    }
+    ]
 }

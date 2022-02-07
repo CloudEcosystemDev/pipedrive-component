@@ -19,7 +19,7 @@
             "properties": {
                 "content": {
                     "type": "string",
-                    "description": "Content of the comment in HTML format. Subject to sanitization on the back-end."
+                    "description": "The content of the comment in HTML format. Subject to sanitization on the back-end."
                 }
             }
         }

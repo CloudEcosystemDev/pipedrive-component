@@ -1,9 +1,21 @@
 {
+    "title": "getLeadSourcesResponse200",
     "type": "object",
     "properties": {
-        "name": {
-            "type": "string",
-            "description": "The unique name of a Lead Source"
+        "success": {
+            "type": "boolean"
+        },
+        "data": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The unique name of a lead source"
+                    }
+                }
+            }
         }
     }
 }

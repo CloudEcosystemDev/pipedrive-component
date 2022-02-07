@@ -1,49 +1,304 @@
 {
-    "type": "object",
-    "properties": {
-        "user": {
+    "title": "listProductsResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
             "type": "object",
             "properties": {
-                "USER_ID": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "data": {
                     "type": "object",
-                    "title": "userDataWithId",
+                    "properties": {
+                        "items": {
+                            "type": "array",
+                            "description": "The array of products",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer",
+                                        "description": "The ID of the deal-product (the ID of the product attached to the deal)"
+                                    },
+                                    "deal_id": {
+                                        "type": "integer",
+                                        "description": "The ID of the deal"
+                                    },
+                                    "order_nr": {
+                                        "type": "integer",
+                                        "description": "The order number of the product"
+                                    },
+                                    "product_id": {
+                                        "type": "integer",
+                                        "description": "The ID of the product"
+                                    },
+                                    "product_variation_id": {
+                                        "type": "integer",
+                                        "description": "The ID of the product variation"
+                                    },
+                                    "item_price": {
+                                        "type": "integer",
+                                        "description": "The price value of the product"
+                                    },
+                                    "discount_percentage": {
+                                        "type": "integer",
+                                        "description": "The discount percentage of the product"
+                                    },
+                                    "duration": {
+                                        "type": "integer",
+                                        "description": "The duration of the product"
+                                    },
+                                    "duration_unit": {
+                                        "type": "string",
+                                        "description": "The type of the duration. (For example hourly, daily, etc.)"
+                                    },
+                                    "sum_no_discount": {
+                                        "type": "number",
+                                        "description": "The product sum without the discount"
+                                    },
+                                    "sum": {
+                                        "type": "number",
+                                        "description": "The sum of all the products attached to the deal"
+                                    },
+                                    "currency": {
+                                        "type": "string",
+                                        "description": "The currency associated with the deal product"
+                                    },
+                                    "enabled_flag": {
+                                        "type": "boolean",
+                                        "description": "Whether the product is enabled or not"
+                                    },
+                                    "add_time": {
+                                        "type": "string",
+                                        "description": "The date and time when the product was added to the deal"
+                                    },
+                                    "last_edit": {
+                                        "type": "string",
+                                        "description": "The date and time when the deal product was last edited"
+                                    },
+                                    "comments": {
+                                        "type": "string",
+                                        "description": "The comments of the product"
+                                    },
+                                    "active_flag": {
+                                        "type": "boolean",
+                                        "description": "Whether the product is active or not"
+                                    },
+                                    "tax": {
+                                        "type": "number",
+                                        "description": "The product tax"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "The product name"
+                                    },
+                                    "sum_formatted": {
+                                        "type": "string",
+                                        "description": "The formatted sum of the product"
+                                    },
+                                    "quantity_formatted": {
+                                        "type": "string",
+                                        "description": "The formatted quantity of the product"
+                                    },
+                                    "quantity": {
+                                        "type": "integer",
+                                        "description": "The quantity of the product"
+                                    },
+                                    "product": {
+                                        "allOf": [
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number",
+                                                        "description": "The ID of the product"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "The name of the product"
+                                                    },
+                                                    "code": {
+                                                        "type": "string",
+                                                        "description": "The product code"
+                                                    },
+                                                    "unit": {
+                                                        "type": "string",
+                                                        "description": "The unit in which this product is sold"
+                                                    },
+                                                    "tax": {
+                                                        "type": "number",
+                                                        "description": "The ax percentage",
+                                                        "default": 0
+                                                    },
+                                                    "active_flag": {
+                                                        "description": "Whether this product is active or not",
+                                                        "title": "numberBooleanDefault1",
+                                                        "type": "number",
+                                                        "default": 1,
+                                                        "enum": [
+                                                            0,
+                                                            1
+                                                        ]
+                                                    },
+                                                    "selectable": {
+                                                        "description": "Whether this product is selected in deals or not",
+                                                        "title": "numberBooleanDefault1",
+                                                        "type": "number",
+                                                        "default": 1,
+                                                        "enum": [
+                                                            0,
+                                                            1
+                                                        ]
+                                                    },
+                                                    "visible_to": {
+                                                        "allOf": [
+                                                            {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "1",
+                                                                    "3",
+                                                                    "5",
+                                                                    "7"
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "description": "Visibility of the product"
+                                                    },
+                                                    "owner_id": {
+                                                        "type": "object",
+                                                        "description": "Information about the Pipedrive user who owns the product"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "prices": {
+                                                        "type": "object",
+                                                        "description": "Object of objects, each containing: currency (string), price (number), cost (number, optional), overhead_cost (number, optional)"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "additional_data": {
                     "allOf": [
                         {
+                            "type": "object",
                             "properties": {
-                                "id": {
+                                "products_quantity_total": {
                                     "type": "integer",
-                                    "description": "The ID of the User"
+                                    "description": "The total quantity of the products"
                                 },
-                                "name": {
-                                    "type": "string",
-                                    "description": "The name of the User"
-                                },
-                                "email": {
-                                    "type": "string",
-                                    "description": "The email of the User"
-                                },
-                                "has_pic": {
+                                "products_sum_total": {
                                     "type": "integer",
-                                    "description": "Whether the User has picture or not. 0 = No picture, 1 = Has picture."
+                                    "description": "The total sum of the products"
                                 },
-                                "pic_hash": {
-                                    "type": "string",
-                                    "nullable": true,
-                                    "description": "The User picture hash"
-                                },
-                                "active_flag": {
+                                "variations_enabled": {
                                     "type": "boolean",
-                                    "description": "If the User is activated or not"
+                                    "description": "Whether variations is enabled or not"
+                                },
+                                "products_quantity_total_formatted": {
+                                    "type": "string",
+                                    "description": "The total formatted quantity of the products"
+                                },
+                                "products_sum_total_formatted": {
+                                    "type": "string",
+                                    "description": "The total formatted sum of the products"
                                 }
                             }
                         },
                         {
                             "type": "object",
-                            "description": "The ID of the User"
+                            "properties": {
+                                "pagination": {
+                                    "description": "Pagination details of the list",
+                                    "type": "object",
+                                    "properties": {
+                                        "start": {
+                                            "type": "integer",
+                                            "description": "Pagination start"
+                                        },
+                                        "limit": {
+                                            "type": "integer",
+                                            "description": "Items shown per page"
+                                        },
+                                        "more_items_in_collection": {
+                                            "type": "boolean",
+                                            "description": "Whether there are more list items in the collection than displayed"
+                                        },
+                                        "next_start": {
+                                            "type": "integer",
+                                            "description": "Next pagination start"
+                                        }
+                                    }
+                                }
+                            }
                         }
                     ]
+                },
+                "related_objects": {
+                    "type": "object",
+                    "properties": {
+                        "user": {
+                            "type": "object",
+                            "properties": {
+                                "USER_ID": {
+                                    "type": "object",
+                                    "title": "userDataWithId",
+                                    "allOf": [
+                                        {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "The ID of the user"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the user"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "description": "The email of the user"
+                                                },
+                                                "has_pic": {
+                                                    "type": "integer",
+                                                    "description": "Whether the user has picture or not. 0 = No picture, 1 = Has picture."
+                                                },
+                                                "pic_hash": {
+                                                    "type": "string",
+                                                    "nullable": true,
+                                                    "description": "The user picture hash"
+                                                },
+                                                "active_flag": {
+                                                    "type": "boolean",
+                                                    "description": "Whether the user is active or not"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "object",
+                                            "description": "The ID of the user"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
-    }
+    ]
 }

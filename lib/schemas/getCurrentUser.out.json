@@ -1,39 +1,159 @@
 {
-    "type": "object",
-    "properties": {
-        "company_id": {
-            "type": "integer",
-            "description": "The User company ID"
-        },
-        "company_name": {
-            "type": "string",
-            "description": "The User company name"
-        },
-        "company_domain": {
-            "type": "string",
-            "description": "The User company domain"
-        },
-        "company_country": {
-            "type": "string",
-            "description": "The User company country"
-        },
-        "company_industry": {
-            "type": "string",
-            "description": "The User company industry"
-        },
-        "language": {
+    "title": "getCurrentUserResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
             "type": "object",
-            "description": "The User language details",
             "properties": {
-                "language_code": {
-                    "type": "string",
-                    "description": "The language code. E.g. en"
-                },
-                "country_code": {
-                    "type": "string",
-                    "description": "The country code. E.g. US"
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "description": "The user ID"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The user name"
+                                },
+                                "default_currency": {
+                                    "type": "string",
+                                    "description": "The user default currency"
+                                },
+                                "locale": {
+                                    "type": "string",
+                                    "description": "The user locale"
+                                },
+                                "lang": {
+                                    "type": "integer",
+                                    "description": "The user language ID"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "description": "The user email"
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "description": "The user phone"
+                                },
+                                "activated": {
+                                    "type": "boolean",
+                                    "description": "Boolean that indicates whether the user is activated"
+                                },
+                                "last_login": {
+                                    "type": "string",
+                                    "description": "The last login date and time of the user. Format: YYYY-MM-DD HH:MM:SS"
+                                },
+                                "created": {
+                                    "type": "string",
+                                    "description": "The creation date and time of the user. Format: YYYY-MM-DD HH:MM:SS"
+                                },
+                                "modified": {
+                                    "type": "string",
+                                    "description": "The last modification date and time of the user. Format: YYYY-MM-DD HH:MM:SS"
+                                },
+                                "signup_flow_variation": {
+                                    "type": "string",
+                                    "nullable": true,
+                                    "description": "The variation of signup flow (if exists). E.g. google"
+                                },
+                                "has_created_company": {
+                                    "type": "boolean",
+                                    "description": "Boolean that indicates whether the user has created a company"
+                                },
+                                "is_admin": {
+                                    "allOf": [
+                                        {
+                                            "title": "numberBoolean",
+                                            "type": "number",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        }
+                                    ],
+                                    "description": "Indication if the user is admin (1 = true, 0 = false)"
+                                },
+                                "active_flag": {
+                                    "type": "boolean",
+                                    "description": "Boolean that indicates whether the user is activated"
+                                },
+                                "timezone_name": {
+                                    "type": "string",
+                                    "description": "The user timezone name"
+                                },
+                                "timezone_offset": {
+                                    "type": "string",
+                                    "description": "The user timezone offset"
+                                },
+                                "role_id": {
+                                    "type": "integer",
+                                    "description": "The ID of the user role"
+                                },
+                                "icon_url": {
+                                    "type": "string",
+                                    "nullable": true,
+                                    "description": "The user icon URL"
+                                },
+                                "is_you": {
+                                    "type": "boolean",
+                                    "description": "Boolean that indicates if the requested user is the same which is logged in (in this case, always true)"
+                                }
+                            }
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "company_id": {
+                                    "type": "integer",
+                                    "description": "The user company ID"
+                                },
+                                "company_name": {
+                                    "type": "string",
+                                    "description": "The user company name"
+                                },
+                                "company_domain": {
+                                    "type": "string",
+                                    "description": "The user company domain"
+                                },
+                                "company_country": {
+                                    "type": "string",
+                                    "description": "The user company country"
+                                },
+                                "company_industry": {
+                                    "type": "string",
+                                    "description": "The user company industry"
+                                },
+                                "language": {
+                                    "type": "object",
+                                    "description": "The user language details",
+                                    "properties": {
+                                        "language_code": {
+                                            "type": "string",
+                                            "description": "The language code. E.g. en"
+                                        },
+                                        "country_code": {
+                                            "type": "string",
+                                            "description": "The country code. E.g. US"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         }
-    }
+    ]
 }

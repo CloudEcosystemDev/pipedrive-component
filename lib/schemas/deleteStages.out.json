@@ -1,12 +1,22 @@
 {
+    "title": "deleteStagesResponse200",
     "type": "object",
     "properties": {
-        "id": {
-            "type": "array",
-            "items": {
-                "type": "integer"
-            },
-            "description": "The list of deleted Stage IDs"
+        "success": {
+            "type": "boolean",
+            "description": "If the request was successful or not"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The list of deleted stage IDs"
+                }
+            }
         }
     }
 }
