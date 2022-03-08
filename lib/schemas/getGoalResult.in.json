@@ -5,12 +5,12 @@
             "required": true,
             "type": "string"
         },
-        "period_start": {
+        "period.start": {
             "required": true,
             "type": "string",
             "format": "date"
         },
-        "period_end": {
+        "period.end": {
             "required": true,
             "type": "string",
             "format": "date"

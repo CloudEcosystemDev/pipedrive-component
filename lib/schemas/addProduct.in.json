@@ -5,13 +5,24 @@
             "title": "addProductRequest",
             "allOf": [
                 {
-                    "title": "productRequest",
                     "type": "object",
+                    "required": [
+                        "name"
+                    ],
                     "properties": {
                         "name": {
                             "type": "string",
                             "description": "The name of the product"
-                        },
+                        }
+                    }
+                },
+                {
+                    "title": "productRequest",
+                    "type": "object",
+                    "required": [
+                        "name"
+                    ],
+                    "properties": {
                         "code": {
                             "type": "string",
                             "description": "The product code"
@@ -65,19 +76,13 @@
                             "description": "The ID of the user who will be marked as the owner of this product. When omitted, the authorized user ID will be used."
                         },
                         "prices": {
-                            "type": "object",
+                            "type": "array",
                             "items": {
                                 "type": "object"
                             },
-                            "description": "Object containing price objects, where each key is the price currency code, and each value is the price object. Each price object contains: `currency` (string), `price` (number), `cost` (number, optional), `overhead_cost` (number, optional). Note that there can only be one price per product per currency. When `prices` is omitted altogether, no prices will be set up for the product."
+                            "description": "An array of objects, each containing: `currency` (string), `price` (number), `cost` (number, optional), `overhead_cost` (number, optional). Note that there can only be one price per product per currency. When `prices` is omitted altogether, no prices will be set up for the product."
                         }
                     }
-                },
-                {
-                    "type": "object",
-                    "required": [
-                        "name"
-                    ]
                 }
             ]
         }

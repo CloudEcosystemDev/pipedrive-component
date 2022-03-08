@@ -1,0 +1,156 @@
+{
+    "title": "searchLeadsResponse200",
+    "allOf": [
+        {
+            "title": "baseResponse",
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "If the response is successful or not"
+                }
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "items": {
+                            "type": "array",
+                            "description": "The array of leads",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "result_score": {
+                                        "type": "number",
+                                        "description": "Search result relevancy"
+                                    },
+                                    "item": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string",
+                                                "description": "The ID of the lead"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "description": "The type of the item"
+                                            },
+                                            "title": {
+                                                "type": "string",
+                                                "description": "The title of the lead"
+                                            },
+                                            "owner": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the owner of the lead"
+                                                    }
+                                                }
+                                            },
+                                            "person": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the person the lead is associated with"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "The name of the person the lead is associated with"
+                                                    }
+                                                }
+                                            },
+                                            "organization": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "description": "The ID of the organization the lead is associated with"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "The name of the organization the lead is associated with"
+                                                    }
+                                                }
+                                            },
+                                            "phones": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "emails": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "custom_fields": {
+                                                "type": "integer",
+                                                "description": "Custom fields"
+                                            },
+                                            "notes": {
+                                                "type": "array",
+                                                "description": "An array of notes",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "value": {
+                                                "type": "integer",
+                                                "description": "The value of the lead"
+                                            },
+                                            "currency": {
+                                                "type": "string",
+                                                "description": "The currency of the lead"
+                                            },
+                                            "visible_to": {
+                                                "type": "integer",
+                                                "description": "The visibility of the lead"
+                                            },
+                                            "is_archived": {
+                                                "type": "boolean",
+                                                "description": "A flag indicating whether the lead is archived or not"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "additional_data": {
+                    "type": "object",
+                    "properties": {
+                        "pagination": {
+                            "description": "Pagination details of the list",
+                            "type": "object",
+                            "properties": {
+                                "start": {
+                                    "type": "integer",
+                                    "description": "Pagination start"
+                                },
+                                "limit": {
+                                    "type": "integer",
+                                    "description": "Items shown per page"
+                                },
+                                "more_items_in_collection": {
+                                    "type": "boolean",
+                                    "description": "Whether there are more list items in the collection than displayed"
+                                },
+                                "next_start": {
+                                    "type": "integer",
+                                    "description": "Next pagination start"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

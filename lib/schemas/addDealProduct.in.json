@@ -11,6 +11,11 @@
                 {
                     "title": "basicDealProductRequest",
                     "type": "object",
+                    "required": [
+                        "product_id",
+                        "item_price",
+                        "quantity"
+                    ],
                     "properties": {
                         "item_price": {
                             "type": "number",
@@ -55,20 +60,6 @@
                                 }
                             ],
                             "description": "Whether the product is enabled on the deal or not. This makes it possible to add products to a deal with a specific price and discount criteria - but keep them disabled, which refrains them from being included in the deal price calculation. When omitted, the product will be marked as enabled by default."
-                        }
-                    }
-                },
-                {
-                    "type": "object",
-                    "required": [
-                        "product_id",
-                        "item_price",
-                        "quantity"
-                    ],
-                    "properties": {
-                        "product_id": {
-                            "type": "integer",
-                            "description": "The ID of the product that will be attached"
                         }
                     }
                 }

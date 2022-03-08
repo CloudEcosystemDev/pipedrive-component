@@ -12,6 +12,11 @@
         "requestBody": {
             "title": "basicDealProductRequest",
             "type": "object",
+            "required": [
+                "product_id",
+                "item_price",
+                "quantity"
+            ],
             "properties": {
                 "item_price": {
                     "type": "number",

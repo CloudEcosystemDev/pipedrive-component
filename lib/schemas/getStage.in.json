@@ -4,6 +4,14 @@
         "id": {
             "required": true,
             "type": "integer"
+        },
+        "everyone": {
+            "title": "numberBoolean",
+            "type": "number",
+            "enum": [
+                0,
+                1
+            ]
         }
     }
 }
