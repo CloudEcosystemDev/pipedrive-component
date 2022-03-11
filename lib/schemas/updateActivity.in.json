@@ -28,6 +28,10 @@
                             "description": "The ID of the deal this activity is associated with",
                             "type": "integer"
                         },
+                        "lead_id": {
+                            "description": "The ID of the lead this activity is associated with",
+                            "type": "string"
+                        },
                         "person_id": {
                             "description": "The ID of the person this activity is associated with",
                             "type": "integer"

@@ -7,6 +7,9 @@
                 {
                     "title": "basicPersonRequest",
                     "type": "object",
+                    "required": [
+                        "name"
+                    ],
                     "properties": {
                         "name": {
                             "type": "string",
@@ -63,6 +66,7 @@
                             }
                         },
                         "visible_to": {
+                            "type": "number",
                             "allOf": [
                                 {
                                     "type": "string",

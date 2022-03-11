@@ -16,6 +16,28 @@
                 "not_archived",
                 "all"
             ]
+        },
+        "owner_id": {
+            "type": "integer",
+            "example": 1
+        },
+        "filter_id": {
+            "type": "integer",
+            "example": 1
+        },
+        "sort": {
+            "type": "string",
+            "enum": [
+                "id",
+                "title",
+                "owner_id",
+                "creator_id",
+                "was_seen",
+                "expected_close_date",
+                "next_activity_id",
+                "add_time",
+                "update_time"
+            ]
         }
     }
 }

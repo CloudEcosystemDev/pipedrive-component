@@ -41,16 +41,19 @@
                             "type": "integer",
                             "description": "The ID of an organization which this deal will be linked to. If the organization does not exist yet, it needs to be created first. This property is required unless `person_id` is specified."
                         },
+                        "pipeline_id": {
+                            "type": "integer",
+                            "description": "The ID of the pipeline this deal will be added to. By default, the deal will be added to the first stage of the specified pipeline. Please note that `pipeline_id` and `stage_id` should not be used together as `pipeline_id` will be ignored."
+                        },
                         "stage_id": {
                             "type": "integer",
-                            "description": "The ID of a stage this deal will be placed in a pipeline (note that you can't supply the ID of the pipeline as this will be assigned automatically based on `stage_id`). If omitted, the deal will be placed in the first stage of the default pipeline."
+                            "description": "The ID of the stage this deal will be added to. Please note that a pipeline will be assigned automatically based on the `stage_id`. If omitted, the deal will be placed in the first stage of the default pipeline."
                         },
                         "status": {
                             "type": "string",
                             "enum": [
                                 "open",
                                 "won",
-                                "lost",
                                 "lost",
                                 "deleted"
                             ],
@@ -70,6 +73,7 @@
                             "description": "The optional message about why the deal was lost (to be used when status = lost)"
                         },
                         "visible_to": {
+                            "type": "number",
                             "allOf": [
                                 {
                                     "type": "string",

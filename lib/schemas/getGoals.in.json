@@ -1,6 +1,16 @@
 {
     "type": "object",
     "properties": {
+        "type.name": {
+            "type": "string",
+            "enum": [
+                "deals_won",
+                "deals_progressed",
+                "activities_completed",
+                "activities_added",
+                "deals_started"
+            ]
+        },
         "title": {
             "type": "string"
         },
@@ -12,20 +22,10 @@
             ],
             "default": true
         },
-        "type_name": {
-            "type": "string",
-            "enum": [
-                "deals_won",
-                "deals_progressed",
-                "activities_completed",
-                "activities_added",
-                "deals_started"
-            ]
-        },
-        "assignee_id": {
+        "assignee.id": {
             "type": "integer"
         },
-        "assignee_type": {
+        "assignee.type": {
             "type": "string",
             "enum": [
                 "person",
@@ -33,33 +33,33 @@
                 "team"
             ]
         },
-        "expected_outcome_target": {
+        "expected_outcome.target": {
             "type": "number"
         },
-        "expected_outcome_tracking_metric": {
+        "expected_outcome.tracking_metric": {
             "type": "string",
             "enum": [
                 "quantity",
                 "sum"
             ]
         },
-        "expected_outcome_currency_id": {
+        "expected_outcome.currency_id": {
             "type": "integer"
         },
-        "type_params_pipeline_id": {
+        "type.params.pipeline_id": {
             "type": "integer"
         },
-        "type_params_stage_id": {
+        "type.params.stage_id": {
             "type": "integer"
         },
-        "type_params_activity_type_id": {
+        "type.params.activity_type_id": {
             "type": "integer"
         },
-        "period_start": {
+        "period.start": {
             "type": "string",
             "format": "date"
         },
-        "period_end": {
+        "period.end": {
             "type": "string",
             "format": "date"
         }

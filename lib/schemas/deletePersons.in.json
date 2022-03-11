@@ -2,7 +2,7 @@
     "type": "object",
     "properties": {
         "ids": {
-            "required": false,
+            "required": true,
             "type": "string"
         }
     }

@@ -33,6 +33,7 @@
                             "type": "string",
                             "enum": [
                                 "deals",
+                                "leads",
                                 "org",
                                 "people",
                                 "products",
