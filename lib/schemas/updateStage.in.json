@@ -24,10 +24,10 @@
                             "description": "The success probability percentage of the deal. Used/shown when deal weighted values are used."
                         },
                         "rotten_flag": {
-                            "type": "integer",
+                            "type": "boolean",
                             "enum": [
-                                0,
-                                1
+                                true,
+                                false
                             ],
                             "description": "Whether deals in this stage can become rotten"
                         },

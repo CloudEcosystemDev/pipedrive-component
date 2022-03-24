@@ -82,6 +82,32 @@
                 "out": "./lib/schemas/getActivities.out.json"
             }
         },
+        "getActivityFields": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all activity fields",
+            "description": "Returns all activity fields.",
+            "callParams": {
+                "pathName": "/activityFields",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getActivityFields.in.json",
+                "out": "./lib/schemas/getActivityFields.out.json"
+            }
+        },
+        "getActivityTypes": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all activity types",
+            "description": "Returns all activity types.",
+            "callParams": {
+                "pathName": "/activityTypes",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getActivityTypes.in.json",
+                "out": "./lib/schemas/getActivityTypes.out.json"
+            }
+        },
         "getUserCallLogs": {
             "main": "./lib/triggers/trigger.js",
             "title": "Get all call logs assigned to a particular user",
@@ -95,56 +121,17 @@
                 "out": "./lib/schemas/getUserCallLogs.out.json"
             }
         },
-        "getCurrencies": {
+        "getCompanyAddons": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get all supported currencies",
-            "description": "Returns all supported currencies in given account which should be used when saving monetary values with other objects. The `code` parameter of the returning objects is the currency code according to ISO 4217 for all non-custom currencies.",
+            "title": "Get all add-ons for a single company",
+            "description": "Returns the add-ons for a single company.",
             "callParams": {
-                "pathName": "/currencies",
+                "pathName": "/billing/subscriptions/addons",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getCurrencies.in.json",
-                "out": "./lib/schemas/getCurrencies.out.json"
-            }
-        },
-        "getDeals": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get all deals",
-            "description": "Returns all deals. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/getting-all-deals\" target=\"_blank\" rel=\"noopener noreferrer\">getting all deals</a>.",
-            "callParams": {
-                "pathName": "/deals",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDeals.in.json",
-                "out": "./lib/schemas/getDeals.out.json"
-            }
-        },
-        "getDealsTimeline": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get deals timeline",
-            "description": "Returns open and won deals, grouped by a defined interval of time set in a date-type dealField (`field_key`) -- e.g. when month is the chosen interval, and 3 months are asked starting from January 1st, 2012, deals are returned grouped into 3 groups -- January, February and March -- based on the value of the given `field_key`.",
-            "callParams": {
-                "pathName": "/deals/timeline",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealsTimeline.in.json",
-                "out": "./lib/schemas/getDealsTimeline.out.json"
-            }
-        },
-        "searchDeals": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Search deals",
-            "description": "Searches all deals by title, notes and/or custom fields. This endpoint is a wrapper of <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> with a narrower OAuth scope. Found deals can be filtered by the person ID and the organization ID.",
-            "callParams": {
-                "pathName": "/deals/search",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/searchDeals.in.json",
-                "out": "./lib/schemas/searchDeals.out.json"
+                "in": "./lib/schemas/getCompanyAddons.in.json",
+                "out": "./lib/schemas/getCompanyAddons.out.json"
             }
         },
         "getDealsSummary": {
@@ -160,6 +147,58 @@
                 "out": "./lib/schemas/getDealsSummary.out.json"
             }
         },
+        "searchDeals": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Search deals",
+            "description": "Searches all deals by title, notes and/or custom fields. This endpoint is a wrapper of <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> with a narrower OAuth scope. Found deals can be filtered by the person ID and the organization ID.",
+            "callParams": {
+                "pathName": "/deals/search",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/searchDeals.in.json",
+                "out": "./lib/schemas/searchDeals.out.json"
+            }
+        },
+        "getDealsTimeline": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get deals timeline",
+            "description": "Returns open and won deals, grouped by a defined interval of time set in a date-type dealField (`field_key`) -- e.g. when month is the chosen interval, and 3 months are asked starting from January 1st, 2012, deals are returned grouped into 3 groups -- January, February and March -- based on the value of the given `field_key`.",
+            "callParams": {
+                "pathName": "/deals/timeline",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDealsTimeline.in.json",
+                "out": "./lib/schemas/getDealsTimeline.out.json"
+            }
+        },
+        "getCurrencies": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all supported currencies",
+            "description": "Returns all supported currencies in given account which should be used when saving monetary values with other objects. The `code` parameter of the returning objects is the currency code according to ISO 4217 for all non-custom currencies.",
+            "callParams": {
+                "pathName": "/currencies",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCurrencies.in.json",
+                "out": "./lib/schemas/getCurrencies.out.json"
+            }
+        },
+        "getDealActivities": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List activities associated with a deal",
+            "description": "Lists activities associated with a deal.",
+            "callParams": {
+                "pathName": "/deals/{id}/activities",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDealActivities.in.json",
+                "out": "./lib/schemas/getDealActivities.out.json"
+            }
+        },
         "getDealFiles": {
             "main": "./lib/triggers/trigger.js",
             "title": "List files attached to a deal",
@@ -171,6 +210,32 @@
             "metadata": {
                 "in": "./lib/schemas/getDealFiles.in.json",
                 "out": "./lib/schemas/getDealFiles.out.json"
+            }
+        },
+        "getDealUpdates": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List updates about a deal",
+            "description": "Lists updates about a deal.",
+            "callParams": {
+                "pathName": "/deals/{id}/flow",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDealUpdates.in.json",
+                "out": "./lib/schemas/getDealUpdates.out.json"
+            }
+        },
+        "getDealParticipants": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List participants of a deal",
+            "description": "Lists the participants associated with a deal.<br>If a company uses the [Campaigns product](https://pipedrive.readme.io/docs/campaigns-in-pipedrive-api), then this endpoint will also return the `data.marketing_status` field.",
+            "callParams": {
+                "pathName": "/deals/{id}/participants",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDealParticipants.in.json",
+                "out": "./lib/schemas/getDealParticipants.out.json"
             }
         },
         "getDealMailMessages": {
@@ -199,19 +264,6 @@
                 "out": "./lib/schemas/getDealUsers.out.json"
             }
         },
-        "getDealParticipants": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List participants of a deal",
-            "description": "Lists the participants associated with a deal.<br>If a company uses the [Campaigns product](https://pipedrive.readme.io/docs/campaigns-in-pipedrive-api), then this endpoint will also return the `data.marketing_status` field.",
-            "callParams": {
-                "pathName": "/deals/{id}/participants",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealParticipants.in.json",
-                "out": "./lib/schemas/getDealParticipants.out.json"
-            }
-        },
         "getDealPersons": {
             "main": "./lib/triggers/trigger.js",
             "title": "List all persons associated with a deal",
@@ -223,19 +275,6 @@
             "metadata": {
                 "in": "./lib/schemas/getDealPersons.in.json",
                 "out": "./lib/schemas/getDealPersons.out.json"
-            }
-        },
-        "getDealProducts": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List products attached to a deal",
-            "description": "Lists products attached to a deal.",
-            "callParams": {
-                "pathName": "/deals/{id}/products",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealProducts.in.json",
-                "out": "./lib/schemas/getDealProducts.out.json"
             }
         },
         "getDealFields": {
@@ -251,43 +290,17 @@
                 "out": "./lib/schemas/getDealFields.out.json"
             }
         },
-        "getDealFollowers": {
+        "getDeals": {
             "main": "./lib/triggers/trigger.js",
-            "title": "List followers of a deal",
-            "description": "Lists the followers of a deal.",
+            "title": "Get all deals",
+            "description": "Returns all deals. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/getting-all-deals\" target=\"_blank\" rel=\"noopener noreferrer\">getting all deals</a>.",
             "callParams": {
-                "pathName": "/deals/{id}/followers",
+                "pathName": "/deals",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getDealFollowers.in.json",
-                "out": "./lib/schemas/getDealFollowers.out.json"
-            }
-        },
-        "getDealActivities": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List activities associated with a deal",
-            "description": "Lists activities associated with a deal.",
-            "callParams": {
-                "pathName": "/deals/{id}/activities",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealActivities.in.json",
-                "out": "./lib/schemas/getDealActivities.out.json"
-            }
-        },
-        "getDealUpdates": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List updates about a deal",
-            "description": "Lists updates about a deal.",
-            "callParams": {
-                "pathName": "/deals/{id}/flow",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealUpdates.in.json",
-                "out": "./lib/schemas/getDealUpdates.out.json"
+                "in": "./lib/schemas/getDeals.in.json",
+                "out": "./lib/schemas/getDeals.out.json"
             }
         },
         "getFiles": {
@@ -303,6 +316,19 @@
                 "out": "./lib/schemas/getFiles.out.json"
             }
         },
+        "getDealFollowers": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List followers of a deal",
+            "description": "Lists the followers of a deal.",
+            "callParams": {
+                "pathName": "/deals/{id}/followers",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDealFollowers.in.json",
+                "out": "./lib/schemas/getDealFollowers.out.json"
+            }
+        },
         "downloadFile": {
             "main": "./lib/triggers/trigger.js",
             "title": "Download one file",
@@ -314,19 +340,6 @@
             "metadata": {
                 "in": "./lib/schemas/downloadFile.in.json",
                 "out": "./lib/schemas/downloadFile.out.json"
-            }
-        },
-        "getFilters": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get all filters",
-            "description": "Returns data about all filters.",
-            "callParams": {
-                "pathName": "/filters",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getFilters.in.json",
-                "out": "./lib/schemas/getFilters.out.json"
             }
         },
         "getFilterHelpers": {
@@ -342,6 +355,32 @@
                 "out": "./lib/schemas/getFilterHelpers.out.json"
             }
         },
+        "getFilters": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all filters",
+            "description": "Returns data about all filters.",
+            "callParams": {
+                "pathName": "/filters",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFilters.in.json",
+                "out": "./lib/schemas/getFilters.out.json"
+            }
+        },
+        "getDealProducts": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List products attached to a deal",
+            "description": "Lists products attached to a deal.",
+            "callParams": {
+                "pathName": "/deals/{id}/products",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDealProducts.in.json",
+                "out": "./lib/schemas/getDealProducts.out.json"
+            }
+        },
         "getGlobalMessages": {
             "main": "./lib/triggers/trigger.js",
             "title": "Get global messages",
@@ -353,84 +392,6 @@
             "metadata": {
                 "in": "./lib/schemas/getGlobalMessages.in.json",
                 "out": "./lib/schemas/getGlobalMessages.out.json"
-            }
-        },
-        "getGoals": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Find goals",
-            "description": "Returns data about goals based on criteria. For searching, append `{searchField}={searchValue}` to the URL, where `searchField` can be any one of the lowest-level fields in dot-notation (e.g. `type.params.pipeline_id`; `title`). `searchValue` should be the value you are looking for on that field. Additionally, `is_active=<true|false>` can be provided to search for only active/inactive goals. When providing `period.start`, `period.end` must also be provided and vice versa.",
-            "callParams": {
-                "pathName": "/goals/find",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getGoals.in.json",
-                "out": "./lib/schemas/getGoals.out.json"
-            }
-        },
-        "searchItem": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Perform a search from multiple item types",
-            "description": "Performs a search from your choice of item types and fields.",
-            "callParams": {
-                "pathName": "/itemSearch",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/searchItem.in.json",
-                "out": "./lib/schemas/searchItem.out.json"
-            }
-        },
-        "getGoalResult": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get result of a goal",
-            "description": "Gets the progress of a goal for the specified period.",
-            "callParams": {
-                "pathName": "/goals/{id}/results",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getGoalResult.in.json",
-                "out": "./lib/schemas/getGoalResult.out.json"
-            }
-        },
-        "getLeads": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get all leads",
-            "description": "Returns multiple leads. Leads are sorted by the time they were created, from oldest to newest. Pagination can be controlled using `limit` and `start` query parameters. If a lead contains custom fields, the fields' values will be included in the response in the same format as with the `Deals` endpoints. If a custom field's value hasn't been set for the lead, it won't appear in the response. Please note that leads do not have a separate set of custom fields, instead they inherit the custom fields' structure from deals.\n",
-            "callParams": {
-                "pathName": "/leads",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getLeads.in.json",
-                "out": "./lib/schemas/getLeads.out.json"
-            }
-        },
-        "getActivityFields": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get all activity fields",
-            "description": "Returns all activity fields.",
-            "callParams": {
-                "pathName": "/activityFields",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getActivityFields.in.json",
-                "out": "./lib/schemas/getActivityFields.out.json"
-            }
-        },
-        "getActivityTypes": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get all activity types",
-            "description": "Returns all activity types.",
-            "callParams": {
-                "pathName": "/activityTypes",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getActivityTypes.in.json",
-                "out": "./lib/schemas/getActivityTypes.out.json"
             }
         },
         "searchItemByField": {
@@ -446,43 +407,43 @@
                 "out": "./lib/schemas/searchItemByField.out.json"
             }
         },
-        "getLeadLabels": {
+        "getLeads": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get all lead labels",
-            "description": "Returns details of all lead labels. This endpoint does not support pagination and all labels are always returned.",
+            "title": "Get all leads",
+            "description": "Returns multiple leads. Leads are sorted by the time they were created, from oldest to newest. Pagination can be controlled using `limit` and `start` query parameters. If a lead contains custom fields, the fields' values will be included in the response in the same format as with the `Deals` endpoints. If a custom field's value hasn't been set for the lead, it won't appear in the response. Please note that leads do not have a separate set of custom fields, instead they inherit the custom fields' structure from deals.\n",
             "callParams": {
-                "pathName": "/leadLabels",
+                "pathName": "/leads",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getLeadLabels.in.json",
-                "out": "./lib/schemas/getLeadLabels.out.json"
+                "in": "./lib/schemas/getLeads.in.json",
+                "out": "./lib/schemas/getLeads.out.json"
             }
         },
-        "getLeadSources": {
+        "searchItem": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get all lead sources",
-            "description": "Returns all lead sources. Please note that the list of lead sources is fixed, it cannot be modified. All leads created through the Pipedrive API will have a lead source `API` assigned.\n",
+            "title": "Perform a search from multiple item types",
+            "description": "Performs a search from your choice of item types and fields.",
             "callParams": {
-                "pathName": "/leadSources",
+                "pathName": "/itemSearch",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getLeadSources.in.json",
-                "out": "./lib/schemas/getLeadSources.out.json"
+                "in": "./lib/schemas/searchItem.in.json",
+                "out": "./lib/schemas/searchItem.out.json"
             }
         },
-        "searchLeads": {
+        "getGoals": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Search leads",
-            "description": "Searches all leads by title, notes and/or custom fields. This endpoint is a wrapper of <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> with a narrower OAuth scope. Found leads can be filtered by the person ID and the organization ID.",
+            "title": "Find goals",
+            "description": "Returns data about goals based on criteria. For searching, append `{searchField}={searchValue}` to the URL, where `searchField` can be any one of the lowest-level fields in dot-notation (e.g. `type.params.pipeline_id`; `title`). `searchValue` should be the value you are looking for on that field. Additionally, `is_active=<true|false>` can be provided to search for only active/inactive goals. When providing `period.start`, `period.end` must also be provided and vice versa.",
             "callParams": {
-                "pathName": "/leads/search",
+                "pathName": "/goals/find",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/searchLeads.in.json",
-                "out": "./lib/schemas/searchLeads.out.json"
+                "in": "./lib/schemas/getGoals.in.json",
+                "out": "./lib/schemas/getGoals.out.json"
             }
         },
         "getMailThreads": {
@@ -498,82 +459,56 @@
                 "out": "./lib/schemas/getMailThreads.out.json"
             }
         },
-        "getNotes": {
+        "getLeadLabels": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get all notes",
-            "description": "Returns all notes.",
+            "title": "Get all lead labels",
+            "description": "Returns details of all lead labels. This endpoint does not support pagination and all labels are always returned.",
             "callParams": {
-                "pathName": "/notes",
+                "pathName": "/leadLabels",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getNotes.in.json",
-                "out": "./lib/schemas/getNotes.out.json"
+                "in": "./lib/schemas/getLeadLabels.in.json",
+                "out": "./lib/schemas/getLeadLabels.out.json"
             }
         },
-        "getNoteComments": {
+        "getGoalResult": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get all comments for a note",
-            "description": "Returns all comments associated with a note.",
+            "title": "Get result of a goal",
+            "description": "Gets the progress of a goal for the specified period.",
             "callParams": {
-                "pathName": "/notes/{id}/comments",
+                "pathName": "/goals/{id}/results",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getNoteComments.in.json",
-                "out": "./lib/schemas/getNoteComments.out.json"
+                "in": "./lib/schemas/getGoalResult.in.json",
+                "out": "./lib/schemas/getGoalResult.out.json"
             }
         },
-        "getOrganizations": {
+        "getLeadSources": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get all organizations",
-            "description": "Returns all organizations.",
+            "title": "Get all lead sources",
+            "description": "Returns all lead sources. Please note that the list of lead sources is fixed, it cannot be modified. All leads created through the Pipedrive API will have a lead source `API` assigned.\n",
             "callParams": {
-                "pathName": "/organizations",
+                "pathName": "/leadSources",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getOrganizations.in.json",
-                "out": "./lib/schemas/getOrganizations.out.json"
+                "in": "./lib/schemas/getLeadSources.in.json",
+                "out": "./lib/schemas/getLeadSources.out.json"
             }
         },
-        "searchOrganization": {
+        "getNoteFields": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Search organizations",
-            "description": "Searches all organizations by name, address, notes and/or custom fields. This endpoint is a wrapper of <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> with a narrower OAuth scope.",
+            "title": "Get all note fields",
+            "description": "Returns data about all note fields.",
             "callParams": {
-                "pathName": "/organizations/search",
+                "pathName": "/noteFields",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/searchOrganization.in.json",
-                "out": "./lib/schemas/searchOrganization.out.json"
-            }
-        },
-        "getMailThreadMessages": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get all mail messages of mail thread",
-            "description": "Returns all the mail messages inside a specified mail thread.",
-            "callParams": {
-                "pathName": "/mailbox/mailThreads/{id}/mailMessages",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getMailThreadMessages.in.json",
-                "out": "./lib/schemas/getMailThreadMessages.out.json"
-            }
-        },
-        "getOrganizationUpdates": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List updates about an organization",
-            "description": "Lists updates about an organization.",
-            "callParams": {
-                "pathName": "/organizations/{id}/flow",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationUpdates.in.json",
-                "out": "./lib/schemas/getOrganizationUpdates.out.json"
+                "in": "./lib/schemas/getNoteFields.in.json",
+                "out": "./lib/schemas/getNoteFields.out.json"
             }
         },
         "getOrganizationActivities": {
@@ -589,6 +524,45 @@
                 "out": "./lib/schemas/getOrganizationActivities.out.json"
             }
         },
+        "getOrganizations": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all organizations",
+            "description": "Returns all organizations.",
+            "callParams": {
+                "pathName": "/organizations",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOrganizations.in.json",
+                "out": "./lib/schemas/getOrganizations.out.json"
+            }
+        },
+        "getNotes": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all notes",
+            "description": "Returns all notes.",
+            "callParams": {
+                "pathName": "/notes",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getNotes.in.json",
+                "out": "./lib/schemas/getNotes.out.json"
+            }
+        },
+        "getMailThreadMessages": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all mail messages of mail thread",
+            "description": "Returns all the mail messages inside a specified mail thread.",
+            "callParams": {
+                "pathName": "/mailbox/mailThreads/{id}/mailMessages",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMailThreadMessages.in.json",
+                "out": "./lib/schemas/getMailThreadMessages.out.json"
+            }
+        },
         "getOrganizationDeals": {
             "main": "./lib/triggers/trigger.js",
             "title": "List deals associated with an organization",
@@ -602,17 +576,43 @@
                 "out": "./lib/schemas/getOrganizationDeals.out.json"
             }
         },
-        "getOrganizationFiles": {
+        "getOrganizationUpdates": {
             "main": "./lib/triggers/trigger.js",
-            "title": "List files attached to an organization",
-            "description": "Lists files associated with an organization.",
+            "title": "List updates about an organization",
+            "description": "Lists updates about an organization.",
             "callParams": {
-                "pathName": "/organizations/{id}/files",
+                "pathName": "/organizations/{id}/flow",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getOrganizationFiles.in.json",
-                "out": "./lib/schemas/getOrganizationFiles.out.json"
+                "in": "./lib/schemas/getOrganizationUpdates.in.json",
+                "out": "./lib/schemas/getOrganizationUpdates.out.json"
+            }
+        },
+        "searchOrganization": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Search organizations",
+            "description": "Searches all organizations by name, address, notes and/or custom fields. This endpoint is a wrapper of <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> with a narrower OAuth scope.",
+            "callParams": {
+                "pathName": "/organizations/search",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/searchOrganization.in.json",
+                "out": "./lib/schemas/searchOrganization.out.json"
+            }
+        },
+        "searchLeads": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Search leads",
+            "description": "Searches all leads by title, notes and/or custom fields. This endpoint is a wrapper of <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> with a narrower OAuth scope. Found leads can be filtered by the person ID and the organization ID.",
+            "callParams": {
+                "pathName": "/leads/search",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/searchLeads.in.json",
+                "out": "./lib/schemas/searchLeads.out.json"
             }
         },
         "getOrganizationMailMessages": {
@@ -641,17 +641,17 @@
                 "out": "./lib/schemas/getOrganizationFollowers.out.json"
             }
         },
-        "getOrganizationFields": {
+        "getOrganizationPersons": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get all organization fields",
-            "description": "Returns data about all organization fields.",
+            "title": "List persons of an organization",
+            "description": "Lists persons associated with an organization.<br>If a company uses the [Campaigns product](https://pipedrive.readme.io/docs/campaigns-in-pipedrive-api), then this endpoint will also return the `data.marketing_status` field.",
             "callParams": {
-                "pathName": "/organizationFields",
+                "pathName": "/organizations/{id}/persons",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getOrganizationFields.in.json",
-                "out": "./lib/schemas/getOrganizationFields.out.json"
+                "in": "./lib/schemas/getOrganizationPersons.in.json",
+                "out": "./lib/schemas/getOrganizationPersons.out.json"
             }
         },
         "getOrganizationUsers": {
@@ -667,17 +667,17 @@
                 "out": "./lib/schemas/getOrganizationUsers.out.json"
             }
         },
-        "getNoteFields": {
+        "getNoteComments": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get all note fields",
-            "description": "Returns data about all note fields.",
+            "title": "Get all comments for a note",
+            "description": "Returns all comments associated with a note.",
             "callParams": {
-                "pathName": "/noteFields",
+                "pathName": "/notes/{id}/comments",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getNoteFields.in.json",
-                "out": "./lib/schemas/getNoteFields.out.json"
+                "in": "./lib/schemas/getNoteComments.in.json",
+                "out": "./lib/schemas/getNoteComments.out.json"
             }
         },
         "getOrganizationRelationships": {
@@ -693,19 +693,6 @@
                 "out": "./lib/schemas/getOrganizationRelationships.out.json"
             }
         },
-        "getOrganizationPersons": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List persons of an organization",
-            "description": "Lists persons associated with an organization.<br>If a company uses the [Campaigns product](https://pipedrive.readme.io/docs/campaigns-in-pipedrive-api), then this endpoint will also return the `data.marketing_status` field.",
-            "callParams": {
-                "pathName": "/organizations/{id}/persons",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationPersons.in.json",
-                "out": "./lib/schemas/getOrganizationPersons.out.json"
-            }
-        },
         "getPermissionSets": {
             "main": "./lib/triggers/trigger.js",
             "title": "Get all permission sets",
@@ -716,149 +703,6 @@
             "metadata": {
                 "in": "./lib/schemas/getPermissionSets.in.json",
                 "out": "./lib/schemas/getPermissionSets.out.json"
-            }
-        },
-        "searchPersons": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Search persons",
-            "description": "Searches all persons by name, email, phone, notes and/or custom fields. This endpoint is a wrapper of <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> with a narrower OAuth scope. Found persons can be filtered by organization ID.",
-            "callParams": {
-                "pathName": "/persons/search",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/searchPersons.in.json",
-                "out": "./lib/schemas/searchPersons.out.json"
-            }
-        },
-        "getPersonFiles": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List files attached to a person",
-            "description": "Lists files associated with a person.",
-            "callParams": {
-                "pathName": "/persons/{id}/files",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonFiles.in.json",
-                "out": "./lib/schemas/getPersonFiles.out.json"
-            }
-        },
-        "getPersons": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get all persons",
-            "description": "Returns all persons.",
-            "callParams": {
-                "pathName": "/persons",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersons.in.json",
-                "out": "./lib/schemas/getPersons.out.json"
-            }
-        },
-        "getPersonDeals": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List deals associated with a person",
-            "description": "Lists deals associated with a person.",
-            "callParams": {
-                "pathName": "/persons/{id}/deals",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonDeals.in.json",
-                "out": "./lib/schemas/getPersonDeals.out.json"
-            }
-        },
-        "getPersonUpdates": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List updates about a person",
-            "description": "Lists updates about a person.<br>If a company uses the [Campaigns product](https://pipedrive.readme.io/docs/campaigns-in-pipedrive-api), then this endpoint's response will also include updates for the `marketing_status` field.",
-            "callParams": {
-                "pathName": "/persons/{id}/flow",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonUpdates.in.json",
-                "out": "./lib/schemas/getPersonUpdates.out.json"
-            }
-        },
-        "getPersonFollowers": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List followers of a person",
-            "description": "Lists the followers of a person.",
-            "callParams": {
-                "pathName": "/persons/{id}/followers",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonFollowers.in.json",
-                "out": "./lib/schemas/getPersonFollowers.out.json"
-            }
-        },
-        "getPersonActivities": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List activities associated with a person",
-            "description": "Lists activities associated with a person.",
-            "callParams": {
-                "pathName": "/persons/{id}/activities",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonActivities.in.json",
-                "out": "./lib/schemas/getPersonActivities.out.json"
-            }
-        },
-        "getPersonMailMessages": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List mail messages associated with a person",
-            "description": "Lists mail messages associated with a person.",
-            "callParams": {
-                "pathName": "/persons/{id}/mailMessages",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonMailMessages.in.json",
-                "out": "./lib/schemas/getPersonMailMessages.out.json"
-            }
-        },
-        "getPersonProducts": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List products associated with a person",
-            "description": "Lists products associated with a person.",
-            "callParams": {
-                "pathName": "/persons/{id}/products",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonProducts.in.json",
-                "out": "./lib/schemas/getPersonProducts.out.json"
-            }
-        },
-        "getPersonFields": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get all person fields",
-            "description": "Returns data about all person fields.<br>If a company uses the [Campaigns product](https://pipedrive.readme.io/docs/campaigns-in-pipedrive-api), then this endpoint will also return the `data.marketing_status` field.",
-            "callParams": {
-                "pathName": "/personFields",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonFields.in.json",
-                "out": "./lib/schemas/getPersonFields.out.json"
-            }
-        },
-        "getPersonUsers": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List permitted users",
-            "description": "List users permitted to access a person.",
-            "callParams": {
-                "pathName": "/persons/{id}/permittedUsers",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonUsers.in.json",
-                "out": "./lib/schemas/getPersonUsers.out.json"
             }
         },
         "getPermissionSetAssignments": {
@@ -874,17 +718,186 @@
                 "out": "./lib/schemas/getPermissionSetAssignments.out.json"
             }
         },
-        "getPipelineConversionStatistics": {
+        "getOrganizationFiles": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get deals conversion rates in pipeline",
-            "description": "Returns all stage-to-stage conversion and pipeline-to-close rates for the given time period.",
+            "title": "List files attached to an organization",
+            "description": "Lists files associated with an organization.",
             "callParams": {
-                "pathName": "/pipelines/{id}/conversion_statistics",
+                "pathName": "/organizations/{id}/files",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getPipelineConversionStatistics.in.json",
-                "out": "./lib/schemas/getPipelineConversionStatistics.out.json"
+                "in": "./lib/schemas/getOrganizationFiles.in.json",
+                "out": "./lib/schemas/getOrganizationFiles.out.json"
+            }
+        },
+        "getOrganizationFields": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all organization fields",
+            "description": "Returns data about all organization fields.",
+            "callParams": {
+                "pathName": "/organizationFields",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOrganizationFields.in.json",
+                "out": "./lib/schemas/getOrganizationFields.out.json"
+            }
+        },
+        "getPersons": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all persons",
+            "description": "Returns all persons.",
+            "callParams": {
+                "pathName": "/persons",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersons.in.json",
+                "out": "./lib/schemas/getPersons.out.json"
+            }
+        },
+        "getPersonActivities": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List activities associated with a person",
+            "description": "Lists activities associated with a person.",
+            "callParams": {
+                "pathName": "/persons/{id}/activities",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonActivities.in.json",
+                "out": "./lib/schemas/getPersonActivities.out.json"
+            }
+        },
+        "getPersonUpdates": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List updates about a person",
+            "description": "Lists updates about a person.<br>If a company uses the [Campaigns product](https://pipedrive.readme.io/docs/campaigns-in-pipedrive-api), then this endpoint's response will also include updates for the `marketing_status` field.",
+            "callParams": {
+                "pathName": "/persons/{id}/flow",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonUpdates.in.json",
+                "out": "./lib/schemas/getPersonUpdates.out.json"
+            }
+        },
+        "searchPersons": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Search persons",
+            "description": "Searches all persons by name, email, phone, notes and/or custom fields. This endpoint is a wrapper of <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> with a narrower OAuth scope. Found persons can be filtered by organization ID.",
+            "callParams": {
+                "pathName": "/persons/search",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/searchPersons.in.json",
+                "out": "./lib/schemas/searchPersons.out.json"
+            }
+        },
+        "getPersonFollowers": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List followers of a person",
+            "description": "Lists the followers of a person.",
+            "callParams": {
+                "pathName": "/persons/{id}/followers",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonFollowers.in.json",
+                "out": "./lib/schemas/getPersonFollowers.out.json"
+            }
+        },
+        "getPersonMailMessages": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List mail messages associated with a person",
+            "description": "Lists mail messages associated with a person.",
+            "callParams": {
+                "pathName": "/persons/{id}/mailMessages",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonMailMessages.in.json",
+                "out": "./lib/schemas/getPersonMailMessages.out.json"
+            }
+        },
+        "getPersonFields": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all person fields",
+            "description": "Returns data about all person fields.<br>If a company uses the [Campaigns product](https://pipedrive.readme.io/docs/campaigns-in-pipedrive-api), then this endpoint will also return the `data.marketing_status` field.",
+            "callParams": {
+                "pathName": "/personFields",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonFields.in.json",
+                "out": "./lib/schemas/getPersonFields.out.json"
+            }
+        },
+        "getPersonProducts": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List products associated with a person",
+            "description": "Lists products associated with a person.",
+            "callParams": {
+                "pathName": "/persons/{id}/products",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonProducts.in.json",
+                "out": "./lib/schemas/getPersonProducts.out.json"
+            }
+        },
+        "getPersonFiles": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List files attached to a person",
+            "description": "Lists files associated with a person.",
+            "callParams": {
+                "pathName": "/persons/{id}/files",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonFiles.in.json",
+                "out": "./lib/schemas/getPersonFiles.out.json"
+            }
+        },
+        "getPersonDeals": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List deals associated with a person",
+            "description": "Lists deals associated with a person.",
+            "callParams": {
+                "pathName": "/persons/{id}/deals",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonDeals.in.json",
+                "out": "./lib/schemas/getPersonDeals.out.json"
+            }
+        },
+        "getPersonUsers": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List permitted users",
+            "description": "List users permitted to access a person.",
+            "callParams": {
+                "pathName": "/persons/{id}/permittedUsers",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPersonUsers.in.json",
+                "out": "./lib/schemas/getPersonUsers.out.json"
+            }
+        },
+        "getPipelineDeals": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get deals in a pipeline",
+            "description": "Lists deals in a specific pipeline across all its stages.",
+            "callParams": {
+                "pathName": "/pipelines/{id}/deals",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPipelineDeals.in.json",
+                "out": "./lib/schemas/getPipelineDeals.out.json"
             }
         },
         "getPipelines": {
@@ -913,17 +926,30 @@
                 "out": "./lib/schemas/getPipelineMovementStatistics.out.json"
             }
         },
-        "getProducts": {
+        "searchProducts": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get all products",
-            "description": "Returns data about all products.",
+            "title": "Search products",
+            "description": "Searches all products by name, code and/or custom fields. This endpoint is a wrapper of <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> with a narrower OAuth scope.",
             "callParams": {
-                "pathName": "/products",
+                "pathName": "/products/search",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getProducts.in.json",
-                "out": "./lib/schemas/getProducts.out.json"
+                "in": "./lib/schemas/searchProducts.in.json",
+                "out": "./lib/schemas/searchProducts.out.json"
+            }
+        },
+        "getPipelineConversionStatistics": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get deals conversion rates in pipeline",
+            "description": "Returns all stage-to-stage conversion and pipeline-to-close rates for the given time period.",
+            "callParams": {
+                "pathName": "/pipelines/{id}/conversion_statistics",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPipelineConversionStatistics.in.json",
+                "out": "./lib/schemas/getPipelineConversionStatistics.out.json"
             }
         },
         "getProductDeals": {
@@ -937,6 +963,31 @@
             "metadata": {
                 "in": "./lib/schemas/getProductDeals.in.json",
                 "out": "./lib/schemas/getProductDeals.out.json"
+            }
+        },
+        "getRoles": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all roles",
+            "callParams": {
+                "pathName": "/roles",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRoles.in.json",
+                "out": "./lib/schemas/getRoles.out.json"
+            }
+        },
+        "getProductFields": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all product fields",
+            "description": "Returns data about all product fields.",
+            "callParams": {
+                "pathName": "/productFields",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getProductFields.in.json",
+                "out": "./lib/schemas/getProductFields.out.json"
             }
         },
         "getProductFiles": {
@@ -965,80 +1016,16 @@
                 "out": "./lib/schemas/getProductFollowers.out.json"
             }
         },
-        "getProductUsers": {
+        "getRoleSettings": {
             "main": "./lib/triggers/trigger.js",
-            "title": "List permitted users",
-            "description": "Lists users permitted to access a product.",
+            "title": "List role settings",
             "callParams": {
-                "pathName": "/products/{id}/permittedUsers",
+                "pathName": "/roles/{id}/settings",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getProductUsers.in.json",
-                "out": "./lib/schemas/getProductUsers.out.json"
-            }
-        },
-        "getProductFields": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get all product fields",
-            "description": "Returns data about all product fields.",
-            "callParams": {
-                "pathName": "/productFields",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getProductFields.in.json",
-                "out": "./lib/schemas/getProductFields.out.json"
-            }
-        },
-        "getRoles": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get all roles",
-            "callParams": {
-                "pathName": "/roles",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getRoles.in.json",
-                "out": "./lib/schemas/getRoles.out.json"
-            }
-        },
-        "getPipelineDeals": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get deals in a pipeline",
-            "description": "Lists deals in a specific pipeline across all its stages.",
-            "callParams": {
-                "pathName": "/pipelines/{id}/deals",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPipelineDeals.in.json",
-                "out": "./lib/schemas/getPipelineDeals.out.json"
-            }
-        },
-        "getRoleSubRoles": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List role sub-roles",
-            "callParams": {
-                "pathName": "/roles/{id}/roles",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getRoleSubRoles.in.json",
-                "out": "./lib/schemas/getRoleSubRoles.out.json"
-            }
-        },
-        "getRecents": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get recents",
-            "description": "Returns data about all recent changes occurred after the given timestamp.",
-            "callParams": {
-                "pathName": "/recents",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getRecents.in.json",
-                "out": "./lib/schemas/getRecents.out.json"
+                "in": "./lib/schemas/getRoleSettings.in.json",
+                "out": "./lib/schemas/getRoleSettings.out.json"
             }
         },
         "getRoleAssignments": {
@@ -1054,17 +1041,30 @@
                 "out": "./lib/schemas/getRoleAssignments.out.json"
             }
         },
-        "searchProducts": {
+        "getProductUsers": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Search products",
-            "description": "Searches all products by name, code and/or custom fields. This endpoint is a wrapper of <a href=\"https://developers.pipedrive.com/docs/api/v1/ItemSearch#searchItem\">/v1/itemSearch</a> with a narrower OAuth scope.",
+            "title": "List permitted users",
+            "description": "Lists users permitted to access a product.",
             "callParams": {
-                "pathName": "/products/search",
+                "pathName": "/products/{id}/permittedUsers",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/searchProducts.in.json",
-                "out": "./lib/schemas/searchProducts.out.json"
+                "in": "./lib/schemas/getProductUsers.in.json",
+                "out": "./lib/schemas/getProductUsers.out.json"
+            }
+        },
+        "getProducts": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all products",
+            "description": "Returns data about all products.",
+            "callParams": {
+                "pathName": "/products",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getProducts.in.json",
+                "out": "./lib/schemas/getProducts.out.json"
             }
         },
         "getStages": {
@@ -1080,17 +1080,16 @@
                 "out": "./lib/schemas/getStages.out.json"
             }
         },
-        "getSubscriptionPayments": {
+        "getRoleSubRoles": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get all payments of a subscription",
-            "description": "Returns all payments of an installment or recurring subscription.",
+            "title": "List role sub-roles",
             "callParams": {
-                "pathName": "/subscriptions/{id}/payments",
+                "pathName": "/roles/{id}/roles",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getSubscriptionPayments.in.json",
-                "out": "./lib/schemas/getSubscriptionPayments.out.json"
+                "in": "./lib/schemas/getRoleSubRoles.in.json",
+                "out": "./lib/schemas/getRoleSubRoles.out.json"
             }
         },
         "getStageDeals": {
@@ -1104,6 +1103,19 @@
             "metadata": {
                 "in": "./lib/schemas/getStageDeals.in.json",
                 "out": "./lib/schemas/getStageDeals.out.json"
+            }
+        },
+        "getSubscriptionPayments": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all payments of a subscription",
+            "description": "Returns all payments of an installment or recurring subscription.",
+            "callParams": {
+                "pathName": "/subscriptions/{id}/payments",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSubscriptionPayments.in.json",
+                "out": "./lib/schemas/getSubscriptionPayments.out.json"
             }
         },
         "getTeams": {
@@ -1171,6 +1183,19 @@
                 "out": "./lib/schemas/getUserFollowers.out.json"
             }
         },
+        "getUsers": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all users",
+            "description": "Returns data about all users within the company.",
+            "callParams": {
+                "pathName": "/users",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUsers.in.json",
+                "out": "./lib/schemas/getUsers.out.json"
+            }
+        },
         "getUserPermissions": {
             "main": "./lib/triggers/trigger.js",
             "title": "List user permissions",
@@ -1195,19 +1220,6 @@
             "metadata": {
                 "in": "./lib/schemas/getUserRoleAssignments.in.json",
                 "out": "./lib/schemas/getUserRoleAssignments.out.json"
-            }
-        },
-        "getUserSettings": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List settings of an authorized user",
-            "description": "Lists the settings of an authorized user. Example response contains a shortened list of settings.",
-            "callParams": {
-                "pathName": "/userSettings",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getUserSettings.in.json",
-                "out": "./lib/schemas/getUserSettings.out.json"
             }
         },
         "getUserRoleSettings": {
@@ -1236,6 +1248,19 @@
                 "out": "./lib/schemas/getUserConnections.out.json"
             }
         },
+        "getUserSettings": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "List settings of an authorized user",
+            "description": "Lists the settings of an authorized user. Example response contains a shortened list of settings.",
+            "callParams": {
+                "pathName": "/userSettings",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUserSettings.in.json",
+                "out": "./lib/schemas/getUserSettings.out.json"
+            }
+        },
         "getWebhooks": {
             "main": "./lib/triggers/trigger.js",
             "title": "Get all Webhooks",
@@ -1249,44 +1274,60 @@
                 "out": "./lib/schemas/getWebhooks.out.json"
             }
         },
-        "getUsers": {
+        "getRecents": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get all users",
-            "description": "Returns data about all users within the company.",
+            "title": "Get recents",
+            "description": "Returns data about all recent changes occurred after the given timestamp.",
             "callParams": {
-                "pathName": "/users",
+                "pathName": "/recents",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getUsers.in.json",
-                "out": "./lib/schemas/getUsers.out.json"
-            }
-        },
-        "getRoleSettings": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List role settings",
-            "callParams": {
-                "pathName": "/roles/{id}/settings",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getRoleSettings.in.json",
-                "out": "./lib/schemas/getRoleSettings.out.json"
+                "in": "./lib/schemas/getRecents.in.json",
+                "out": "./lib/schemas/getRecents.out.json"
             }
         }
     },
     "actions": {
-        "deleteActivities": {
+        "deleteActivity": {
             "main": "./lib/actions/action.js",
-            "title": "Delete multiple activities in bulk",
-            "description": "Marks multiple activities as deleted.",
+            "title": "Delete an activity",
+            "description": "Marks an activity as deleted.",
             "callParams": {
-                "pathName": "/activities",
+                "pathName": "/activities/{id}",
                 "method": "delete"
             },
             "metadata": {
-                "in": "./lib/schemas/deleteActivities.in.json",
-                "out": "./lib/schemas/deleteActivities.out.json"
+                "in": "./lib/schemas/deleteActivity.in.json",
+                "out": "./lib/schemas/deleteActivity.out.json"
+            }
+        },
+        "addActivityType": {
+            "main": "./lib/actions/action.js",
+            "title": "Add new activity type",
+            "description": "Adds a new activity type.",
+            "callParams": {
+                "pathName": "/activityTypes",
+                "method": "post",
+                "requestContentType": "application/x-www-form-urlencoded"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addActivityType.in.json",
+                "out": "./lib/schemas/addActivityType.out.json"
+            }
+        },
+        "addCallLog": {
+            "main": "./lib/actions/action.js",
+            "title": "Add a call log",
+            "description": "Adds a new call log.",
+            "callParams": {
+                "pathName": "/callLogs",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addCallLog.in.json",
+                "out": "./lib/schemas/addCallLog.out.json"
             }
         },
         "addActivity": {
@@ -1303,44 +1344,44 @@
                 "out": "./lib/schemas/addActivity.out.json"
             }
         },
-        "deleteActivity": {
+        "updateActivityType": {
             "main": "./lib/actions/action.js",
-            "title": "Delete an activity",
-            "description": "Marks an activity as deleted.",
+            "title": "Update an activity type",
+            "description": "Updates an activity type.",
             "callParams": {
-                "pathName": "/activities/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteActivity.in.json",
-                "out": "./lib/schemas/deleteActivity.out.json"
-            }
-        },
-        "deleteActivityTypes": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete multiple activity types in bulk",
-            "description": "Marks multiple activity types as deleted.",
-            "callParams": {
-                "pathName": "/activityTypes",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteActivityTypes.in.json",
-                "out": "./lib/schemas/deleteActivityTypes.out.json"
-            }
-        },
-        "addActivityType": {
-            "main": "./lib/actions/action.js",
-            "title": "Add new activity type",
-            "description": "Adds a new activity type.",
-            "callParams": {
-                "pathName": "/activityTypes",
-                "method": "post",
+                "pathName": "/activityTypes/{id}",
+                "method": "put",
                 "requestContentType": "application/x-www-form-urlencoded"
             },
             "metadata": {
-                "in": "./lib/schemas/addActivityType.in.json",
-                "out": "./lib/schemas/addActivityType.out.json"
+                "in": "./lib/schemas/updateActivityType.in.json",
+                "out": "./lib/schemas/updateActivityType.out.json"
+            }
+        },
+        "deleteActivities": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete multiple activities in bulk",
+            "description": "Marks multiple activities as deleted.",
+            "callParams": {
+                "pathName": "/activities",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteActivities.in.json",
+                "out": "./lib/schemas/deleteActivities.out.json"
+            }
+        },
+        "deleteCallLog": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a call log",
+            "description": "Deletes a call log. If there is an audio recording attached to it, it will also be deleted. The related activity will not be removed by this request. If you want to remove the related activities, please use the endpoint which is specific for activities.",
+            "callParams": {
+                "pathName": "/callLogs/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteCallLog.in.json",
+                "out": "./lib/schemas/deleteCallLog.out.json"
             }
         },
         "getActivity": {
@@ -1369,33 +1410,6 @@
                 "out": "./lib/schemas/deleteActivityType.out.json"
             }
         },
-        "addCallLog": {
-            "main": "./lib/actions/action.js",
-            "title": "Add a call log",
-            "description": "Adds a new call log.",
-            "callParams": {
-                "pathName": "/callLogs",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addCallLog.in.json",
-                "out": "./lib/schemas/addCallLog.out.json"
-            }
-        },
-        "deleteCallLog": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a call log",
-            "description": "Deletes a call log. If there is an audio recording attached to it, it will also be deleted. The related activity will not be removed by this request. If you want to remove the related activities, please use the endpoint which is specific for activities.",
-            "callParams": {
-                "pathName": "/callLogs/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteCallLog.in.json",
-                "out": "./lib/schemas/deleteCallLog.out.json"
-            }
-        },
         "addCallLogAudioFile": {
             "main": "./lib/actions/action.js",
             "title": "Attach an audio file to the call log",
@@ -1410,6 +1424,20 @@
                 "out": "./lib/schemas/addCallLogAudioFile.out.json"
             }
         },
+        "updateDeal": {
+            "main": "./lib/actions/action.js",
+            "title": "Update a deal",
+            "description": "Updates the properties of a deal. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/updating-a-deal\" target=\"_blank\" rel=\"noopener noreferrer\">updating a deal</a>.",
+            "callParams": {
+                "pathName": "/deals/{id}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateDeal.in.json",
+                "out": "./lib/schemas/updateDeal.out.json"
+            }
+        },
         "getCallLog": {
             "main": "./lib/actions/action.js",
             "title": "Get details of a call log",
@@ -1421,33 +1449,6 @@
             "metadata": {
                 "in": "./lib/schemas/getCallLog.in.json",
                 "out": "./lib/schemas/getCallLog.out.json"
-            }
-        },
-        "updateActivityType": {
-            "main": "./lib/actions/action.js",
-            "title": "Update an activity type",
-            "description": "Updates an activity type.",
-            "callParams": {
-                "pathName": "/activityTypes/{id}",
-                "method": "put",
-                "requestContentType": "application/x-www-form-urlencoded"
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateActivityType.in.json",
-                "out": "./lib/schemas/updateActivityType.out.json"
-            }
-        },
-        "deleteDeals": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete multiple deals in bulk",
-            "description": "Marks multiple deals as deleted.",
-            "callParams": {
-                "pathName": "/deals",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteDeals.in.json",
-                "out": "./lib/schemas/deleteDeals.out.json"
             }
         },
         "addDeal": {
@@ -1477,6 +1478,32 @@
                 "out": "./lib/schemas/deleteDeal.out.json"
             }
         },
+        "deleteDealFollower": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a follower from a deal",
+            "description": "Deletes a follower from a deal.",
+            "callParams": {
+                "pathName": "/deals/{id}/followers/{follower_id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteDealFollower.in.json",
+                "out": "./lib/schemas/deleteDealFollower.out.json"
+            }
+        },
+        "deleteActivityTypes": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete multiple activity types in bulk",
+            "description": "Marks multiple activity types as deleted.",
+            "callParams": {
+                "pathName": "/activityTypes",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteActivityTypes.in.json",
+                "out": "./lib/schemas/deleteActivityTypes.out.json"
+            }
+        },
         "duplicateDeal": {
             "main": "./lib/actions/action.js",
             "title": "Duplicate deal",
@@ -1488,33 +1515,6 @@
             "metadata": {
                 "in": "./lib/schemas/duplicateDeal.in.json",
                 "out": "./lib/schemas/duplicateDeal.out.json"
-            }
-        },
-        "getDeal": {
-            "main": "./lib/actions/action.js",
-            "title": "Get details of a deal",
-            "description": "Returns the details of a specific deal. Note that this also returns some additional fields which are not present when asking for all deals - such as deal age and stay in pipeline stages. Also note that custom fields appear as long hashes in the resulting data. These hashes can be mapped against the `key` value of dealFields. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/getting-details-of-a-deal\" target=\"_blank\" rel=\"noopener noreferrer\">getting details of a deal</a>.",
-            "callParams": {
-                "pathName": "/deals/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDeal.in.json",
-                "out": "./lib/schemas/getDeal.out.json"
-            }
-        },
-        "updateDeal": {
-            "main": "./lib/actions/action.js",
-            "title": "Update a deal",
-            "description": "Updates the properties of a deal. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/updating-a-deal\" target=\"_blank\" rel=\"noopener noreferrer\">updating a deal</a>.",
-            "callParams": {
-                "pathName": "/deals/{id}",
-                "method": "put",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateDeal.in.json",
-                "out": "./lib/schemas/updateDeal.out.json"
             }
         },
         "addDealFollower": {
@@ -1531,17 +1531,30 @@
                 "out": "./lib/schemas/addDealFollower.out.json"
             }
         },
-        "deleteDealFollower": {
+        "getDeal": {
             "main": "./lib/actions/action.js",
-            "title": "Delete a follower from a deal",
-            "description": "Deletes a follower from a deal.",
+            "title": "Get details of a deal",
+            "description": "Returns the details of a specific deal. Note that this also returns some additional fields which are not present when asking for all deals - such as deal age and stay in pipeline stages. Also note that custom fields appear as long hashes in the resulting data. These hashes can be mapped against the `key` value of dealFields. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/getting-details-of-a-deal\" target=\"_blank\" rel=\"noopener noreferrer\">getting details of a deal</a>.",
             "callParams": {
-                "pathName": "/deals/{id}/followers/{follower_id}",
+                "pathName": "/deals/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDeal.in.json",
+                "out": "./lib/schemas/getDeal.out.json"
+            }
+        },
+        "deleteDealParticipant": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a participant from a deal",
+            "description": "Deletes a participant from a deal.",
+            "callParams": {
+                "pathName": "/deals/{id}/participants/{deal_participant_id}",
                 "method": "delete"
             },
             "metadata": {
-                "in": "./lib/schemas/deleteDealFollower.in.json",
-                "out": "./lib/schemas/deleteDealFollower.out.json"
+                "in": "./lib/schemas/deleteDealParticipant.in.json",
+                "out": "./lib/schemas/deleteDealParticipant.out.json"
             }
         },
         "mergeDeals": {
@@ -1558,33 +1571,6 @@
                 "out": "./lib/schemas/mergeDeals.out.json"
             }
         },
-        "addDealParticipant": {
-            "main": "./lib/actions/action.js",
-            "title": "Add a participant to a deal",
-            "description": "Adds a participant to a deal.",
-            "callParams": {
-                "pathName": "/deals/{id}/participants",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addDealParticipant.in.json",
-                "out": "./lib/schemas/addDealParticipant.out.json"
-            }
-        },
-        "deleteDealParticipant": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a participant from a deal",
-            "description": "Deletes a participant from a deal.",
-            "callParams": {
-                "pathName": "/deals/{id}/participants/{deal_participant_id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteDealParticipant.in.json",
-                "out": "./lib/schemas/deleteDealParticipant.out.json"
-            }
-        },
         "addDealProduct": {
             "main": "./lib/actions/action.js",
             "title": "Add a product to the deal, eventually creating a new item called a deal-product",
@@ -1597,19 +1583,6 @@
             "metadata": {
                 "in": "./lib/schemas/addDealProduct.in.json",
                 "out": "./lib/schemas/addDealProduct.out.json"
-            }
-        },
-        "deleteDealProduct": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete an attached product from a deal",
-            "description": "Deletes a product attachment from a deal, using the `product_attachment_id`.",
-            "callParams": {
-                "pathName": "/deals/{id}/products/{product_attachment_id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteDealProduct.in.json",
-                "out": "./lib/schemas/deleteDealProduct.out.json"
             }
         },
         "updateDealProduct": {
@@ -1639,31 +1612,18 @@
                 "out": "./lib/schemas/deleteDealFields.out.json"
             }
         },
-        "addDealField": {
+        "addDealParticipant": {
             "main": "./lib/actions/action.js",
-            "title": "Add a new deal field",
-            "description": "Adds a new deal field. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-new-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">adding a new custom field</a>.",
+            "title": "Add a participant to a deal",
+            "description": "Adds a participant to a deal.",
             "callParams": {
-                "pathName": "/dealFields",
+                "pathName": "/deals/{id}/participants",
                 "method": "post",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/addDealField.in.json",
-                "out": "./lib/schemas/addDealField.out.json"
-            }
-        },
-        "getDealField": {
-            "main": "./lib/actions/action.js",
-            "title": "Get one deal field",
-            "description": "Returns data about a specific deal field.",
-            "callParams": {
-                "pathName": "/dealFields/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getDealField.in.json",
-                "out": "./lib/schemas/getDealField.out.json"
+                "in": "./lib/schemas/addDealParticipant.in.json",
+                "out": "./lib/schemas/addDealParticipant.out.json"
             }
         },
         "deleteDealField": {
@@ -1679,32 +1639,18 @@
                 "out": "./lib/schemas/deleteDealField.out.json"
             }
         },
-        "addFileAndLinkIt": {
+        "addFile": {
             "main": "./lib/actions/action.js",
-            "title": "Create a remote file and link it to an item",
-            "description": "Creates a new empty file in the remote location (`googledrive`) that will be linked to the item you supply. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-remote-file\" target=\"_blank\" rel=\"noopener noreferrer\">adding a remote file</a>.",
+            "title": "Add file",
+            "description": "Lets you upload a file and associate it with a deal, person, organization, activity or product. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-file\" target=\"_blank\" rel=\"noopener noreferrer\">adding a file</a>.",
             "callParams": {
-                "pathName": "/files/remote",
+                "pathName": "/files",
                 "method": "post",
-                "requestContentType": "application/x-www-form-urlencoded"
+                "requestContentType": "multipart/form-data"
             },
             "metadata": {
-                "in": "./lib/schemas/addFileAndLinkIt.in.json",
-                "out": "./lib/schemas/addFileAndLinkIt.out.json"
-            }
-        },
-        "linkFileToItem": {
-            "main": "./lib/actions/action.js",
-            "title": "Link a remote file to an item",
-            "description": "Links an existing remote file (`googledrive`) to the item you supply. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-remote-file\" target=\"_blank\" rel=\"noopener noreferrer\">adding a remote file</a>.",
-            "callParams": {
-                "pathName": "/files/remoteLink",
-                "method": "post",
-                "requestContentType": "application/x-www-form-urlencoded"
-            },
-            "metadata": {
-                "in": "./lib/schemas/linkFileToItem.in.json",
-                "out": "./lib/schemas/linkFileToItem.out.json"
+                "in": "./lib/schemas/addFile.in.json",
+                "out": "./lib/schemas/addFile.out.json"
             }
         },
         "updateDealField": {
@@ -1721,6 +1667,47 @@
                 "out": "./lib/schemas/updateDealField.out.json"
             }
         },
+        "deleteDealProduct": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete an attached product from a deal",
+            "description": "Deletes a product attachment from a deal, using the `product_attachment_id`.",
+            "callParams": {
+                "pathName": "/deals/{id}/products/{product_attachment_id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteDealProduct.in.json",
+                "out": "./lib/schemas/deleteDealProduct.out.json"
+            }
+        },
+        "addDealField": {
+            "main": "./lib/actions/action.js",
+            "title": "Add a new deal field",
+            "description": "Adds a new deal field. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-new-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">adding a new custom field</a>.",
+            "callParams": {
+                "pathName": "/dealFields",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addDealField.in.json",
+                "out": "./lib/schemas/addDealField.out.json"
+            }
+        },
+        "linkFileToItem": {
+            "main": "./lib/actions/action.js",
+            "title": "Link a remote file to an item",
+            "description": "Links an existing remote file (`googledrive`) to the item you supply. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-remote-file\" target=\"_blank\" rel=\"noopener noreferrer\">adding a remote file</a>.",
+            "callParams": {
+                "pathName": "/files/remoteLink",
+                "method": "post",
+                "requestContentType": "application/x-www-form-urlencoded"
+            },
+            "metadata": {
+                "in": "./lib/schemas/linkFileToItem.in.json",
+                "out": "./lib/schemas/linkFileToItem.out.json"
+            }
+        },
         "updateFile": {
             "main": "./lib/actions/action.js",
             "title": "Update file details",
@@ -1735,18 +1722,31 @@
                 "out": "./lib/schemas/updateFile.out.json"
             }
         },
-        "addFilter": {
+        "deleteDeals": {
             "main": "./lib/actions/action.js",
-            "title": "Add a new filter",
-            "description": "Adds a new filter, returns the ID upon success. Note that in the conditions JSON object only one first-level condition group is supported, and it must be glued with 'AND', and only two second level condition groups are supported of which one must be glued with 'AND' and the second with 'OR'. Other combinations do not work (yet) but the syntax supports introducing them in future. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-filter\" target=\"_blank\" rel=\"noopener noreferrer\">adding a filter</a>.",
+            "title": "Delete multiple deals in bulk",
+            "description": "Marks multiple deals as deleted.",
             "callParams": {
-                "pathName": "/filters",
-                "method": "post",
+                "pathName": "/deals",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteDeals.in.json",
+                "out": "./lib/schemas/deleteDeals.out.json"
+            }
+        },
+        "updateActivity": {
+            "main": "./lib/actions/action.js",
+            "title": "Update an activity",
+            "description": "Updates an activity. Includes `more_activities_scheduled_in_context` property in response's `additional_data` which indicates whether there are more undone activities scheduled with the same deal, person or organization (depending on the supplied data).",
+            "callParams": {
+                "pathName": "/activities/{id}",
+                "method": "put",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/addFilter.in.json",
-                "out": "./lib/schemas/addFilter.out.json"
+                "in": "./lib/schemas/updateActivity.in.json",
+                "out": "./lib/schemas/updateActivity.out.json"
             }
         },
         "deleteFilters": {
@@ -1762,71 +1762,18 @@
                 "out": "./lib/schemas/deleteFilters.out.json"
             }
         },
-        "deleteFilter": {
+        "addFileAndLinkIt": {
             "main": "./lib/actions/action.js",
-            "title": "Delete a filter",
-            "description": "Marks a filter as deleted.",
+            "title": "Create a remote file and link it to an item",
+            "description": "Creates a new empty file in the remote location (`googledrive`) that will be linked to the item you supply. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-remote-file\" target=\"_blank\" rel=\"noopener noreferrer\">adding a remote file</a>.",
             "callParams": {
-                "pathName": "/filters/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteFilter.in.json",
-                "out": "./lib/schemas/deleteFilter.out.json"
-            }
-        },
-        "updateFilter": {
-            "main": "./lib/actions/action.js",
-            "title": "Update filter",
-            "description": "Updates an existing filter.",
-            "callParams": {
-                "pathName": "/filters/{id}",
-                "method": "put",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateFilter.in.json",
-                "out": "./lib/schemas/updateFilter.out.json"
-            }
-        },
-        "getFilter": {
-            "main": "./lib/actions/action.js",
-            "title": "Get one filter",
-            "description": "Returns data about a specific filter. Note that this also returns the condition lines of the filter.",
-            "callParams": {
-                "pathName": "/filters/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getFilter.in.json",
-                "out": "./lib/schemas/getFilter.out.json"
-            }
-        },
-        "updateGoal": {
-            "main": "./lib/actions/action.js",
-            "title": "Update existing goal",
-            "description": "Updates an existing goal.",
-            "callParams": {
-                "pathName": "/goals/{id}",
-                "method": "put",
+                "pathName": "/files/remote",
+                "method": "post",
                 "requestContentType": "application/x-www-form-urlencoded"
             },
             "metadata": {
-                "in": "./lib/schemas/updateGoal.in.json",
-                "out": "./lib/schemas/updateGoal.out.json"
-            }
-        },
-        "deleteGlobalMessage": {
-            "main": "./lib/actions/action.js",
-            "title": "Dismiss a global message",
-            "description": "Removes a global message from being shown if the message is dismissible.",
-            "callParams": {
-                "pathName": "/globalMessages/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteGlobalMessage.in.json",
-                "out": "./lib/schemas/deleteGlobalMessage.out.json"
+                "in": "./lib/schemas/addFileAndLinkIt.in.json",
+                "out": "./lib/schemas/addFileAndLinkIt.out.json"
             }
         },
         "addGoal": {
@@ -1843,31 +1790,110 @@
                 "out": "./lib/schemas/addGoal.out.json"
             }
         },
-        "deleteGoal": {
+        "getFilter": {
             "main": "./lib/actions/action.js",
-            "title": "Delete existing goal",
-            "description": "Marks a goal as deleted.",
+            "title": "Get one filter",
+            "description": "Returns data about a specific filter. Note that this also returns the condition lines of the filter.",
             "callParams": {
-                "pathName": "/goals/{id}",
+                "pathName": "/filters/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFilter.in.json",
+                "out": "./lib/schemas/getFilter.out.json"
+            }
+        },
+        "deleteGlobalMessage": {
+            "main": "./lib/actions/action.js",
+            "title": "Dismiss a global message",
+            "description": "Removes a global message from being shown if the message is dismissible.",
+            "callParams": {
+                "pathName": "/globalMessages/{id}",
                 "method": "delete"
             },
             "metadata": {
-                "in": "./lib/schemas/deleteGoal.in.json",
-                "out": "./lib/schemas/deleteGoal.out.json"
+                "in": "./lib/schemas/deleteGlobalMessage.in.json",
+                "out": "./lib/schemas/deleteGlobalMessage.out.json"
             }
         },
-        "updateLead": {
+        "updateFilter": {
             "main": "./lib/actions/action.js",
-            "title": "Update a lead",
-            "description": "Updates one or more properties of a lead. Only properties included in the request will be updated. Send `null` to unset a property (applicable for example for `value`, `person_id` or `organization_id`). If a lead contains custom fields, the fields' values will be included in the response in the same format as with the `Deals` endpoints. If a custom field's value hasn't been set for the lead, it won't appear in the response. Please note that leads do not have a separate set of custom fields, instead they inherit the custom fields' structure from deals. See an example given in the <a href=\"https://pipedrive.readme.io/docs/updating-custom-field-value\" target=\"_blank\" rel=\"noopener noreferrer\">updating custom fields' values tutorial</a>.",
+            "title": "Update filter",
+            "description": "Updates an existing filter.",
             "callParams": {
-                "pathName": "/leads/{id}",
-                "method": "patch",
+                "pathName": "/filters/{id}",
+                "method": "put",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/updateLead.in.json",
-                "out": "./lib/schemas/updateLead.out.json"
+                "in": "./lib/schemas/updateFilter.in.json",
+                "out": "./lib/schemas/updateFilter.out.json"
+            }
+        },
+        "deleteFile": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a file",
+            "description": "Marks a file as deleted.",
+            "callParams": {
+                "pathName": "/files/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteFile.in.json",
+                "out": "./lib/schemas/deleteFile.out.json"
+            }
+        },
+        "deleteFilter": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a filter",
+            "description": "Marks a filter as deleted.",
+            "callParams": {
+                "pathName": "/filters/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteFilter.in.json",
+                "out": "./lib/schemas/deleteFilter.out.json"
+            }
+        },
+        "getDealField": {
+            "main": "./lib/actions/action.js",
+            "title": "Get one deal field",
+            "description": "Returns data about a specific deal field.",
+            "callParams": {
+                "pathName": "/dealFields/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDealField.in.json",
+                "out": "./lib/schemas/getDealField.out.json"
+            }
+        },
+        "updateGoal": {
+            "main": "./lib/actions/action.js",
+            "title": "Update existing goal",
+            "description": "Updates an existing goal.",
+            "callParams": {
+                "pathName": "/goals/{id}",
+                "method": "put",
+                "requestContentType": "application/x-www-form-urlencoded"
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateGoal.in.json",
+                "out": "./lib/schemas/updateGoal.out.json"
+            }
+        },
+        "getFile": {
+            "main": "./lib/actions/action.js",
+            "title": "Get one file",
+            "description": "Returns data about a specific file.",
+            "callParams": {
+                "pathName": "/files/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFile.in.json",
+                "out": "./lib/schemas/getFile.out.json"
             }
         },
         "deleteLead": {
@@ -1881,19 +1907,6 @@
             "metadata": {
                 "in": "./lib/schemas/deleteLead.in.json",
                 "out": "./lib/schemas/deleteLead.out.json"
-            }
-        },
-        "deleteLeadLabel": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a lead label",
-            "description": "Deletes a specific lead label.",
-            "callParams": {
-                "pathName": "/leadLabels/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteLeadLabel.in.json",
-                "out": "./lib/schemas/deleteLeadLabel.out.json"
             }
         },
         "getLead": {
@@ -1923,32 +1936,32 @@
                 "out": "./lib/schemas/addLead.out.json"
             }
         },
-        "addLeadLabel": {
+        "addFilter": {
             "main": "./lib/actions/action.js",
-            "title": "Add a lead label",
-            "description": "Creates a lead label.",
+            "title": "Add a new filter",
+            "description": "Adds a new filter, returns the ID upon success. Note that in the conditions JSON object only one first-level condition group is supported, and it must be glued with 'AND', and only two second level condition groups are supported of which one must be glued with 'AND' and the second with 'OR'. Other combinations do not work (yet) but the syntax supports introducing them in future. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-filter\" target=\"_blank\" rel=\"noopener noreferrer\">adding a filter</a>.",
             "callParams": {
-                "pathName": "/leadLabels",
+                "pathName": "/filters",
                 "method": "post",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/addLeadLabel.in.json",
-                "out": "./lib/schemas/addLeadLabel.out.json"
+                "in": "./lib/schemas/addFilter.in.json",
+                "out": "./lib/schemas/addFilter.out.json"
             }
         },
-        "updateActivity": {
+        "updateLead": {
             "main": "./lib/actions/action.js",
-            "title": "Update an activity",
-            "description": "Updates an activity. Includes `more_activities_scheduled_in_context` property in response's `additional_data` which indicates whether there are more undone activities scheduled with the same deal, person or organization (depending on the supplied data).",
+            "title": "Update a lead",
+            "description": "Updates one or more properties of a lead. Only properties included in the request will be updated. Send `null` to unset a property (applicable for example for `value`, `person_id` or `organization_id`). If a lead contains custom fields, the fields' values will be included in the response in the same format as with the `Deals` endpoints. If a custom field's value hasn't been set for the lead, it won't appear in the response. Please note that leads do not have a separate set of custom fields, instead they inherit the custom fields' structure from deals. See an example given in the <a href=\"https://pipedrive.readme.io/docs/updating-custom-field-value\" target=\"_blank\" rel=\"noopener noreferrer\">updating custom fields' values tutorial</a>.",
             "callParams": {
-                "pathName": "/activities/{id}",
-                "method": "put",
+                "pathName": "/leads/{id}",
+                "method": "patch",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/updateActivity.in.json",
-                "out": "./lib/schemas/updateActivity.out.json"
+                "in": "./lib/schemas/updateLead.in.json",
+                "out": "./lib/schemas/updateLead.out.json"
             }
         },
         "updateLeadLabel": {
@@ -1965,57 +1978,18 @@
                 "out": "./lib/schemas/updateLeadLabel.out.json"
             }
         },
-        "getMailMessage": {
+        "addLeadLabel": {
             "main": "./lib/actions/action.js",
-            "title": "Get one mail message",
-            "description": "Returns data about a specific mail message.",
+            "title": "Add a lead label",
+            "description": "Creates a lead label.",
             "callParams": {
-                "pathName": "/mailbox/mailMessages/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getMailMessage.in.json",
-                "out": "./lib/schemas/getMailMessage.out.json"
-            }
-        },
-        "deleteNote": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a note",
-            "description": "Deletes a specific note.",
-            "callParams": {
-                "pathName": "/notes/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteNote.in.json",
-                "out": "./lib/schemas/deleteNote.out.json"
-            }
-        },
-        "updateNote": {
-            "main": "./lib/actions/action.js",
-            "title": "Update a note",
-            "description": "Updates a note.",
-            "callParams": {
-                "pathName": "/notes/{id}",
-                "method": "put",
+                "pathName": "/leadLabels",
+                "method": "post",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/updateNote.in.json",
-                "out": "./lib/schemas/updateNote.out.json"
-            }
-        },
-        "getNote": {
-            "main": "./lib/actions/action.js",
-            "title": "Get one note",
-            "description": "Returns details about a specific note.",
-            "callParams": {
-                "pathName": "/notes/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getNote.in.json",
-                "out": "./lib/schemas/getNote.out.json"
+                "in": "./lib/schemas/addLeadLabel.in.json",
+                "out": "./lib/schemas/addLeadLabel.out.json"
             }
         },
         "getMailThread": {
@@ -2031,71 +2005,56 @@
                 "out": "./lib/schemas/getMailThread.out.json"
             }
         },
-        "updateCommentForNote": {
+        "deleteMailThread": {
             "main": "./lib/actions/action.js",
-            "title": "Update a comment related to a note",
-            "description": "Updates a comment related to a note.",
+            "title": "Delete mail thread",
+            "description": "Marks a mail thread as deleted.",
+            "callParams": {
+                "pathName": "/mailbox/mailThreads/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteMailThread.in.json",
+                "out": "./lib/schemas/deleteMailThread.out.json"
+            }
+        },
+        "getNote": {
+            "main": "./lib/actions/action.js",
+            "title": "Get one note",
+            "description": "Returns details about a specific note.",
+            "callParams": {
+                "pathName": "/notes/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getNote.in.json",
+                "out": "./lib/schemas/getNote.out.json"
+            }
+        },
+        "getComment": {
+            "main": "./lib/actions/action.js",
+            "title": "Get one comment",
+            "description": "Returns the details of a comment.",
             "callParams": {
                 "pathName": "/notes/{id}/comments/{commentId}",
-                "method": "put",
-                "requestContentType": "application/json"
+                "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/updateCommentForNote.in.json",
-                "out": "./lib/schemas/updateCommentForNote.out.json"
+                "in": "./lib/schemas/getComment.in.json",
+                "out": "./lib/schemas/getComment.out.json"
             }
         },
-        "addNoteComment": {
+        "deleteGoal": {
             "main": "./lib/actions/action.js",
-            "title": "Add a comment to a note",
-            "description": "Adds a new comment to a note.",
+            "title": "Delete existing goal",
+            "description": "Marks a goal as deleted.",
             "callParams": {
-                "pathName": "/notes/{id}/comments",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addNoteComment.in.json",
-                "out": "./lib/schemas/addNoteComment.out.json"
-            }
-        },
-        "deleteComment": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a comment related to a note",
-            "description": "Deletes a comment.",
-            "callParams": {
-                "pathName": "/notes/{id}/comments/{commentId}",
+                "pathName": "/goals/{id}",
                 "method": "delete"
             },
             "metadata": {
-                "in": "./lib/schemas/deleteComment.in.json",
-                "out": "./lib/schemas/deleteComment.out.json"
-            }
-        },
-        "deleteFile": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a file",
-            "description": "Marks a file as deleted.",
-            "callParams": {
-                "pathName": "/files/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteFile.in.json",
-                "out": "./lib/schemas/deleteFile.out.json"
-            }
-        },
-        "deleteOrganizations": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete multiple organizations in bulk",
-            "description": "Marks multiple organizations as deleted.",
-            "callParams": {
-                "pathName": "/organizations",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteOrganizations.in.json",
-                "out": "./lib/schemas/deleteOrganizations.out.json"
+                "in": "./lib/schemas/deleteGoal.in.json",
+                "out": "./lib/schemas/deleteGoal.out.json"
             }
         },
         "updateMailThreadDetails": {
@@ -2112,6 +2071,59 @@
                 "out": "./lib/schemas/updateMailThreadDetails.out.json"
             }
         },
+        "deleteNote": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a note",
+            "description": "Deletes a specific note.",
+            "callParams": {
+                "pathName": "/notes/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteNote.in.json",
+                "out": "./lib/schemas/deleteNote.out.json"
+            }
+        },
+        "addNoteComment": {
+            "main": "./lib/actions/action.js",
+            "title": "Add a comment to a note",
+            "description": "Adds a new comment to a note.",
+            "callParams": {
+                "pathName": "/notes/{id}/comments",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addNoteComment.in.json",
+                "out": "./lib/schemas/addNoteComment.out.json"
+            }
+        },
+        "getMailMessage": {
+            "main": "./lib/actions/action.js",
+            "title": "Get one mail message",
+            "description": "Returns data about a specific mail message.",
+            "callParams": {
+                "pathName": "/mailbox/mailMessages/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMailMessage.in.json",
+                "out": "./lib/schemas/getMailMessage.out.json"
+            }
+        },
+        "deleteOrganizations": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete multiple organizations in bulk",
+            "description": "Marks multiple organizations as deleted.",
+            "callParams": {
+                "pathName": "/organizations",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteOrganizations.in.json",
+                "out": "./lib/schemas/deleteOrganizations.out.json"
+            }
+        },
         "addNote": {
             "main": "./lib/actions/action.js",
             "title": "Add a note",
@@ -2126,30 +2138,45 @@
                 "out": "./lib/schemas/addNote.out.json"
             }
         },
-        "getOrganization": {
+        "updateCommentForNote": {
             "main": "./lib/actions/action.js",
-            "title": "Get details of an organization",
-            "description": "Returns details of an organization. Note that this also returns some additional fields which are not present when asking for all organizations. Also note that custom fields appear as long hashes in the resulting data. These hashes can be mapped against the `key` value of organizationFields.",
+            "title": "Update a comment related to a note",
+            "description": "Updates a comment related to a note.",
             "callParams": {
-                "pathName": "/organizations/{id}",
-                "method": "get"
+                "pathName": "/notes/{id}/comments/{commentId}",
+                "method": "put",
+                "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/getOrganization.in.json",
-                "out": "./lib/schemas/getOrganization.out.json"
+                "in": "./lib/schemas/updateCommentForNote.in.json",
+                "out": "./lib/schemas/updateCommentForNote.out.json"
             }
         },
-        "deleteMailThread": {
+        "updateNote": {
             "main": "./lib/actions/action.js",
-            "title": "Delete mail thread",
-            "description": "Marks a mail thread as deleted.",
+            "title": "Update a note",
+            "description": "Updates a note.",
             "callParams": {
-                "pathName": "/mailbox/mailThreads/{id}",
+                "pathName": "/notes/{id}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateNote.in.json",
+                "out": "./lib/schemas/updateNote.out.json"
+            }
+        },
+        "deleteLeadLabel": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a lead label",
+            "description": "Deletes a specific lead label.",
+            "callParams": {
+                "pathName": "/leadLabels/{id}",
                 "method": "delete"
             },
             "metadata": {
-                "in": "./lib/schemas/deleteMailThread.in.json",
-                "out": "./lib/schemas/deleteMailThread.out.json"
+                "in": "./lib/schemas/deleteLeadLabel.in.json",
+                "out": "./lib/schemas/deleteLeadLabel.out.json"
             }
         },
         "addOrganizationFollower": {
@@ -2166,20 +2193,6 @@
                 "out": "./lib/schemas/addOrganizationFollower.out.json"
             }
         },
-        "addOrganization": {
-            "main": "./lib/actions/action.js",
-            "title": "Add an organization",
-            "description": "Adds a new organization. Note that you can supply additional custom fields along with the request that are not described here. These custom fields are different for each Pipedrive account and can be recognized by long hashes as keys. To determine which custom fields exists, fetch the organizationFields and look for `key` values. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-an-organization\" target=\"_blank\" rel=\"noopener noreferrer\">adding an organization</a>.",
-            "callParams": {
-                "pathName": "/organizations",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addOrganization.in.json",
-                "out": "./lib/schemas/addOrganization.out.json"
-            }
-        },
         "deleteOrganizationFollower": {
             "main": "./lib/actions/action.js",
             "title": "Delete a follower from an organization",
@@ -2193,58 +2206,17 @@
                 "out": "./lib/schemas/deleteOrganizationFollower.out.json"
             }
         },
-        "addFile": {
+        "getOrganization": {
             "main": "./lib/actions/action.js",
-            "title": "Add file",
-            "description": "Lets you upload a file and associate it with a deal, person, organization, activity or product. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-file\" target=\"_blank\" rel=\"noopener noreferrer\">adding a file</a>.",
-            "callParams": {
-                "pathName": "/files",
-                "method": "post",
-                "requestContentType": "multipart/form-data"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addFile.in.json",
-                "out": "./lib/schemas/addFile.out.json"
-            }
-        },
-        "mergeOrganizations": {
-            "main": "./lib/actions/action.js",
-            "title": "Merge two organizations",
-            "description": "Merges an organization with another organization. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/merging-two-organizations\" target=\"_blank\" rel=\"noopener noreferrer\">merging two organizations</a>.",
-            "callParams": {
-                "pathName": "/organizations/{id}/merge",
-                "method": "put",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/mergeOrganizations.in.json",
-                "out": "./lib/schemas/mergeOrganizations.out.json"
-            }
-        },
-        "deleteOrganization": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete an organization",
-            "description": "Marks an organization as deleted.",
+            "title": "Get details of an organization",
+            "description": "Returns details of an organization. Note that this also returns some additional fields which are not present when asking for all organizations. Also note that custom fields appear as long hashes in the resulting data. These hashes can be mapped against the `key` value of organizationFields.",
             "callParams": {
                 "pathName": "/organizations/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteOrganization.in.json",
-                "out": "./lib/schemas/deleteOrganization.out.json"
-            }
-        },
-        "getComment": {
-            "main": "./lib/actions/action.js",
-            "title": "Get one comment",
-            "description": "Returns the details of a comment.",
-            "callParams": {
-                "pathName": "/notes/{id}/comments/{commentId}",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getComment.in.json",
-                "out": "./lib/schemas/getComment.out.json"
+                "in": "./lib/schemas/getOrganization.in.json",
+                "out": "./lib/schemas/getOrganization.out.json"
             }
         },
         "updateOrganizationField": {
@@ -2261,47 +2233,6 @@
                 "out": "./lib/schemas/updateOrganizationField.out.json"
             }
         },
-        "getOrganizationRelationship": {
-            "main": "./lib/actions/action.js",
-            "title": "Get one organization relationship",
-            "description": "Finds and returns an organization relationship from its ID.",
-            "callParams": {
-                "pathName": "/organizationRelationships/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getOrganizationRelationship.in.json",
-                "out": "./lib/schemas/getOrganizationRelationship.out.json"
-            }
-        },
-        "addOrganizationRelationship": {
-            "main": "./lib/actions/action.js",
-            "title": "Create an organization relationship",
-            "description": "Creates and returns an organization relationship.",
-            "callParams": {
-                "pathName": "/organizationRelationships",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addOrganizationRelationship.in.json",
-                "out": "./lib/schemas/addOrganizationRelationship.out.json"
-            }
-        },
-        "addOrganizationField": {
-            "main": "./lib/actions/action.js",
-            "title": "Add a new organization field",
-            "description": "Adds a new organization field. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-new-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">adding a new custom field</a>.",
-            "callParams": {
-                "pathName": "/organizationFields",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addOrganizationField.in.json",
-                "out": "./lib/schemas/addOrganizationField.out.json"
-            }
-        },
         "updateOrganization": {
             "main": "./lib/actions/action.js",
             "title": "Update an organization",
@@ -2316,16 +2247,82 @@
                 "out": "./lib/schemas/updateOrganization.out.json"
             }
         },
-        "getPermissionSet": {
+        "deleteComment": {
             "main": "./lib/actions/action.js",
-            "title": "Get one permission set",
+            "title": "Delete a comment related to a note",
+            "description": "Deletes a comment.",
             "callParams": {
-                "pathName": "/permissionSets/{id}",
+                "pathName": "/notes/{id}/comments/{commentId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteComment.in.json",
+                "out": "./lib/schemas/deleteComment.out.json"
+            }
+        },
+        "deleteOrganizationFields": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete multiple organization fields in bulk",
+            "description": "Marks multiple fields as deleted.",
+            "callParams": {
+                "pathName": "/organizationFields",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteOrganizationFields.in.json",
+                "out": "./lib/schemas/deleteOrganizationFields.out.json"
+            }
+        },
+        "deleteOrganizationField": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete an organization field",
+            "description": "Marks a field as deleted. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/deleting-a-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">deleting a custom field</a>.",
+            "callParams": {
+                "pathName": "/organizationFields/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteOrganizationField.in.json",
+                "out": "./lib/schemas/deleteOrganizationField.out.json"
+            }
+        },
+        "deleteOrganizationRelationship": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete an organization relationship",
+            "description": "Deletes an organization relationship and returns the deleted ID.",
+            "callParams": {
+                "pathName": "/organizationRelationships/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteOrganizationRelationship.in.json",
+                "out": "./lib/schemas/deleteOrganizationRelationship.out.json"
+            }
+        },
+        "deleteOrganization": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete an organization",
+            "description": "Marks an organization as deleted.",
+            "callParams": {
+                "pathName": "/organizations/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteOrganization.in.json",
+                "out": "./lib/schemas/deleteOrganization.out.json"
+            }
+        },
+        "getOrganizationField": {
+            "main": "./lib/actions/action.js",
+            "title": "Get one organization field",
+            "description": "Returns data about a specific organization field.",
+            "callParams": {
+                "pathName": "/organizationFields/{id}",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getPermissionSet.in.json",
-                "out": "./lib/schemas/getPermissionSet.out.json"
+                "in": "./lib/schemas/getOrganizationField.in.json",
+                "out": "./lib/schemas/getOrganizationField.out.json"
             }
         },
         "updateOrganizationRelationship": {
@@ -2342,6 +2339,20 @@
                 "out": "./lib/schemas/updateOrganizationRelationship.out.json"
             }
         },
+        "addOrganizationField": {
+            "main": "./lib/actions/action.js",
+            "title": "Add a new organization field",
+            "description": "Adds a new organization field. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-new-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">adding a new custom field</a>.",
+            "callParams": {
+                "pathName": "/organizationFields",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addOrganizationField.in.json",
+                "out": "./lib/schemas/addOrganizationField.out.json"
+            }
+        },
         "deletePersons": {
             "main": "./lib/actions/action.js",
             "title": "Delete multiple persons in bulk",
@@ -2355,17 +2366,31 @@
                 "out": "./lib/schemas/deletePersons.out.json"
             }
         },
-        "getOrganizationField": {
+        "deletePerson": {
             "main": "./lib/actions/action.js",
-            "title": "Get one organization field",
-            "description": "Returns data about a specific organization field.",
+            "title": "Delete a person",
+            "description": "Marks a person as deleted.",
             "callParams": {
-                "pathName": "/organizationFields/{id}",
-                "method": "get"
+                "pathName": "/persons/{id}",
+                "method": "delete"
             },
             "metadata": {
-                "in": "./lib/schemas/getOrganizationField.in.json",
-                "out": "./lib/schemas/getOrganizationField.out.json"
+                "in": "./lib/schemas/deletePerson.in.json",
+                "out": "./lib/schemas/deletePerson.out.json"
+            }
+        },
+        "mergeOrganizations": {
+            "main": "./lib/actions/action.js",
+            "title": "Merge two organizations",
+            "description": "Merges an organization with another organization. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/merging-two-organizations\" target=\"_blank\" rel=\"noopener noreferrer\">merging two organizations</a>.",
+            "callParams": {
+                "pathName": "/organizations/{id}/merge",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/mergeOrganizations.in.json",
+                "out": "./lib/schemas/mergeOrganizations.out.json"
             }
         },
         "updatePerson": {
@@ -2382,32 +2407,6 @@
                 "out": "./lib/schemas/updatePerson.out.json"
             }
         },
-        "getPerson": {
-            "main": "./lib/actions/action.js",
-            "title": "Get details of a person",
-            "description": "Returns the details of a person. Note that this also returns some additional fields which are not present when asking for all persons. Also note that custom fields appear as long hashes in the resulting data. These hashes can be mapped against the `key` value of personFields.<br>If a company uses the [Campaigns product](https://pipedrive.readme.io/docs/campaigns-in-pipedrive-api), then this endpoint will also return the `data.marketing_status` field.",
-            "callParams": {
-                "pathName": "/persons/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPerson.in.json",
-                "out": "./lib/schemas/getPerson.out.json"
-            }
-        },
-        "deletePerson": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a person",
-            "description": "Marks a person as deleted.",
-            "callParams": {
-                "pathName": "/persons/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deletePerson.in.json",
-                "out": "./lib/schemas/deletePerson.out.json"
-            }
-        },
         "addPersonFollower": {
             "main": "./lib/actions/action.js",
             "title": "Add a follower to a person",
@@ -2420,6 +2419,46 @@
             "metadata": {
                 "in": "./lib/schemas/addPersonFollower.in.json",
                 "out": "./lib/schemas/addPersonFollower.out.json"
+            }
+        },
+        "addOrganizationRelationship": {
+            "main": "./lib/actions/action.js",
+            "title": "Create an organization relationship",
+            "description": "Creates and returns an organization relationship.",
+            "callParams": {
+                "pathName": "/organizationRelationships",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addOrganizationRelationship.in.json",
+                "out": "./lib/schemas/addOrganizationRelationship.out.json"
+            }
+        },
+        "getPermissionSet": {
+            "main": "./lib/actions/action.js",
+            "title": "Get one permission set",
+            "callParams": {
+                "pathName": "/permissionSets/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPermissionSet.in.json",
+                "out": "./lib/schemas/getPermissionSet.out.json"
+            }
+        },
+        "addOrganization": {
+            "main": "./lib/actions/action.js",
+            "title": "Add an organization",
+            "description": "Adds a new organization. Note that you can supply additional custom fields along with the request that are not described here. These custom fields are different for each Pipedrive account and can be recognized by long hashes as keys. To determine which custom fields exists, fetch the organizationFields and look for `key` values. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-an-organization\" target=\"_blank\" rel=\"noopener noreferrer\">adding an organization</a>.",
+            "callParams": {
+                "pathName": "/organizations",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addOrganization.in.json",
+                "out": "./lib/schemas/addOrganization.out.json"
             }
         },
         "mergePersons": {
@@ -2436,19 +2475,6 @@
                 "out": "./lib/schemas/mergePersons.out.json"
             }
         },
-        "deleteOrganizationFields": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete multiple organization fields in bulk",
-            "description": "Marks multiple fields as deleted.",
-            "callParams": {
-                "pathName": "/organizationFields",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteOrganizationFields.in.json",
-                "out": "./lib/schemas/deleteOrganizationFields.out.json"
-            }
-        },
         "addPerson": {
             "main": "./lib/actions/action.js",
             "title": "Add a person",
@@ -2461,46 +2487,6 @@
             "metadata": {
                 "in": "./lib/schemas/addPerson.in.json",
                 "out": "./lib/schemas/addPerson.out.json"
-            }
-        },
-        "addPersonPicture": {
-            "main": "./lib/actions/action.js",
-            "title": "Add person picture",
-            "description": "Adds a picture to a person. If a picture is already set, the old picture will be replaced. Added image (or the cropping parameters supplied with the request) should have an equal width and height and should be at least 128 pixels. GIF, JPG and PNG are accepted. All added images will be resized to 128 and 512 pixel wide squares.",
-            "callParams": {
-                "pathName": "/persons/{id}/picture",
-                "method": "post",
-                "requestContentType": "multipart/form-data"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addPersonPicture.in.json",
-                "out": "./lib/schemas/addPersonPicture.out.json"
-            }
-        },
-        "deleteOrganizationRelationship": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete an organization relationship",
-            "description": "Deletes an organization relationship and returns the deleted ID.",
-            "callParams": {
-                "pathName": "/organizationRelationships/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteOrganizationRelationship.in.json",
-                "out": "./lib/schemas/deleteOrganizationRelationship.out.json"
-            }
-        },
-        "deletePersonPicture": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete person picture",
-            "description": "Deletes a person's picture.",
-            "callParams": {
-                "pathName": "/persons/{id}/picture",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deletePersonPicture.in.json",
-                "out": "./lib/schemas/deletePersonPicture.out.json"
             }
         },
         "addPersonField": {
@@ -2517,57 +2503,30 @@
                 "out": "./lib/schemas/addPersonField.out.json"
             }
         },
-        "deleteOrganizationField": {
+        "deletePersonPicture": {
             "main": "./lib/actions/action.js",
-            "title": "Delete an organization field",
+            "title": "Delete person picture",
+            "description": "Deletes a person's picture.",
+            "callParams": {
+                "pathName": "/persons/{id}/picture",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deletePersonPicture.in.json",
+                "out": "./lib/schemas/deletePersonPicture.out.json"
+            }
+        },
+        "deletePersonField": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a person field",
             "description": "Marks a field as deleted. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/deleting-a-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">deleting a custom field</a>.",
             "callParams": {
-                "pathName": "/organizationFields/{id}",
+                "pathName": "/personFields/{id}",
                 "method": "delete"
             },
             "metadata": {
-                "in": "./lib/schemas/deleteOrganizationField.in.json",
-                "out": "./lib/schemas/deleteOrganizationField.out.json"
-            }
-        },
-        "getFile": {
-            "main": "./lib/actions/action.js",
-            "title": "Get one file",
-            "description": "Returns data about a specific file.",
-            "callParams": {
-                "pathName": "/files/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getFile.in.json",
-                "out": "./lib/schemas/getFile.out.json"
-            }
-        },
-        "addPipeline": {
-            "main": "./lib/actions/action.js",
-            "title": "Add a new pipeline",
-            "description": "Adds a new pipeline.",
-            "callParams": {
-                "pathName": "/pipelines",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addPipeline.in.json",
-                "out": "./lib/schemas/addPipeline.out.json"
-            }
-        },
-        "deletePersonFields": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete multiple person fields in bulk",
-            "description": "Marks multiple fields as deleted.",
-            "callParams": {
-                "pathName": "/personFields",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deletePersonFields.in.json",
-                "out": "./lib/schemas/deletePersonFields.out.json"
+                "in": "./lib/schemas/deletePersonField.in.json",
+                "out": "./lib/schemas/deletePersonField.out.json"
             }
         },
         "updatePersonField": {
@@ -2584,31 +2543,17 @@
                 "out": "./lib/schemas/updatePersonField.out.json"
             }
         },
-        "deletePersonFollower": {
+        "getPersonField": {
             "main": "./lib/actions/action.js",
-            "title": "Delete a follower from a person",
-            "description": "Deletes a follower from a person.",
+            "title": "Get one person field",
+            "description": "Returns data about a specific person field.",
             "callParams": {
-                "pathName": "/persons/{id}/followers/{follower_id}",
-                "method": "delete"
+                "pathName": "/personFields/{id}",
+                "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/deletePersonFollower.in.json",
-                "out": "./lib/schemas/deletePersonFollower.out.json"
-            }
-        },
-        "updatePipeline": {
-            "main": "./lib/actions/action.js",
-            "title": "Update a pipeline",
-            "description": "Updates the properties of a pipeline.",
-            "callParams": {
-                "pathName": "/pipelines/{id}",
-                "method": "put",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/updatePipeline.in.json",
-                "out": "./lib/schemas/updatePipeline.out.json"
+                "in": "./lib/schemas/getPersonField.in.json",
+                "out": "./lib/schemas/getPersonField.out.json"
             }
         },
         "getPipeline": {
@@ -2637,216 +2582,32 @@
                 "out": "./lib/schemas/deletePipeline.out.json"
             }
         },
-        "getPersonField": {
+        "updatePipeline": {
             "main": "./lib/actions/action.js",
-            "title": "Get one person field",
-            "description": "Returns data about a specific person field.",
+            "title": "Update a pipeline",
+            "description": "Updates the properties of a pipeline.",
             "callParams": {
-                "pathName": "/personFields/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPersonField.in.json",
-                "out": "./lib/schemas/getPersonField.out.json"
-            }
-        },
-        "deleteProductFollower": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a follower from a product",
-            "description": "Deletes a follower from a product.",
-            "callParams": {
-                "pathName": "/products/{id}/followers/{follower_id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteProductFollower.in.json",
-                "out": "./lib/schemas/deleteProductFollower.out.json"
-            }
-        },
-        "getProduct": {
-            "main": "./lib/actions/action.js",
-            "title": "Get one product",
-            "description": "Returns data about a specific product.",
-            "callParams": {
-                "pathName": "/products/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getProduct.in.json",
-                "out": "./lib/schemas/getProduct.out.json"
-            }
-        },
-        "deleteProductField": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a product field",
-            "description": "Marks a product field as deleted. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/deleting-a-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">deleting a custom field</a>.",
-            "callParams": {
-                "pathName": "/productFields/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteProductField.in.json",
-                "out": "./lib/schemas/deleteProductField.out.json"
-            }
-        },
-        "addProductFollower": {
-            "main": "./lib/actions/action.js",
-            "title": "Add a follower to a product",
-            "description": "Adds a follower to a product.",
-            "callParams": {
-                "pathName": "/products/{id}/followers",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addProductFollower.in.json",
-                "out": "./lib/schemas/addProductFollower.out.json"
-            }
-        },
-        "deleteProductFields": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete multiple product fields in bulk",
-            "description": "Marks multiple fields as deleted.",
-            "callParams": {
-                "pathName": "/productFields",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteProductFields.in.json",
-                "out": "./lib/schemas/deleteProductFields.out.json"
-            }
-        },
-        "updateProductField": {
-            "main": "./lib/actions/action.js",
-            "title": "Update a product field",
-            "description": "Updates a product field. For more information, see the tutorial for <a href=\" https://pipedrive.readme.io/docs/updating-custom-field-value \" target=\"_blank\" rel=\"noopener noreferrer\">updating custom fields' values</a>.",
-            "callParams": {
-                "pathName": "/productFields/{id}",
+                "pathName": "/pipelines/{id}",
                 "method": "put",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/updateProductField.in.json",
-                "out": "./lib/schemas/updateProductField.out.json"
+                "in": "./lib/schemas/updatePipeline.in.json",
+                "out": "./lib/schemas/updatePipeline.out.json"
             }
         },
-        "addProductField": {
+        "addPersonPicture": {
             "main": "./lib/actions/action.js",
-            "title": "Add a new product field",
-            "description": "Adds a new product field. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-new-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">adding a new custom field</a>.",
+            "title": "Add person picture",
+            "description": "Adds a picture to a person. If a picture is already set, the old picture will be replaced. Added image (or the cropping parameters supplied with the request) should have an equal width and height and should be at least 128 pixels. GIF, JPG and PNG are accepted. All added images will be resized to 128 and 512 pixel wide squares.",
             "callParams": {
-                "pathName": "/productFields",
+                "pathName": "/persons/{id}/picture",
                 "method": "post",
-                "requestContentType": "application/json"
+                "requestContentType": "multipart/form-data"
             },
             "metadata": {
-                "in": "./lib/schemas/addProductField.in.json",
-                "out": "./lib/schemas/addProductField.out.json"
-            }
-        },
-        "deleteRole": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a role",
-            "callParams": {
-                "pathName": "/roles/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteRole.in.json",
-                "out": "./lib/schemas/deleteRole.out.json"
-            }
-        },
-        "addRole": {
-            "main": "./lib/actions/action.js",
-            "title": "Add a role",
-            "callParams": {
-                "pathName": "/roles",
-                "method": "post",
-                "requestContentType": "application/x-www-form-urlencoded"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addRole.in.json",
-                "out": "./lib/schemas/addRole.out.json"
-            }
-        },
-        "getProductField": {
-            "main": "./lib/actions/action.js",
-            "title": "Get one product field",
-            "description": "Returns data about a specific product field.",
-            "callParams": {
-                "pathName": "/productFields/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getProductField.in.json",
-                "out": "./lib/schemas/getProductField.out.json"
-            }
-        },
-        "deleteRoleAssignment": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a role assignment",
-            "description": "Deletes assignment from a role.",
-            "callParams": {
-                "pathName": "/roles/{id}/assignments",
-                "method": "delete",
-                "requestContentType": "application/x-www-form-urlencoded"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteRoleAssignment.in.json",
-                "out": "./lib/schemas/deleteRoleAssignment.out.json"
-            }
-        },
-        "getRole": {
-            "main": "./lib/actions/action.js",
-            "title": "Get one role",
-            "callParams": {
-                "pathName": "/roles/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getRole.in.json",
-                "out": "./lib/schemas/getRole.out.json"
-            }
-        },
-        "addRoleAssignment": {
-            "main": "./lib/actions/action.js",
-            "title": "Add role assignment",
-            "description": "Adds assignment for a role.",
-            "callParams": {
-                "pathName": "/roles/{id}/assignments",
-                "method": "post",
-                "requestContentType": "application/x-www-form-urlencoded"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addRoleAssignment.in.json",
-                "out": "./lib/schemas/addRoleAssignment.out.json"
-            }
-        },
-        "addOrUpdateRoleSetting": {
-            "main": "./lib/actions/action.js",
-            "title": "Add or update role setting",
-            "description": "Adds or updates the visibility setting for a role.",
-            "callParams": {
-                "pathName": "/roles/{id}/settings",
-                "method": "post",
-                "requestContentType": "application/x-www-form-urlencoded"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addOrUpdateRoleSetting.in.json",
-                "out": "./lib/schemas/addOrUpdateRoleSetting.out.json"
-            }
-        },
-        "deleteProduct": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a product",
-            "description": "Marks a product as deleted.",
-            "callParams": {
-                "pathName": "/products/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteProduct.in.json",
-                "out": "./lib/schemas/deleteProduct.out.json"
+                "in": "./lib/schemas/addPersonPicture.in.json",
+                "out": "./lib/schemas/addPersonPicture.out.json"
             }
         },
         "addProduct": {
@@ -2863,70 +2624,109 @@
                 "out": "./lib/schemas/addProduct.out.json"
             }
         },
-        "deleteStage": {
+        "deleteProductFields": {
             "main": "./lib/actions/action.js",
-            "title": "Delete a stage",
-            "description": "Marks a stage as deleted.",
+            "title": "Delete multiple product fields in bulk",
+            "description": "Marks multiple fields as deleted.",
             "callParams": {
-                "pathName": "/stages/{id}",
+                "pathName": "/productFields",
                 "method": "delete"
             },
             "metadata": {
-                "in": "./lib/schemas/deleteStage.in.json",
-                "out": "./lib/schemas/deleteStage.out.json"
+                "in": "./lib/schemas/deleteProductFields.in.json",
+                "out": "./lib/schemas/deleteProductFields.out.json"
             }
         },
-        "getStage": {
+        "getProduct": {
             "main": "./lib/actions/action.js",
-            "title": "Get one stage",
-            "description": "Returns data about a specific stage.",
+            "title": "Get one product",
+            "description": "Returns data about a specific product.",
             "callParams": {
-                "pathName": "/stages/{id}",
+                "pathName": "/products/{id}",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getStage.in.json",
-                "out": "./lib/schemas/getStage.out.json"
+                "in": "./lib/schemas/getProduct.in.json",
+                "out": "./lib/schemas/getProduct.out.json"
             }
         },
-        "updateStage": {
+        "deleteProduct": {
             "main": "./lib/actions/action.js",
-            "title": "Update stage details",
-            "description": "Updates the properties of a stage.",
+            "title": "Delete a product",
+            "description": "Marks a product as deleted.",
             "callParams": {
-                "pathName": "/stages/{id}",
-                "method": "put",
+                "pathName": "/products/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteProduct.in.json",
+                "out": "./lib/schemas/deleteProduct.out.json"
+            }
+        },
+        "deleteProductFollower": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a follower from a product",
+            "description": "Deletes a follower from a product.",
+            "callParams": {
+                "pathName": "/products/{id}/followers/{follower_id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteProductFollower.in.json",
+                "out": "./lib/schemas/deleteProductFollower.out.json"
+            }
+        },
+        "deleteProductField": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a product field",
+            "description": "Marks a product field as deleted. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/deleting-a-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">deleting a custom field</a>.",
+            "callParams": {
+                "pathName": "/productFields/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteProductField.in.json",
+                "out": "./lib/schemas/deleteProductField.out.json"
+            }
+        },
+        "addProductField": {
+            "main": "./lib/actions/action.js",
+            "title": "Add a new product field",
+            "description": "Adds a new product field. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/adding-a-new-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">adding a new custom field</a>.",
+            "callParams": {
+                "pathName": "/productFields",
+                "method": "post",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/updateStage.in.json",
-                "out": "./lib/schemas/updateStage.out.json"
+                "in": "./lib/schemas/addProductField.in.json",
+                "out": "./lib/schemas/addProductField.out.json"
             }
         },
-        "findSubscriptionByDeal": {
+        "getProductField": {
             "main": "./lib/actions/action.js",
-            "title": "Find subscription by deal",
-            "description": "Returns details of an installment or a recurring subscription by the deal ID.",
+            "title": "Get one product field",
+            "description": "Returns data about a specific product field.",
             "callParams": {
-                "pathName": "/subscriptions/find/{dealId}",
+                "pathName": "/productFields/{id}",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/findSubscriptionByDeal.in.json",
-                "out": "./lib/schemas/findSubscriptionByDeal.out.json"
+                "in": "./lib/schemas/getProductField.in.json",
+                "out": "./lib/schemas/getProductField.out.json"
             }
         },
-        "getSubscription": {
+        "getPerson": {
             "main": "./lib/actions/action.js",
-            "title": "Get details of a subscription",
-            "description": "Returns details of an installment or a recurring subscription.",
+            "title": "Get details of a person",
+            "description": "Returns the details of a person. Note that this also returns some additional fields which are not present when asking for all persons. Also note that custom fields appear as long hashes in the resulting data. These hashes can be mapped against the `key` value of personFields.<br>If a company uses the [Campaigns product](https://pipedrive.readme.io/docs/campaigns-in-pipedrive-api), then this endpoint will also return the `data.marketing_status` field.",
             "callParams": {
-                "pathName": "/subscriptions/{id}",
+                "pathName": "/persons/{id}",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getSubscription.in.json",
-                "out": "./lib/schemas/getSubscription.out.json"
+                "in": "./lib/schemas/getPerson.in.json",
+                "out": "./lib/schemas/getPerson.out.json"
             }
         },
         "updateProduct": {
@@ -2943,6 +2743,192 @@
                 "out": "./lib/schemas/updateProduct.out.json"
             }
         },
+        "addPipeline": {
+            "main": "./lib/actions/action.js",
+            "title": "Add a new pipeline",
+            "description": "Adds a new pipeline.",
+            "callParams": {
+                "pathName": "/pipelines",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addPipeline.in.json",
+                "out": "./lib/schemas/addPipeline.out.json"
+            }
+        },
+        "updateProductField": {
+            "main": "./lib/actions/action.js",
+            "title": "Update a product field",
+            "description": "Updates a product field. For more information, see the tutorial for <a href=\" https://pipedrive.readme.io/docs/updating-custom-field-value \" target=\"_blank\" rel=\"noopener noreferrer\">updating custom fields' values</a>.",
+            "callParams": {
+                "pathName": "/productFields/{id}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateProductField.in.json",
+                "out": "./lib/schemas/updateProductField.out.json"
+            }
+        },
+        "getOrganizationRelationship": {
+            "main": "./lib/actions/action.js",
+            "title": "Get one organization relationship",
+            "description": "Finds and returns an organization relationship from its ID.",
+            "callParams": {
+                "pathName": "/organizationRelationships/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOrganizationRelationship.in.json",
+                "out": "./lib/schemas/getOrganizationRelationship.out.json"
+            }
+        },
+        "addRole": {
+            "main": "./lib/actions/action.js",
+            "title": "Add a role",
+            "callParams": {
+                "pathName": "/roles",
+                "method": "post",
+                "requestContentType": "application/x-www-form-urlencoded"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addRole.in.json",
+                "out": "./lib/schemas/addRole.out.json"
+            }
+        },
+        "deletePersonFollower": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a follower from a person",
+            "description": "Deletes a follower from a person.",
+            "callParams": {
+                "pathName": "/persons/{id}/followers/{follower_id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deletePersonFollower.in.json",
+                "out": "./lib/schemas/deletePersonFollower.out.json"
+            }
+        },
+        "getRole": {
+            "main": "./lib/actions/action.js",
+            "title": "Get one role",
+            "callParams": {
+                "pathName": "/roles/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRole.in.json",
+                "out": "./lib/schemas/getRole.out.json"
+            }
+        },
+        "deleteRole": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a role",
+            "callParams": {
+                "pathName": "/roles/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteRole.in.json",
+                "out": "./lib/schemas/deleteRole.out.json"
+            }
+        },
+        "updateStage": {
+            "main": "./lib/actions/action.js",
+            "title": "Update stage details",
+            "description": "Updates the properties of a stage.",
+            "callParams": {
+                "pathName": "/stages/{id}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateStage.in.json",
+                "out": "./lib/schemas/updateStage.out.json"
+            }
+        },
+        "deleteStages": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete multiple stages in bulk",
+            "description": "Marks multiple stages as deleted.",
+            "callParams": {
+                "pathName": "/stages",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteStages.in.json",
+                "out": "./lib/schemas/deleteStages.out.json"
+            }
+        },
+        "updateRole": {
+            "main": "./lib/actions/action.js",
+            "title": "Update role details",
+            "callParams": {
+                "pathName": "/roles/{id}",
+                "method": "put",
+                "requestContentType": "application/x-www-form-urlencoded"
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateRole.in.json",
+                "out": "./lib/schemas/updateRole.out.json"
+            }
+        },
+        "addProductFollower": {
+            "main": "./lib/actions/action.js",
+            "title": "Add a follower to a product",
+            "description": "Adds a follower to a product.",
+            "callParams": {
+                "pathName": "/products/{id}/followers",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addProductFollower.in.json",
+                "out": "./lib/schemas/addProductFollower.out.json"
+            }
+        },
+        "addRoleAssignment": {
+            "main": "./lib/actions/action.js",
+            "title": "Add role assignment",
+            "description": "Adds assignment for a role.",
+            "callParams": {
+                "pathName": "/roles/{id}/assignments",
+                "method": "post",
+                "requestContentType": "application/x-www-form-urlencoded"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addRoleAssignment.in.json",
+                "out": "./lib/schemas/addRoleAssignment.out.json"
+            }
+        },
+        "deleteStage": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a stage",
+            "description": "Marks a stage as deleted.",
+            "callParams": {
+                "pathName": "/stages/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteStage.in.json",
+                "out": "./lib/schemas/deleteStage.out.json"
+            }
+        },
+        "addStage": {
+            "main": "./lib/actions/action.js",
+            "title": "Add a new stage",
+            "description": "Adds a new stage, returns the ID upon success.",
+            "callParams": {
+                "pathName": "/stages",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addStage.in.json",
+                "out": "./lib/schemas/addStage.out.json"
+            }
+        },
         "deleteSubscription": {
             "main": "./lib/actions/action.js",
             "title": "Delete a subscription",
@@ -2954,6 +2940,33 @@
             "metadata": {
                 "in": "./lib/schemas/deleteSubscription.in.json",
                 "out": "./lib/schemas/deleteSubscription.out.json"
+            }
+        },
+        "getSubscription": {
+            "main": "./lib/actions/action.js",
+            "title": "Get details of a subscription",
+            "description": "Returns details of an installment or a recurring subscription.",
+            "callParams": {
+                "pathName": "/subscriptions/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSubscription.in.json",
+                "out": "./lib/schemas/getSubscription.out.json"
+            }
+        },
+        "addSubscriptionInstallment": {
+            "main": "./lib/actions/action.js",
+            "title": "Add an installment subscription",
+            "description": "Adds a new installment subscription.",
+            "callParams": {
+                "pathName": "/subscriptions/installment",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addSubscriptionInstallment.in.json",
+                "out": "./lib/schemas/addSubscriptionInstallment.out.json"
             }
         },
         "addRecurringSubscription": {
@@ -2984,20 +2997,6 @@
                 "out": "./lib/schemas/updateSubscriptionInstallment.out.json"
             }
         },
-        "updateRecurringSubscription": {
-            "main": "./lib/actions/action.js",
-            "title": "Update a recurring subscription",
-            "description": "Updates a recurring subscription.",
-            "callParams": {
-                "pathName": "/subscriptions/recurring/{id}",
-                "method": "put",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateRecurringSubscription.in.json",
-                "out": "./lib/schemas/updateRecurringSubscription.out.json"
-            }
-        },
         "cancelRecurringSubscription": {
             "main": "./lib/actions/action.js",
             "title": "Cancel a recurring subscription",
@@ -3010,87 +3009,6 @@
             "metadata": {
                 "in": "./lib/schemas/cancelRecurringSubscription.in.json",
                 "out": "./lib/schemas/cancelRecurringSubscription.out.json"
-            }
-        },
-        "deletePersonField": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a person field",
-            "description": "Marks a field as deleted. For more information, see the tutorial for <a href=\"https://pipedrive.readme.io/docs/deleting-a-custom-field\" target=\"_blank\" rel=\"noopener noreferrer\">deleting a custom field</a>.",
-            "callParams": {
-                "pathName": "/personFields/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deletePersonField.in.json",
-                "out": "./lib/schemas/deletePersonField.out.json"
-            }
-        },
-        "addTeam": {
-            "main": "./lib/actions/action.js",
-            "title": "Add a new team",
-            "description": "Adds a new team to the company and returns the created object.",
-            "callParams": {
-                "pathName": "/teams",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addTeam.in.json",
-                "out": "./lib/schemas/addTeam.out.json"
-            }
-        },
-        "updateRole": {
-            "main": "./lib/actions/action.js",
-            "title": "Update role details",
-            "callParams": {
-                "pathName": "/roles/{id}",
-                "method": "put",
-                "requestContentType": "application/x-www-form-urlencoded"
-            },
-            "metadata": {
-                "in": "./lib/schemas/updateRole.in.json",
-                "out": "./lib/schemas/updateRole.out.json"
-            }
-        },
-        "addTeamUser": {
-            "main": "./lib/actions/action.js",
-            "title": "Add users to a team",
-            "description": "Adds users to an existing team.",
-            "callParams": {
-                "pathName": "/teams/{id}/users",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addTeamUser.in.json",
-                "out": "./lib/schemas/addTeamUser.out.json"
-            }
-        },
-        "addSubscriptionInstallment": {
-            "main": "./lib/actions/action.js",
-            "title": "Add an installment subscription",
-            "description": "Adds a new installment subscription.",
-            "callParams": {
-                "pathName": "/subscriptions/installment",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/addSubscriptionInstallment.in.json",
-                "out": "./lib/schemas/addSubscriptionInstallment.out.json"
-            }
-        },
-        "getTeam": {
-            "main": "./lib/actions/action.js",
-            "title": "Get a single team",
-            "description": "Returns data about a specific team.",
-            "callParams": {
-                "pathName": "/teams/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getTeam.in.json",
-                "out": "./lib/schemas/getTeam.out.json"
             }
         },
         "updateTeam": {
@@ -3107,17 +3025,45 @@
                 "out": "./lib/schemas/updateTeam.out.json"
             }
         },
-        "getUserTeams": {
+        "findSubscriptionByDeal": {
             "main": "./lib/actions/action.js",
-            "title": "Get all teams of a user",
-            "description": "Returns data about all teams which have the specified user as a member.",
+            "title": "Find subscription by deal",
+            "description": "Returns details of an installment or a recurring subscription by the deal ID.",
             "callParams": {
-                "pathName": "/teams/user/{id}",
+                "pathName": "/subscriptions/find/{dealId}",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getUserTeams.in.json",
-                "out": "./lib/schemas/getUserTeams.out.json"
+                "in": "./lib/schemas/findSubscriptionByDeal.in.json",
+                "out": "./lib/schemas/findSubscriptionByDeal.out.json"
+            }
+        },
+        "updateRecurringSubscription": {
+            "main": "./lib/actions/action.js",
+            "title": "Update a recurring subscription",
+            "description": "Updates a recurring subscription.",
+            "callParams": {
+                "pathName": "/subscriptions/recurring/{id}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateRecurringSubscription.in.json",
+                "out": "./lib/schemas/updateRecurringSubscription.out.json"
+            }
+        },
+        "addTeam": {
+            "main": "./lib/actions/action.js",
+            "title": "Add a new team",
+            "description": "Adds a new team to the company and returns the created object.",
+            "callParams": {
+                "pathName": "/teams",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addTeam.in.json",
+                "out": "./lib/schemas/addTeam.out.json"
             }
         },
         "deleteTeamUser": {
@@ -3134,18 +3080,44 @@
                 "out": "./lib/schemas/deleteTeamUser.out.json"
             }
         },
-        "updateUser": {
+        "addTeamUser": {
             "main": "./lib/actions/action.js",
-            "title": "Update user details",
-            "description": "Updates the properties of a user. Currently, only `active_flag` can be updated.",
+            "title": "Add users to a team",
+            "description": "Adds users to an existing team.",
             "callParams": {
-                "pathName": "/users/{id}",
-                "method": "put",
-                "requestContentType": "application/x-www-form-urlencoded"
+                "pathName": "/teams/{id}/users",
+                "method": "post",
+                "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/updateUser.in.json",
-                "out": "./lib/schemas/updateUser.out.json"
+                "in": "./lib/schemas/addTeamUser.in.json",
+                "out": "./lib/schemas/addTeamUser.out.json"
+            }
+        },
+        "getUserTeams": {
+            "main": "./lib/actions/action.js",
+            "title": "Get all teams of a user",
+            "description": "Returns data about all teams which have the specified user as a member.",
+            "callParams": {
+                "pathName": "/teams/user/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUserTeams.in.json",
+                "out": "./lib/schemas/getUserTeams.out.json"
+            }
+        },
+        "getUser": {
+            "main": "./lib/actions/action.js",
+            "title": "Get one user",
+            "description": "Returns data about a specific user within the company.",
+            "callParams": {
+                "pathName": "/users/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUser.in.json",
+                "out": "./lib/schemas/getUser.out.json"
             }
         },
         "addUser": {
@@ -3162,33 +3134,6 @@
                 "out": "./lib/schemas/addUser.out.json"
             }
         },
-        "deleteUserRoleAssignment": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a role assignment",
-            "description": "Deletes a role assignment for a user.",
-            "callParams": {
-                "pathName": "/users/{id}/roleAssignments",
-                "method": "delete",
-                "requestContentType": "application/x-www-form-urlencoded"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteUserRoleAssignment.in.json",
-                "out": "./lib/schemas/deleteUserRoleAssignment.out.json"
-            }
-        },
-        "getUser": {
-            "main": "./lib/actions/action.js",
-            "title": "Get one user",
-            "description": "Returns data about a specific user within the company.",
-            "callParams": {
-                "pathName": "/users/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getUser.in.json",
-                "out": "./lib/schemas/getUser.out.json"
-            }
-        },
         "addUserRoleAssignment": {
             "main": "./lib/actions/action.js",
             "title": "Add role assignment",
@@ -3203,18 +3148,73 @@
                 "out": "./lib/schemas/addUserRoleAssignment.out.json"
             }
         },
-        "addStage": {
+        "updateUser": {
             "main": "./lib/actions/action.js",
-            "title": "Add a new stage",
-            "description": "Adds a new stage, returns the ID upon success.",
+            "title": "Update user details",
+            "description": "Updates the properties of a user. Currently, only `active_flag` can be updated.",
             "callParams": {
-                "pathName": "/stages",
-                "method": "post",
-                "requestContentType": "application/json"
+                "pathName": "/users/{id}",
+                "method": "put",
+                "requestContentType": "application/x-www-form-urlencoded"
             },
             "metadata": {
-                "in": "./lib/schemas/addStage.in.json",
-                "out": "./lib/schemas/addStage.out.json"
+                "in": "./lib/schemas/updateUser.in.json",
+                "out": "./lib/schemas/updateUser.out.json"
+            }
+        },
+        "deleteRoleAssignment": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a role assignment",
+            "description": "Deletes assignment from a role.",
+            "callParams": {
+                "pathName": "/roles/{id}/assignments",
+                "method": "delete",
+                "requestContentType": "application/x-www-form-urlencoded"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteRoleAssignment.in.json",
+                "out": "./lib/schemas/deleteRoleAssignment.out.json"
+            }
+        },
+        "deleteUserRoleAssignment": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a role assignment",
+            "description": "Deletes a role assignment for a user.",
+            "callParams": {
+                "pathName": "/users/{id}/roleAssignments",
+                "method": "delete",
+                "requestContentType": "application/x-www-form-urlencoded"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteUserRoleAssignment.in.json",
+                "out": "./lib/schemas/deleteUserRoleAssignment.out.json"
+            }
+        },
+        "deletePersonFields": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete multiple person fields in bulk",
+            "description": "Marks multiple fields as deleted.",
+            "callParams": {
+                "pathName": "/personFields",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deletePersonFields.in.json",
+                "out": "./lib/schemas/deletePersonFields.out.json"
+            }
+        },
+        "addOrUpdateRoleSetting": {
+            "main": "./lib/actions/action.js",
+            "title": "Add or update role setting",
+            "description": "Adds or updates the visibility setting for a role.",
+            "callParams": {
+                "pathName": "/roles/{id}/settings",
+                "method": "post",
+                "requestContentType": "application/x-www-form-urlencoded"
+            },
+            "metadata": {
+                "in": "./lib/schemas/addOrUpdateRoleSetting.in.json",
+                "out": "./lib/schemas/addOrUpdateRoleSetting.out.json"
             }
         },
         "addWebhook": {
@@ -3231,19 +3231,6 @@
                 "out": "./lib/schemas/addWebhook.out.json"
             }
         },
-        "deleteStages": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete multiple stages in bulk",
-            "description": "Marks multiple stages as deleted.",
-            "callParams": {
-                "pathName": "/stages",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteStages.in.json",
-                "out": "./lib/schemas/deleteStages.out.json"
-            }
-        },
         "deleteWebhook": {
             "main": "./lib/actions/action.js",
             "title": "Delete existing Webhook",
@@ -3255,6 +3242,32 @@
             "metadata": {
                 "in": "./lib/schemas/deleteWebhook.in.json",
                 "out": "./lib/schemas/deleteWebhook.out.json"
+            }
+        },
+        "getTeam": {
+            "main": "./lib/actions/action.js",
+            "title": "Get a single team",
+            "description": "Returns data about a specific team.",
+            "callParams": {
+                "pathName": "/teams/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTeam.in.json",
+                "out": "./lib/schemas/getTeam.out.json"
+            }
+        },
+        "getStage": {
+            "main": "./lib/actions/action.js",
+            "title": "Get one stage",
+            "description": "Returns data about a specific stage.",
+            "callParams": {
+                "pathName": "/stages/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getStage.in.json",
+                "out": "./lib/schemas/getStage.out.json"
             }
         }
     }
