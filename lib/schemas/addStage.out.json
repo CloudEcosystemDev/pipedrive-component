@@ -34,10 +34,10 @@
                     "description": "The ID of the pipeline to add the stage to"
                 },
                 "rotten_flag": {
-                    "type": "integer",
+                    "type": "boolean",
                     "enum": [
-                        0,
-                        1
+                        true,
+                        false
                     ],
                     "description": "Whether deals in this stage can become rotten"
                 },
