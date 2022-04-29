@@ -93,6 +93,7 @@
                     "format": "date-time"
                 },
                 "visible_to": {
+                    "type": "string",
                     "allOf": [
                         {
                             "type": "string",

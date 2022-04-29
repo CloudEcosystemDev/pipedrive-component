@@ -75,7 +75,7 @@
                             "description": "The optional message about why the deal was lost (to be used when status = lost)"
                         },
                         "visible_to": {
-                            "type": "number",
+                            "type": "string",
                             "allOf": [
                                 {
                                     "type": "string",

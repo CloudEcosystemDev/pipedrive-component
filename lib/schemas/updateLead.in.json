@@ -65,7 +65,7 @@
                     "description": "The date of when the deal which will be created from the lead is expected to be closed. In ISO 8601 format: YYYY-MM-DD."
                 },
                 "visible_to": {
-                    "type": "number",
+                    "type": "string",
                     "allOf": [
                         {
                             "type": "string",
